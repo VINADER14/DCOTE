@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    text-align: center;
+    background-color:rgb(165,2,57);
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
