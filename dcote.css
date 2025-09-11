@@ -3,15 +3,29 @@ body {
 }
 
 .navbar {
-    width: 100%;
-    text-align: center;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color:rgb(165,2,57);
+    padding: 10px 20px;
 }
 
-.navbar a {
-    display: inline-block;
-    padding: 8px 20px;
-    margin: 0 10px;
-    text-decoration: none;
+.navbar .left a {
+    font-weight: bold;
+    font-size: 18px;
     color: white;
+    text-decoration: none;
+}
+
+.navbar .center a,
+.navbar .right a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .center {
+    flex: 1;
+    text-align: center;
 }
