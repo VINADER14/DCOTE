@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navbar {
@@ -9,7 +10,7 @@ body {
     align-items: center;
     background-color:rgb(165,2,57);
     padding: 10px 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .left {
@@ -47,7 +48,7 @@ body {
 
 .image_base {
     width: 220px;
-    margin: 25px 20px;
+    margin: 15px 20px;
     float: left;
     border: 1px solid rgb(218, 20, 89);
     border-radius: 10px;
@@ -56,6 +57,11 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.484);
 }
 
+.content {
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+}
 
 .image_base img {
     max-width: 100%;
@@ -63,4 +69,52 @@ body {
     display: block;
     object-fit: cover;
     margin: 0 auto;
+}
+
+.news {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.description {
+    width: 40%;
+}
+
+.description p {
+    font-size: 22px;
+}
+
+.section-title {
+    background-color: rgb(168, 7, 61);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.updates {
+    width: 40%;
+}
+
+.updates ul {
+    list-style: none;
+    padding: 0;
+}
+
+.updates li {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.updates .highlight {
+    color: rgb(168, 7, 61);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.updates .spoiler {
+    color: rgb(168, 7, 61);
+    font-size: 20px;
 }
