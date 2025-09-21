@@ -161,7 +161,7 @@ video {
     font-weight: bold;
 }
 
-.theory-text {
+.theory-card p {
     color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -182,4 +182,119 @@ video {
 .btn:hover {
     background: black;
     color: white;
+}
+
+.tg-channel {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tg-channel h2 {
+    font-size: 28px;
+    margin: 20px 0;
+    color: rgb(128, 0, 32);
+    font-weight: bold;
+}
+
+.tg-channel p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ranobe {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ranobe h2 {
+    font-size: 28px;
+    margin: 20px 0;
+    color: rgb(128, 0, 32);
+    font-weight: bold;
+}
+
+.ranobe p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ilustration {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ilustration h2 {
+    font-size: 28px;
+    margin: 20px 0;
+    color: rgb(128, 0, 32);
+    font-weight: bold;
+}
+
+.ilustration p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.characters {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.characters h2 {
+    font-size: 28px;
+    margin: 20px 0;
+    color: rgb(128, 0, 32);
+    font-weight: bold;
+}
+
+.characters p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgb(165,2,57);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
 }
