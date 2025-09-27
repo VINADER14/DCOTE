@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    font-family: 'Wiguru', sans-serif;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-container {
+    background-color: rgb(165,2,57);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}

@@ -1,9 +1,12 @@
 body {
     margin: 0;
     font-family: 'Wiguru', sans-serif;
+    padding-top: 40px;
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -82,15 +85,15 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    font-family: 'Ofont';
 }
 
 .description {
     width: 40%;
-    font-family: 'Ofonto';
 }
 
 .description p {
-    font-size: 22px;
+    font-size: 22px;  
 }
 
 .section-title {
@@ -277,7 +280,6 @@ video {
 }
 
 .footer-nav {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
