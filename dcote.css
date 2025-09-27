@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Wiguru', sans-serif;
+    padding-top: 40px;
 }
 main{
     margin-top: 40px;
@@ -10,6 +11,8 @@ main{
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     position: fixed;
@@ -96,15 +99,15 @@ main{
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    font-family: 'Ofont';
 }
 
 .description {
     width: 40%;
-    font-family: 'Ofonto';
 }
 
 .description p {
-    font-size: 22px;
+    font-size: 22px;  
 }
 
 .section-title {
@@ -217,7 +220,6 @@ video {
 
 
 .footer-nav {
-    margin-top: 30px;
     bottom: 0;
     left: 0;
     width: 100%;
