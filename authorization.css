@@ -14,4 +14,52 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    width: 320px;
+    text-align: center;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.auth-container input {
+    width: 280px;
+    max-width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-container .links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-container .links a {
+    color: black;
+    transition: 0.3s;
+    text-decoration: none;
 }

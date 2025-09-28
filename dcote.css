@@ -107,7 +107,7 @@ main{
 }
 
 .description p {
-    font-size: 22px;  
+    font-size: 17px;  
 }
 
 .section-title {
@@ -121,7 +121,6 @@ main{
 
 .updates {
     width: 40%;
-    font-family: 'Ofonto';
 }
 
 .updates ul {
@@ -152,7 +151,7 @@ main{
 
 @font-face {
     font-family: 'Ofont';
-    src: url('ofont.ru_Copperplate.ttf') format('truetype');
+    src: url('fonts/ofont.ru_Copperplate.ttf') format('truetype');
 }
 
 .ranobe, .theory-card, .tg-channel, .ilustration, .characters {
