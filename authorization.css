@@ -1,65 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    font-family: 'Wiguru', sans-serif;
-    background: white;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .auth-container {
-    background-color: rgb(165,2,57);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-    width: 320px;
-    text-align: center;
+  display: flex;
+  width: 950px;
+  height: 540px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
-.auth-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+.auth-image {
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: contain;
 }
 
-.auth-container h2 {
-    margin-bottom: 20px;
-    color: white;
-}
-
-.auth-container input {
-    width: 280px;
-    max-width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-}
-
-.auth-container button {
+.auth-image img {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
-    background: white;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
 }
 
-.auth-container .links {
-    margin-top: 15px;
-    font-size: 14px;
+.auth-form {
+  width: 50%;
+  height: 100%;
+  padding: 40px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.auth-container .links a {
-    color: black;
-    transition: 0.3s;
-    text-decoration: none;
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #8b0000;
+}
+.logo span {
+  color: #2b2b2b;
+}
+
+.login-link {
+  font-size: 13px;
+  color: #8b0000;
+}
+.login-btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #8b0000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+h1 {
+  color: #8b0000;
+  font-size: 22px;
+  margin-top: 35px;
+}
+p {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #f0c0c0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+input:focus {
+  border-color: #8b0000;
+}
+
+.submit-btn {
+  background: #8b0000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.submit-btn:hover {
+  background: #a70000;
 }
