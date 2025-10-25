@@ -73,7 +73,6 @@ main{
 
 .image_base {
     width: 220px;
-    margin-block: 20px;
     border: 1px solid rgb(218, 20, 89);
     border-radius: 10px;
     overflow: hidden;
@@ -91,7 +90,6 @@ main{
     height: auto;
     display: block;
     object-fit: cover;
-    margin: 0 auto;
 }
 
 .news {
@@ -116,7 +114,7 @@ main{
     padding: 10px 15px;
     border-radius: 3px;
     font-size: 15px;
-    margin-top: 20px;
+    margin: 0px;
 }
 
 .updates {
