@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -19,7 +22,11 @@
             <a href="https://dcote/characters.com">ПЕРСОНАЖИ</a>
         </div>
         <div class="right">
-            <a href="registration.php">ВХОД</a>
+            <?php if (isset($_SESSION['email'])): ?>
+                <a href="registration.php"><?= htmlspecialchars($_SESSION['username'] ?? $_SESSION['email']) ?></a>
+            <?php else: ?>
+                <a href="registration.php">ВХОД</a>
+            <?php endif; ?>
         </div>
     </nav>
     <main>

@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'lemon_milk';
+    src: url('fonts/lemon_milk.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'copperplate';
+    src: url('fonts/ofont.ru_Copperplate.ttf') format('truetype');
+}
+
+
+label {
+    font-family: "lemon_milk",sans-serif;
+    color: #a61737;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-container {
+    display: flex;
+    width: 1000px;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    display: block;
+}
+ 
+.auth-form {
+    width: 50%;
+    height: 100%;
+    padding: 10px 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-field {
+    border: 2px solid #ff0000;
+    background-color: #ff000070;
+    transition: color 0.2s;
+}
+
+.auth-header {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #8b0000;
+}
+
+.logo span {
+    color: rgb(92, 12, 30);
+}
+
+.login-link {
+    font-size: 13px;
+    font-family: "copperplate", sans-serif;
+    color: #a23751;
+}
+
+
+.login-btn {
+    margin-left: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #a61737;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: #87132c;
+}
+
+h1 {
+    color: #a61737;
+    font-size: 22px;
+    margin-top: 20px;
+    font-family: "lemon_milk",sans-serif;
+}
+
+p {
+    font-family: "copperplate", sans-serif;
+    color: #a23751;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #f0c0c0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #8b0000;
+}
+
+.field_group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.submit-btn {
+    background: #a61737;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.submit-btn:hover {
+    background: #87132c;
+}
+
+.error-message {
+    font-family: "copperplate", sans-serif;
+    color: #a23751;
+    font-size: 14px;
+}
+

@@ -3,6 +3,7 @@ body {
     font-family: 'Wiguru', sans-serif;
     padding-top: 40px;
 }
+
 main{
     margin-top: 40px;
     width: 80%;
@@ -60,6 +61,12 @@ main{
     text-decoration: none;
     transition: color 0.3s;
 }
+
+.navbar .right {
+    min-width: 200px;
+    text-align: right;
+}
+
 
 .navbar a:hover {
     color: rgb(73, 0, 24);
