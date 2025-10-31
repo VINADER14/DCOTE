@@ -16,8 +16,6 @@ main{
     top: 0;
     width: 100%;
     display: flex;
-    position: fixed;
-    top:0;
     justify-content: space-between;
     align-items: center;
     background-color:rgb(165,2,57);
