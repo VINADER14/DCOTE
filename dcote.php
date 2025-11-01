@@ -23,9 +23,9 @@ session_start();
         </div>
         <div class="right">
             <?php if (isset($_SESSION['email'])): ?>
-                <a href="registration.php"><?= htmlspecialchars($_SESSION['username'] ?? $_SESSION['email']) ?></a>
+                <a href="login.php"><?= htmlspecialchars($_SESSION['username'] ?? $_SESSION['email']) ?></a>
             <?php else: ?>
-                <a href="registration.php">ВХОД</a>
+                <a href="login.php">ВХОД</a>
             <?php endif; ?>
         </div>
     </nav>

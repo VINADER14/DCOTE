@@ -88,6 +88,7 @@ main{
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    margin: 20px 0px;
 }
 
 .image_base img {

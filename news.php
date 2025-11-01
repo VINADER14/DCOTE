@@ -1,3 +1,12 @@
+<?php 
+session_start();
+require 'config.php';
+require 'help_funcs.php';
+
+$news_list=execute_query('SELECT * FROM news', fetch:'all');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +28,11 @@
             <a href="https://dcote/characters.com">ПЕРСОНАЖИ</a>
         </div>
         <div class="right">
-            <a href="registration.php">ВХОД</a>
-            <!-- <?php if (isset($_SESSION['email'])): ?>
+            <?php if (isset($_SESSION['email'])): ?>
                 <a href="registration.php"><?= htmlspecialchars($_SESSION['username'] ?? $_SESSION['email']) ?></a>
             <?php else: ?>
-            <?php endif; ?> -->
+                <a href="registration.php">ВХОД</a>
+            <?php endif; ?>
         </div>
     </nav>
     <main>
@@ -40,27 +49,31 @@
             </select>
             <select class="filter-select">
                 <option value="">Теги</option>
-                <option value="1">Иван</option>
-                <option value="2">Мария</option>
+                <option value="1">хз1</option>
+                <option value="2">хз2</option>
             </select>
             <button class="filter-button">Непросмотренные посты</button>
             </div>
             <div class="news-list">
-                <div class='news1'>
-                    <img src='images/dcote_nov1.jpg' class="new-img">
-                    <img src="images/pin-icon.png" class="pin-img">
-                    <div class="news-text">
-                        <h1 class="news-title">ОБЛОЖКА И НАЧАЛЬНЫЕ ИЛЛЮСТРАЦИИ 3 ТОМА 3 ГОДА</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis assumenda repudiandae est unde odio soluta ut quae deserunt tempora nisi iusto velit cumque aliquid, reprehenderit cum. Veritatis repudiandae incidunt debitis!</p>
+                <?php foreach ($news_list as $news): ?>
+                    <div class='news1'>
+                        <img src='<?=e($news['image'])?>' alt="news_image" class="new-img" >
+                        <?php if ((int)$news['pin'] === 1): ?>
+                            <img src="images/pin-icon.png" class="pin-img">
+                        <?php endif; ?>
+                        <div class="news-text">
+                        <h1 class="news-title"><?=e($news['news_title'])?></h1>
+                        <p><?=e($news['news_text'])?></p>
                             <div class="news-comms-date">
                                 <img src="images/comm-icon.png">
-                                <p class="comms-number">123456</p>
-                                <p class="date">24 октября 2025 г.</p>
+                                <p class="comms-number"><?=e($news['comms'])?></p>
+                                <p class="date"><?=date_for_news($news['created_at'])?></p>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
+        </div>
     </main>
     <footer class="footer-nav">
         <a href="#">Главная</a>

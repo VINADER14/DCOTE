@@ -176,6 +176,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 20px;
 }
 
 .news1 {
@@ -188,6 +189,8 @@ main {
     height: 100px;
     overflow: hidden;
 }
+
+
 
 .news1 .new-img {
     width: 120px;
@@ -259,7 +262,7 @@ main {
     justify-content: center;
     gap: 40px;
     padding: 15px 0;
-    margin: 0px;
+    margin-top: 20px;
     box-sizing: border-box;
 }
 
