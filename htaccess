@@ -1,0 +1,9 @@
+# Включаем модуль перезаписи
+RewriteEngine On
+
+# Если файл или папка существуют — ничего не делаем
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Все запросы без расширения добавляем .php
+; RewriteRule ^([^/.]+)$ $1.php [L]
