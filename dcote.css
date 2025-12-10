@@ -39,16 +39,16 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Pan-Regular', sans-serif;
-    background-image: url('images/bg_image.png');
+    background-image: url('images/test.png');
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 main {
     max-width: 1540px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 35px;
     flex: 1;
 }
 
@@ -291,12 +291,12 @@ main {
 
 
     .footer-nav .social-nets-logos {
-    height: 30px !important;
+    height: 25px !important;
     width: auto;
     }
 
     .footer-nav{
-        padding: 5px 10px !important;
+        padding: 5px 20px !important;
     }
 
     .footer-center p{
@@ -375,7 +375,7 @@ main {
 
 .content-line1 {
     display: flex;
-    gap: 20px;
+    gap: 35px;
     align-items: stretch;
 }
 
@@ -388,39 +388,60 @@ main {
     overflow: hidden;
 }
 
-
 .image_base {
     width: 40%;
+    aspect-ratio: 0.8;   /* задаём высоту автоматически */
+    position: relative;
     overflow: hidden;
     flex-shrink: 0;
-    z-index: 20;
+    max-width: 397px;
 }
 
 .image_base img {
-    width: 100%;
-    height: 100%;
     display: block;
+    width: 100%;   /* чтобы хоть что-то было видно до работы JS */
+    height: 100%;
     object-fit: cover;
+    position: absolute; /* теперь центрирование через JS работает */
+    top: 0;
+    left: 0;
 }
 
+
+.image_base1 { 
+    width: 40%; 
+    overflow: hidden; 
+    flex-shrink: 0; 
+    z-index: 20; }
+
+.image_base1 img { 
+    width: 100%;
+    height: 100%; 
+    display: block;
+    object-fit: cover;
+ }
+
 .description-text {
+    width: 60%;
     padding: 8px 8px;
     color: white;
     font-family: 'Pan-Light', sans-serif;
     min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .description-text h2 {
-    font-size: clamp(17.5px, 1.8vw - 0.96px, 27px);
+    font-size: clamp(1px, 1.8vw - 0.96px, 27px);
     display: flex;
     justify-content: center;
     font-family: 'Pan-Bold', sans-serif;
-    margin-top: 12px;
-    margin-bottom: 5px;
+    margin: 0px;
 }
 
 .description-text p {
-    font-size: clamp(12px, 1.44vw - 0.76px, 20px);
+    font-size: clamp(1px, 1.35vw - 0.76px, 20px);
     margin: 0px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -432,7 +453,7 @@ main {
 .content-line2, .content-line3{
     display: flex;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 35px;
     border-radius: 10px;
 }
 
@@ -557,10 +578,10 @@ main {
 
 
 .buttons-containers {
-    margin-top: 20px;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 35px;
 }
 
 
@@ -600,11 +621,12 @@ main {
 
 .banner-info {
     display: flex;
+    flex:1;
     flex-direction: column;
     align-items: center;
     position: relative;
     font-family: 'Pan-Regular', sans-serif;
-
+    gap:15px;
 }
 
 
@@ -619,12 +641,15 @@ main {
     background: transparent;
     cursor: pointer;
     transition: 0.3s;
-    margin-block: 18px;
+    margin-block: 0px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
+.banner-info button{
+    margin-bottom: 15px;
+}
 
 .banner-info button:hover,.about-school button:hover {
     background-color: rgb(143, 17, 68);
@@ -636,7 +661,8 @@ main {
     text-align: center;
     color: white;
     font-family: 'Pan-Bold', sans-serif;
-    margin-block: 10px;
+    margin:0px;
+    margin-top: 15px;
 }
 
 .banner-info p {
@@ -647,7 +673,6 @@ main {
     font-family: 'Pan-Light', sans-serif;
     padding-inline: 60px;
     padding: 0% 20%;
-    margin-block: 5px;
 }
 
 
@@ -683,8 +708,15 @@ main {
 }
 
 .social-nets-logos {
-    height: 2.5vw;
+    height: 2vw;
     width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .footer-right {
