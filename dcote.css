@@ -10,22 +10,22 @@
 
 @font-face {
     font-family: 'Pan-Thin';
-    src: url('fonts/Programme-Pan-Thin.otf') format('truetype');
+    src: url('fonts/Comfortaa-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Pan-Regular';
-    src: url('fonts/Programme-Pan-Regular.otf') format('truetype');
+    src: url('fonts/Comfortaa-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Pan-Light';
-    src: url('fonts/Programme-Pan-Light.otf') format('truetype');
+    src: url('fonts/Comfortaa-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Pan-Bold';
-    src: url('fonts/Programme-Pan-Bold.otf') format('truetype');
+    src: url('fonts/Comfortaa-Bold.ttf') format('truetype');
 }
 
 body {
@@ -50,6 +50,9 @@ main {
     margin: 0 auto;
     padding: 35px;
     flex: 1;
+    gap: 35px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -103,7 +106,7 @@ main {
     color: white;
     text-decoration: none;
     font-family: 'Pan-Thin', sans-serif;
-    font-size: clamp(12px,0.6vw,100px)
+    font-size: clamp(11px,0.6vw,100px)
 }
 
 .navbar a span {
@@ -303,8 +306,14 @@ main {
         padding:0% 20% !important;
     }
 
+    main {
+        padding: 20px;
+        gap: 20px;
+    }
 
 }
+
+
 
 .side-menu .close-btn {
     display: flex;
@@ -377,6 +386,7 @@ main {
     display: flex;
     gap: 35px;
     align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .description {
@@ -387,6 +397,21 @@ main {
     position: relative;
     overflow: hidden;
 }
+
+@media (max-width: 1060px){
+    .content-line1{
+        gap: 20px;
+    }
+}
+
+.description {
+    flex: 2 2 510px !important;
+}
+
+.updates {
+    flex: 1 1 270px !important;
+}
+
 
 .image_base {
     width: 40%;
@@ -433,19 +458,20 @@ main {
 }
 
 .description-text h2 {
-    font-size: clamp(1px, 1.8vw - 0.96px, 27px);
+    font-size: clamp(15px, 1.8vw - 0.96px, 27px);
     display: flex;
     justify-content: center;
     font-family: 'Pan-Bold', sans-serif;
     margin: 0px;
+    text-align: center;
 }
 
 .description-text p {
-    font-size: clamp(1px, 1.35vw - 0.76px, 20px);
+    font-size: clamp(10px, 1.2vw - 0.76px, 20px);
     margin: 0px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 17;
+    /* -webkit-line-clamp: 20; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -453,7 +479,6 @@ main {
 .content-line2, .content-line3{
     display: flex;
     overflow: hidden;
-    margin-top: 35px;
     border-radius: 10px;
 }
 
@@ -543,6 +568,7 @@ main {
     font-family: 'Pan-Bold', sans-serif;
     margin-top: 12px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 
@@ -575,10 +601,39 @@ main {
     font-size: 20px;
 }
 
+@media (max-width: 855px){
+    .content-line1 .updates{
+        min-height: 300px;
+
+    }
+
+    .content-line2, .content-line3{
+        flex-direction: column;
+    }
+
+    .content-line2 .school-image-base{
+        width: 100% !important;
+    }
+
+    .content-line2 .about-school{
+        width: auto !important;
+        gap: 10px;
+        background: linear-gradient(0deg, #0b172b,#df0e5441);
+    }
+
+    .content-line3 .island-image-base{
+        width: 100% !important;
+    }
+    
+    .content-line3 .about-island {
+        width: auto !important;
+        gap:10px;
+        background: linear-gradient(180deg, #0b172b,#df0e5441);
+    }
+}
 
 
 .buttons-containers {
-    margin-top: 35px;
     display: flex;
     flex-direction: column;
     gap: 35px;

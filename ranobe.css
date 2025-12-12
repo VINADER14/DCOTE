@@ -10,22 +10,22 @@
 
 @font-face {
     font-family: 'Pan-Thin';
-    src: url('fonts/Programme-Pan-Thin.otf') format('truetype');
+    src: url('fonts/Comfortaa-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Pan-Regular';
-    src: url('fonts/Programme-Pan-Regular.otf') format('truetype');
+    src: url('fonts/Comfortaa-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Pan-Light';
-    src: url('fonts/Programme-Pan-Light.otf') format('truetype');
+    src: url('fonts/Comfortaa-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Pan-Bold';
-    src: url('fonts/Programme-Pan-Bold.otf') format('truetype');
+    src: url('fonts/Comfortaa-Bold.ttf') format('truetype');
 }
 
 body {
@@ -48,8 +48,11 @@ body {
 main {
     max-width: 1540px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 35px;
     flex: 1;
+    gap: 35px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -103,7 +106,7 @@ main {
     color: white;
     text-decoration: none;
     font-family: 'Pan-Thin', sans-serif;
-    font-size: clamp(12px,0.6vw,100px)
+    font-size: clamp(11px,0.6vw,100px)
 }
 
 .navbar a span {
@@ -291,20 +294,26 @@ main {
 
 
     .footer-nav .social-nets-logos {
-    height: 30px !important;
+    height: 25px !important;
     width: auto;
     }
 
     .footer-nav{
-        padding: 5px 10px !important;
+        padding: 5px 20px !important;
     }
 
     .footer-center p{
         padding:0% 20% !important;
     }
 
+    main {
+        padding: 20px;
+        gap: 20px;
+    }
 
 }
+
+
 
 .side-menu .close-btn {
     display: flex;
@@ -371,6 +380,8 @@ main {
     z-index: 100;
 }
 
+/* ==== НАВБАР КОНЕЦ ==== */
+
 
 
 .navigation-links{
@@ -416,10 +427,9 @@ a.current-page span::after {
 
 
 .volumes {
-	margin-top:30px;
 	display:flex;
 	justify-content:center;
-	gap:30px;
+	gap:35px;
 	align-items:center;
 }
 
@@ -481,7 +491,7 @@ a.current-page span::after {
     text-decoration: none;
     transition: 0.3s;
     font-family: 'Pan-Regular', sans-serif;
-    font-size: clamp(14px,0.8vw,100px);
+    font-size: clamp(14px,1.0vw,20px);
     border: 2px solid rgb(229, 11, 85);
     border-radius: 10px;
     padding-block: 6px;
@@ -499,6 +509,35 @@ a.current-page span::after {
     border-color: rgb(143, 17, 68);
 }
 
+
+@media (max-width: 855px){
+    .volumes{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .volume-box{
+        width: auto;
+    }
+
+    .volume-desc h2{
+	font-size: 44px;
+    }
+
+    .volume-desc p{
+        font-size: 16px;
+    }
+
+    .volumes {
+	gap:20px;
+    }
+
+    .read-btn {
+    font-size: clamp(14px,1.4vw,100px);
+    padding: 10px 24px;
+
+    }
+}
 
 
 .footer-nav {
