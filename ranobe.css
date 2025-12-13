@@ -582,3 +582,83 @@ a.current-page span::after {
     justify-content: flex-end;
 }
 
+/* ===== Общие начальные состояния ===== */
+.scale-in,
+.slide-in-left,
+.slide-in-right,
+.slide-in-top {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ===== УВЕЛИЧЕНИЕ (картинка) ===== */
+.scale-in {
+  transform: scale(0.85);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.scale-in.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== ПРИЛИВ СЛЕВА (текст) ===== */
+.slide-in-left {
+  transform: translateX(-40px);
+  transition:
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== ПРИЛИВ СПРАВА (обновления, опционально) ===== */
+.slide-in-right {
+  transform: translateX(40px);
+  transition:
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== ПРИЛИВ СВЕРХУ (обновления, опционально) ===== */
+.slide-in-top {
+  transform: translateY(-40px);
+  transition:
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
+}
+
+.slide-in-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (max-width: 855px) {
+  .scale-in,
+  .slide-in-left,
+  .slide-in-right,
+  .slide-in-top  {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

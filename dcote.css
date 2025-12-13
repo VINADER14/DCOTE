@@ -459,7 +459,7 @@ main {
 }
 
 .description-text h2 {
-    font-size: clamp(15px, 1.8vw - 0.96px, 27px);
+    font-size: clamp(17.5px, 1.8vw - 0.96px, 27px);
     display: flex;
     justify-content: center;
     font-family: 'Pan-Bold', sans-serif;
@@ -468,7 +468,7 @@ main {
 }
 
 .description-text p {
-    font-size: clamp(10px, 1.2vw - 0.76px, 20px);
+    font-size: clamp(12px, 1.44vw - 0.76px, 21px);
     margin: 0px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -588,7 +588,7 @@ main {
     text-decoration: none;
     color: rgb(255, 255, 255);
     display: inline-block;
-    font-size: clamp(6px, 1.4vw, 16px);
+    font-size: clamp(12px, 1.44vw - 0.76px, 21px);
 }
 
 
@@ -604,6 +604,17 @@ main {
 }
 
 @media (max-width: 855px){
+    .content-line1 .description{
+        flex-direction: column;
+    }
+    .content-line1 .description .image_base{
+        width: 100% !important;
+        max-width: none !important;
+    }
+    .content-line1 .description .description-text{
+        width: auto !important;
+        gap: 10px;
+    }
     .content-line1 .updates{
         min-height: 300px;
 
@@ -786,7 +797,8 @@ main {
 /* ===== Общие начальные состояния ===== */
 .scale-in,
 .slide-in-left,
-.slide-in-right {
+.slide-in-right,
+.slide-in-top {
   opacity: 0;
   will-change: transform, opacity;
 }
@@ -795,8 +807,8 @@ main {
 .scale-in {
   transform: scale(0.85);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .scale-in.show {
@@ -808,8 +820,8 @@ main {
 .slide-in-left {
   transform: translateX(-40px);
   transition:
-    opacity 0.7s ease 0.3s,
-    transform 0.7s ease 0.3s;
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
 }
 
 .slide-in-left.show {
@@ -821,8 +833,8 @@ main {
 .slide-in-right {
   transform: translateX(40px);
   transition:
-    opacity 0.7s ease 0.3s,
-    transform 0.7s ease 0.3s;
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
 }
 
 .slide-in-right.show {
@@ -834,8 +846,8 @@ main {
 .slide-in-top {
   transform: translateY(-40px);
   transition:
-    opacity 0.7s ease 0.3s,
-    transform 0.7s ease 0.3s;
+    opacity 0.9s ease 0.3s,
+    transform 0.9s ease 0.3s;
 }
 
 .slide-in-top.show {
