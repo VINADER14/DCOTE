@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="auth-container">
         <div class="auth-image">
-            <img src="images/kei_ayano_reg.jpg" alt="kei_ayano_reg">
+            <img src="images/kei_ayano_reg.jpg" alt="base_dcote_image">
         </div>
         <div class="auth-form">
             <div class="auth-header">
