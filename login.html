@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=3">
+    <title>Авторизация | DCOTE</title>
+    <link rel="stylesheet" href="login.css?v=7">
+</head>
+<body>
+    <svg style="display: none;">
+    <symbol id="close" viewBox="0 0 1000 1000">
+        <rect x="-153.88" y="482.59" width="1309.92" height="35.17" rx="9" ry="9"
+            transform="translate(-206.91 500.81) rotate(-45)"
+            fill="currentColor" />
+        <rect x="-157.04" y="481.08" width="1309.92" height="35.17" rx="9" ry="9"
+            transform="translate(497.4 1203.35) rotate(-135)"
+            fill="currentColor" />
+    </symbol>
+    <symbol id="hamburger" viewBox="0 0 624 624">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48"
+        d="M536.06,24.08h-96c-35.35,0-64,28.65-64,64v96c0,35.35,28.65,64,64,64h96c35.35,0,64-28.65,64-64v-96c0-35.35-28.65-64-64-64Z"/>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48"
+        d="M184.06,24.08h-96c-35.35,0-64,28.65-64,64v96c0,35.35,28.65,64,64,64h96c35.35,0,64-28.65,64-64v-96c0-35.35-28.65-64-64-64Z"/>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48"
+        d="M536.06,376.08h-96c-35.35,0-64,28.65-64,64v96c0,35.35,28.65,64,64,64h96c35.35,0,64-28.65,64-64v-96c0-35.35-28.65-64-64-64Z"/>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48"
+        d="M184.06,376.08h-96c-35.35,0-64,28.65-64,64v96c0,35.35,28.65,64,64,64h96c35.35,0,64-28.65,64-64v-96c0-35.35-28.65-64-64-64Z"/>
+    </symbol>
+    <symbol id="tg-logo" viewBox="0 0 512 512">
+    <rect width="512" height="512" rx="15%" fill="#df0e53"/>
+    <path fill="#f7bbbc" d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/>
+    <path fill="#f29597" d="M199 404c7 0 11-4 16-8l45-43-56-34"/>
+    <path fill="#ffffff" d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/>
+    </symbol>
+    <symbol id="x-logo" viewBox="0 0 555.56 555.56">
+    <style>
+        .st0 { fill: #fff; }
+        .st1 { fill: none; }
+        .st2 { fill: #df0e53; }
+    </style>
+    <path class="st0" d="M277.78,9.78h0c148.01,0,268,119.99,268,268h0c0,148.01-119.99,268-268,268h0c-148.01,0-268-119.99-268-268h0C9.78,129.77,129.77,9.78,277.78,9.78Z"/>
+    <path class="st2" d="M500,0H55.56C25,0,0,25,0,55.56v444.44c0,30.56,25,55.56,55.56,55.56h444.44c30.56,0,55.56-25,55.56-55.56V55.56c0-30.56-25-55.56-55.56-55.56ZM433.33,
+    188.89v11.11c0,105.56-80.56,227.78-227.78,227.78-44.44,0-86.11-13.89-122.22-36.11h19.44c36.11,0,72.22-13.89,100-33.33-36.11,0-63.89-25-75-55.56,5.56,0,11.11,
+    2.78,13.89,2.78,8.33,0,13.89,0,22.22-2.78-36.11-8.33-63.89-38.89-63.89-77.78h0c11.11,5.56,22.22,8.33,36.11,11.11-22.22-19.44-36.11-41.67-36.11-69.44,
+    0-13.89,2.78-27.78,11.11-38.89,38.89,47.22,97.22,80.56,163.89,83.33,0-5.56-2.78-11.11-2.78-19.44,0-44.44,36.11-80.56,80.56-80.56,22.22,0,44.44,8.33,58.33,
+    25,19.44-2.78,36.11-11.11,50-19.44-5.56,19.44-19.44,33.33-36.11,44.44,16.67-2.78,30.56-5.56,47.22-13.89-11.11,16.67-25,30.56-38.89,41.67Z"/>
+    </symbol>
+    <symbol id="ds-logo" viewBox="-4.08 -4.08 32.16 32.16">
+    <rect x="-4.08" y="-4.08" width="32.16" height="32.16" rx="3.216" fill="#df0e53"/>
+    <path d="M20.317 4.54101C18.7873 3.82774 17.147 3.30224 15.4319 3.00126C15.4007 2.99545 15.3695 3.00997 15.3534 3.039C15.1424 3.4203 14.9087 3.91774 14.7451 
+    4.30873C12.9004 4.02808 11.0652 4.02808 9.25832 4.30873C9.09465 3.90905 8.85248 3.4203 8.64057 3.039C8.62448 3.01094 8.59328 2.99642 8.56205 3.00126C6.84791 
+    3.30128 5.20756 3.82678 3.67693 4.54101C3.66368 4.54681 3.65233 4.5565 3.64479 4.56907C0.533392 9.29283 -0.31895 13.9005 0.0991801 18.451C0.101072 18.4733 0.11337 18.4946 0.130398
+     18.5081C2.18321 20.0401 4.17171 20.9701 6.12328 21.5866C6.15451 21.5963 6.18761 21.5847 6.20748 21.5585C6.66913 20.9179 7.08064 20.2424 7.43348 19.532C7.4543 19.4904
+      7.43442 19.441 7.39186 19.4246C6.73913 19.173 6.1176 18.8662 5.51973 18.5178C5.47244 18.4897 5.46865 18.421 5.51216 18.3881C5.63797 18.2923 5.76382 18.1926 5.88396 18.0919C5.90569
+       18.0736 5.93598 18.0697 5.96153 18.0813C9.88928 19.9036 14.1415 19.9036 18.023 18.0813C18.0485 18.0687 18.0788 18.0726 18.1015 18.091C18.2216 18.1916 18.3475 18.2923 18.4742
+        18.3881C18.5177 18.421 18.5149 18.4897 18.4676 18.5178C17.8697 18.8729 17.2482 19.173 16.5945 19.4236C16.552 19.4401 16.533 19.4904 16.5538 19.532C16.9143 20.2414 17.3258
+         20.9169 17.7789 21.5576C17.7978 21.5847 17.8319 21.5963 17.8631 21.5866C19.8241 20.9701 21.8126 20.0401 23.8654 18.5081C23.8834 18.4946 23.8948 18.4742 23.8967 18.452C24.3971
+          13.1911 23.0585 8.6212 20.3482 4.57004C20.3416 4.5565 20.3303 4.54681 20.317 4.54101ZM8.02002 15.6802C6.8375 15.6802 5.86313 14.577 5.86313 13.222C5.86313 11.8671 6.8186
+           10.7639 8.02002 10.7639C9.23087 10.7639 10.1958 11.8768 10.1769 13.222C10.1769 14.577 9.22141 15.6802 8.02002 15.6802ZM15.9947 15.6802C14.8123 15.6802 13.8379 14.577 13.8379
+            13.222C13.8379 11.8671 14.7933 10.7639 15.9947 10.7639C17.2056 10.7639 18.1705 11.8768 18.1516 13.222C18.1516 14.577 17.2056 15.6802 15.9947 15.6802Z" fill="#ffffff"/>
+    </symbol>
+    </svg>
+    <nav class="navbar">
+        <div class="left"> 
+            <a href="https://dcote.online/dcote.html" class="logo-link scale-in">
+            <img src="images/dcote_logo.png" fetchpriority="high" decoding="async" alt="DCOTE" class="logo"> </a>
+        </div>
+        <div class="center">
+            <a href="https://dcote/news"><span>НОВОСТИ</span></a>
+            <a href="ranobe.html"><span>РАНОБЕ</span></a>
+            <a href="https://dcote/anime"><span>АНИМЕ</span></a>
+            <a href="https://dcote/manga"><span>МАНГА</span></a>
+            <a href="https://dcote/arts"><span>ИЛЛЮСТРАЦИИ</span></a>
+            <a href="https://dcote/characters"><span>ПЕРСОНАЖИ</span></a>
+            <a href="https://dcote/project"><span>О ПРОЕКТЕ</span></a>
+        </div>
+        <div class="right">
+            <button class="login-btn scale-in" onclick="window.location.href='login.php'">ВОЙТИ</button>
+        </div>
+        <div class="right-mobile">
+            <button class="login-btn-mobile" onclick="window.location.href='login.php'">ВОЙТИ</button>
+            <button class="hamburger" id="hamburgerBtn"><svg width="30" height="30"><use href="#hamburger"></use></svg></button>
+        </div>
+    <div class="side-menu" id="sideMenu">
+        <div class="side-links">
+            <div class="side-link-first-line">
+                <a href="https://dcote/news"><span>НОВОСТИ</span></a>
+                <button class="close-btn" id="closeMenu"><svg width="25" height="25"><use href="#close"></use></svg></button>
+            </div>
+            <a href="ranobe.html"><span>РАНОБЕ</span></a>
+            <a href="https://dcote/anime"><span>АНИМЕ</span></a>
+            <a href="https://dcote/manga"><span>МАНГА</span></a>
+            <a href="https://dcote/arts"><span>ИЛЛЮСТРАЦИИ</span></a>
+            <a href="https://dcote/characters"><span>ПЕРСОНАЖИ</span></a>
+            <a href="https://dcote/project"><span>О ПРОЕКТЕ</span></a>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    </nav>
+    <div class="navigation-links">
+        <a href="https://dcote"><span>ГЛАВНАЯ</span></a>
+        <p>/</p>
+        <a class="current-page" href="about_school.html"><span>АВТОРИЗАЦИЯ</span></a>
+    </div>
+    <main>
+        <div class="auth-container">
+            <div class="auth-image scale-in">
+                <img src="images/auth_4.webp" alt="base_dcote_image">
+            </div>
+            <div class="auth-form scale-in slide-in-left">
+                <form method="post">
+                    <h1>АВТОРИЗАЦИЯ</h1>
+                    <div class="input-group">
+                        <label for="email"><h3>Имя пользователя</h3></label>
+                        <input type="email" id="email" name="email" required>
+                        <p>Забыл(а) имя пользователя? <a href="https://dcote">Восстановить</a></p>
+                    </div>
+                    <div class="input-group">
+                        <label for="password"><h3>Пароль</h3></label>
+                        <input type="password" id="password" name="password" required>
+                        <p>Забыл(а) пароль? <a href="https://dcote">Восстановить</a></p>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="submit-btn">АВТОРИЗОВАТЬСЯ</button>
+                        <p>Нет аккаунта? <a href="https://dcote"> Зарегистрируйся</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-nav">
+        <div class="footer-left">
+            <a href="https://x.com/aandreev06" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#x-logo"></use></svg></a>
+            <a href="https://dcote.ru" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#ds-logo"></use></svg></a>
+            <a href="https://t.me/DCOTEFILES" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#tg-logo"></use></svg></a>
+        </div>
+        <div class="footer-center scale-in">
+            <p>Мы не претендуем на авторство и/или какие-либо иные права на какой-либо контент с авторским правом, представленный на сайте.</p>
+        </div>
+        <div class="footer-right">
+            <a href="https://dcote.ru" class="logo-link">
+            <img src="images/dcote_logo.png" alt="DCOTE" class="logo scale-in"> </a>
+        </div>
+    </footer>
+<script>
+const hamburger = document.getElementById('hamburgerBtn');
+const sideMenu = document.getElementById('sideMenu');
+const closeBtn = document.getElementById('closeMenu');
+const overlay = document.getElementById('overlay');
+
+
+hamburger.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    overlay.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
+});
+
+overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
+});
+
+if (!('IntersectionObserver' in window)) {
+document
+    .querySelectorAll('.scale-in, .slide-in-left, .slide-in-right, .slide-in-top')
+    .forEach(el => el.classList.add('show'));
+} else {
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+    }
+    });
+}, { threshold: 0.1 });
+document
+    .querySelectorAll('.scale-in, .slide-in-left, .slide-in-right, .slide-in-top')
+    .forEach(el => observer.observe(el));
+}
+</script>
+</body>
+</html>

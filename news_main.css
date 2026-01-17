@@ -1,94 +1,28 @@
 @font-face {
-    font-family: 'Vag-Heavy';
-    src: url('fonts/VAG\ Rounded\ Next\ Heavy.ttf') format('truetype');
+    font-family: 'Pan-Thin';
+    src: url('fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Vag-Bold';
-    src: url('fonts/VAG\ Rounded\ Next\ Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Vag-Medium';
-    src: url('fonts/VAG\ Rounded\ Next\ Medium.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Vag-Regular';
+    font-family: 'Pan-Regular';
     src: url('fonts/VAG\ Rounded\ Next\ Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Vag-Thin';
+    font-family: 'Pan-Light';
     src: url('fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
 }
 
-:root {
-    --fs-title1: clamp(5px, 2.75vw, 42px);
-    --fs-title2: clamp(5px, 2.35vw, 36px);
-    --fs-title3: clamp(5px, 1.8vw, 28px);
-    --fs-text: clamp(5px, 1.15vw, 18px);
-    --fs-nav: clamp(5px, 0.91vw, 14px);
-    --fs-login: clamp(5px, 1.30vw, 20px);
-    --fs-footer: clamp(5px, 0.78vw, 12px);
-    --fs-nav-links: clamp(5px, 1.17vw, 18px);
+@font-face {
+    font-family: 'Pan-Bold';
+    src: url('fonts/VAG\ Rounded\ Next\ Bold.ttf') format('truetype');
 }
 
-h1{
-    font-size: var(--fs-title1);
-    font-family: 'Vag-Heavy';
-    line-height: 1.15em;
-    color: white;
-    margin:0px;
-    font-weight: 400;
+@font-face {
+    font-family: 'Pan-Medium';
+    src: url('fonts/VAG\ Rounded\ Next\ Medium.ttf') format('truetype');
 }
 
-h2{
-    font-size: var(--fs-title2);
-    font-family: 'Vag-Bold';
-    line-height: 1.2em;   
-    color: white;
-    margin:0px; 
-    font-weight: 400;
-}
-
-h3{
-    font-size: var(--fs-title3);
-    font-family: 'Vag-Medium';
-    line-height: 1.25em;
-    color: white;
-    margin:0px;
-    font-weight: 400;
-}
-
-p{
-    font-size: var(--fs-text);
-    font-family: 'Vag-Regular';
-    line-height: 1.4em;
-    color: white;
-    margin:0px;
-}
-
-button {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: 10px;
-    padding-block: 9px;
-    padding-inline: 35px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    background-color: #33333300;
-    align-items: center;
-}
-
-
-button:hover {
-    background-color: rgb(143, 17, 68);
-    border-color: rgb(143, 17, 68);
-}
 
 body {
     margin: 0;
@@ -110,16 +44,14 @@ body {
 
 
 main {
-    max-width: 1540px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 35px;
     flex: 1;
-    gap: 30px;
+    gap: 35px;
     display: flex;
     flex-direction: column;
 }
-
-
 
 
 /* ==== Навбар НАЧАЛО ==== */
@@ -171,8 +103,8 @@ main {
     margin: 0 20px;
     color: white;
     text-decoration: none;
-    font-family: 'Vag-Medium', sans-serif;
-    font-size: var(--fs-nav)
+    font-family: 'Pan-Regular', sans-serif;
+    font-size: clamp(11px,0.6vw,100px)
 }
 
 .navbar a span {
@@ -202,18 +134,15 @@ main {
 
 /* ==== Навбар правая часть ==== */
 
-.navbar .right {
-    min-width: 130px;
-}
 
 .navbar .right button {
     margin: 0 20px;
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    font-family: 'Vag-Bold', sans-serif;
-    font-size: var(--fs-login);
-    border: 3px solid rgb(229, 11, 85);
+    font-family: 'Pan-Regular', sans-serif;
+    font-size: clamp(14px,0.8vw,100px);
+    border: 2px solid rgb(229, 11, 85);
     border-radius: 10px;
     padding-block: 6px;
     padding-inline: 15px;
@@ -222,6 +151,7 @@ main {
     cursor: pointer;
     background-color: #33333300;
     align-items: center;
+    min-width: 130px;
 }
 
 
@@ -377,6 +307,10 @@ main {
         gap: 20px;
     }
 
+    .cont-1,.cont-2,.dormitory .desc{
+        padding: 20px !important;
+        gap: 20px !important;
+    }
 }
 
 
@@ -449,14 +383,13 @@ main {
 /* ==== НАВБАР КОНЕЦ ==== */
 
 
+
 .navigation-links{
     display:flex;
-    font-size: var(--fs-nav-links);
-    font-family: 'Vag-Medium';
-	color:white;
+    font-size: clamp(14px,0.8vw,100px);
+    color:white;
     gap:8px;
     justify-content:center;
-    margin-top: 10px;
 }
 
 .navigation-links p{
@@ -475,6 +408,7 @@ main {
 
 .current-page {
     color: rgb(229, 11, 85) !important;
+    font-family: 'Pan-Regular', sans-serif;
 }
 
 a.current-page  span {
@@ -494,93 +428,106 @@ a.current-page span::after {
 }
 
 
-.auth-container{
+.buttons-containers {
     display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    overflow: hidden;
+    flex-direction: column;
+    gap: 35px;
 }
 
-.auth-image{
-    width: 35%;
+
+.base-dcote {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 12px;
+    flex: 1;
     overflow: hidden;
-    aspect-ratio: 0.75;
-    z-index: 100;
+    background: linear-gradient(#df0e5431 80%, #0b172b);
 }
 
-.auth-image img{
+.base-dcote-image {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 2.8/1;
+    overflow: hidden;
+    border-radius: inherit;
+    box-sizing: border-box;
+}
+
+.base-dcote-image img {
+    width: 100%;
+    display: block;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    object-position: top;
-    border-radius: 10px;
+    object-position: center;
+    border-radius: inherit;
+    box-sizing: border-box;
 }
 
-.auth-form{
-    width: 65%;
+
+.banner-info {
     display: flex;
+    flex:1;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(90deg,#df0e5431 50%, #0b172b);
-    padding: 15px;
-    z-index: 10;
-}
-
-.auth-form h1{
-    text-align: center;
-}
-
-.auth-form form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 30px;
-}
-
-.auth-form button {
-    font-family: 'Vag-Bold', sans-serif;
-    font-size: var(--fs-nav-links);
-
+    position: relative;
+    font-family: 'Pan-Regular', sans-serif;
+    gap:15px;
 }
 
 
-.auth-form input{
-    background: transparent;
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: 7px;
-    padding: 5px 10px;
-    outline: none;
-    color: inherit;
-    font-size: inherit;
-    font-size: var(--fs-text);
-    font-family: 'Vag-Regular';
-    line-height: 1.4em;
+
+.banner-info button, .about-school button {
     color: white;
-    margin:0px;
-    width: 65%;
-}
-
-.auth-form a{
-    text-decoration: none;
-    color: rgb(229, 11, 85);
-    font-family: 'Vag-Medium';
-}
-
-
-
-
-.input-group{
-    display: flex;
-    flex-direction: column;
+    font-family: 'Pan-Bold', sans-serif;
+    font-size: clamp(10px, 1.2vw + 0.72px, 18px);
+    border: 2px solid rgb(229, 11, 85);
+    border-radius: 0.6em;
+    padding: 0.5em 1.4em;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-block: 0px;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    gap:7px
 }
+
+.banner-info button{
+    margin-bottom: 15px;
+}
+
+.banner-info button:hover,.about-school button:hover {
+    background-color: rgb(143, 17, 68);
+    border-color: rgb(143, 17, 68);
+}
+
+.banner-info h2 {
+    font-size: clamp(16px, 3.6vw + 0.1px, 48px);
+    text-align: center;
+    color: white;
+    font-family: 'Pan-Bold', sans-serif;
+    margin:0px;
+    margin-top: 15px;
+}
+
+.banner-info p {
+    font-size: clamp(10px, 1.2vw + 0.72px, 18px);
+    margin: 0px;
+    color: white;
+    text-align: center;
+    font-family: 'Pan-Regular', sans-serif;
+    padding-inline: 60px;
+    padding: 0% 0%;
+}
+
+
+
 
 .footer-nav {
     margin-top: 0px;
@@ -604,12 +551,13 @@ a.current-page span::after {
 }
 
 .footer-center p{
-    font-size: var(--fs-footer);
+    font-size: clamp(5px, 0.5vw, 16px);
     color: white;
-    font-family: 'Vag-Thin';
+    font-family: 'Pan-Regular';
     text-align: center;
     justify-self: center;
     flex:1;
+    padding:0% 30%;
 }
 
 
@@ -712,4 +660,3 @@ a.current-page span::after {
     transition: none !important;
   }
 }
-
