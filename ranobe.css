@@ -447,367 +447,191 @@ main {
     z-index: 100;
 }
 
+
+.navigation-links{
+    display:flex;
+    font-size: var(--fs-nav-links);
+    font-family: 'Vag-Medium';
+    color:white;
+    gap:8px;
+    justify-content:center;
+    margin-top: 10px;
+}
+
+.navigation-links p{
+    margin:0px;
+}
+
+.navigation-links a{
+    text-decoration:none;
+    color:white;
+}
+
+.navigation-links a:hover{
+    scale:1.1;
+}
+
+
+.current-page {
+    color: rgb(229, 11, 85) !important;
+}
+
+a.current-page  span {
+    position: relative;
+    display: inline-block;
+}
+
+
+a.current-page span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: rgb(229, 11, 85);
+}
+
 /* ==== НАВБАР КОНЕЦ ==== */
 
-.content-line1 {
-    display: flex;
-    gap: 35px;
-    align-items: stretch;
-    flex-wrap: wrap;
+
+
+
+.volumes {
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    align-items:center;
 }
 
-.description {
-    display: flex;
-    flex: 2;
-    background: linear-gradient(90deg,#df0e5431 50%, #0b172b);
+.volume-box {
+    width:25%;
     border-radius: 10px;
-    position: relative;
     overflow: hidden;
-}
-
-@media (max-width: 1060px){
-    .content-line1{
-        gap: 20px;
-    }
-}
-
-.description {
-    flex: 2 2 510px !important;
-}
-
-.updates {
-    flex: 1 1 270px !important;
-}
-
-
-.image_base {
-    width: 40%;
-    aspect-ratio: 0.8;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    max-width: 397px;
-    z-index: 20;
-}
-
-.image_base img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute; 
-    top: 0;
-    left: 0;
-}
-
-
-.image_base1 { 
-    width: 40%; 
-    overflow: hidden; 
-    flex-shrink: 0; 
-    z-index: 20; }
-
-.image_base1 img { 
-    width: 100%;
-    height: 100%; 
-    display: block;
-    object-fit: cover;
- }
-
-.description-text {
-    width: 60%;
-    padding: 8px 8px;
-    color: white;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.description-text h2 {
-    display: flex;
-    justify-content: center;
-    margin: 0px;
-    text-align: center;
-}
-
-.description-text p {
-    margin: 0px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    /* -webkit-line-clamp: 20; */
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.content-line2, .content-line3{
-    display: flex;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.content-line2 .about-school{
-    padding: 10px 20px;
-    background: linear-gradient(90deg,#df0e5441, #0b172b);
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.content-line2 .about-school .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-line2 .about-school button{
-    margin-block: 0px !important;
-}
-
-.content-line2 .about-school h2, .content-line3 .about-island h2 {
-    font-size: clamp(17.5px, 1.8vw - 0.96px, 27px);
-    font-family: 'Pan-Bold', sans-serif;
-    color:white;
-    text-align: center;
-    padding: 0% 10%;
-    margin: 0px;
-}
-
-.content-line2 .about-school p,.content-line3 .about-island p {
-    font-size: clamp(12px, 1.44vw - 0.76px, 21px);
-    font-family: 'Pan-Regular', sans-serif;
-    color:white;
-    margin: 0px;
-}
-
-
-.content-line3 .about-island{
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #0b172b,#df0e5441);
-    width: 50%;
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: column;
-}
-
-.school-image-base,.island-image-base{
-    width: 50%;
-    overflow: hidden;
-    z-index: 20;
-}
-
-.school-image-base img, .island-image-base img{
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-.updates {
-    display: flex;
-    flex: 1;
-    background: linear-gradient(#df0e5441 50%, #0b172b);
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 8px;
-    color: white;
-    font-family: 'Pan-Regular', sans-serif;
-    min-height: 0;
-    justify-content: space-between;
-
-}
-
-.updates .updates-link:hover{
-    color: rgb(224, 11, 82);
-}
-
-.updates .updates-link {
-    transition: 0.3s;
-}
-
-.updates h2 {
-    font-size: clamp(17.5px, 1.8vw - 0.96px, 27px);
-    display: flex;
-    justify-content: center;
-    font-family: 'Pan-Bold', sans-serif;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-
-.updates ul {
-    list-style: none;
-    padding: 0;
-}
-
-.updates li {
-    margin-bottom: 8px;
-    font-size: 20px;
-}
-
-.updates a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    font-size: clamp(12px, 1.44vw - 0.76px, 21px);
-}
-
-
-.updates .highlight {
-    color: rgb(168, 7, 61);
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.updates .spoiler {
-    color: rgb(168, 7, 61);
-    font-size: 20px;
-}
-
-@media (max-width: 855px){
-    .content-line1 .description{
-        flex-direction: column;
-    }
-    .content-line1 .description .image_base{
-        width: 100% !important;
-        max-width: none !important;
-    }
-    .content-line1 .description .description-text{
-        width: auto !important;
-        gap: 10px;
-    }
-    .content-line1 .updates{
-        min-height: 300px;
-
-    }
-
-    .content-line2, .content-line3{
-        flex-direction: column;
-    }
-
-    .content-line2 .school-image-base{
-        width: 100% !important;
-    }
-
-    .content-line2 .about-school{
-        width: auto !important;
-        gap: 10px;
-        background: linear-gradient(0deg, #0b172b,#df0e5441);
-    }
-
-    .content-line3 .island-image-base{
-        width: 100% !important;
-    }
-    
-    .content-line3 .about-island {
-        width: auto !important;
-        gap:10px;
-        background: linear-gradient(180deg, #0b172b,#df0e5441);
-    }
-}
-
-
-.buttons-containers {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-
-.base-dcote {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-radius: 12px;
-    flex: 1;
-    overflow: hidden;
-    background: linear-gradient(#df0e5431 80%, #0b172b);
-}
-
-.base-dcote-image {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 20;
-}
-
-.image-wrapper {
-    width: 100%;
-    aspect-ratio: 2.8/1;
-    overflow: hidden;
-    border-radius: inherit;
-    box-sizing: border-box;
-}
-
-.base-dcote-image img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    border-radius: inherit;
-    box-sizing: border-box;
-}
-
-
-.banner-info {
-    display: flex;
+    max-width: 1000px;
     flex:1;
+}
+
+.volume-image{
+    flex-shrink: 0;
+    z-index: 20;
+    aspect-ratio: 7 / 10;
+    position: relative;
+    width: 100%;
+
+}
+
+.volume-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+}
+
+.volume-desc h2{
+    margin:0px;
+    text-align: center;
+}
+
+.volume-desc p{
+    margin:0px;
+}
+
+
+.volume-desc{
+    background: linear-gradient(180deg,#df0e5441, #0b172b);
+    color:white;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap:20px;
+    justify-content: space-evenly;
+}
+
+.zalupa{
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    font-family: 'Pan-Regular', sans-serif;
-    gap:15px;
+    gap: 10px;
+}
+
+.underline-line {
+  height: 1px;
+  background: white;
+  width: 65%;
+}
+
+.read-btn {
+    font-family: 'Vag-Bold', sans-serif;
+    font-size: var(--fs-nav-links);
+    padding: 5px 30px;
 }
 
 
-
-.banner-info button, .about-school button {
-    color: white;
-    font-family: 'Pan-Bold', sans-serif;
-    font-size: clamp(10px, 1.2vw + 0.72px, 18px);
-    border: 2px solid rgb(229, 11, 85);
-    border-radius: 0.6em;
-    padding: 0.5em 1.4em;
-    background: transparent;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-block: 0px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-info button{
-    margin-bottom: 15px;
-}
-
-.banner-info button:hover,.about-school button:hover {
+.read-btn:hover {
     background-color: rgb(143, 17, 68);
     border-color: rgb(143, 17, 68);
 }
 
-.banner-info h2 {
-    font-size: clamp(16px, 3.6vw + 0.1px, 48px);
-    text-align: center;
-    color: white;
-    font-family: 'Pan-Bold', sans-serif;
-    margin:0px;
-    margin-top: 15px;
+.last-line{
+    display: flex;
+    gap:5px;
+    align-items: center;
+    font-size: var(--fs-text);
 }
 
-.banner-info p {
-    font-size: clamp(10px, 1.2vw + 0.72px, 18px);
-    margin: 0px;
-    color: white;
-    text-align: center;
-    font-family: 'Pan-Regular', sans-serif;
-    padding-inline: 60px;
-    padding: 0% 20%;
+.last-line .some-logos{
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.last-line .in-process{
+    color:#ffb147;
+}
+
+.last-line .completed{
+    color:#64c396;
+}
+
+.check-circle{
+    fill:#64c396;
+}
+
+.last-line .check-circle{
+    width: 1.4em;
+    height: 1.4em;
+}
+
+@media (max-width: 855px){
+    .volumes{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .volume-box{
+        width: auto;
+    }
+
+    .volume-desc h2{
+    font-size: 44px;
+    }
+
+    .volume-desc p{
+        font-size: 16px;
+    }
+
+    .volumes {
+    gap:20px;
+    }
+
+    .read-btn {
+    font-size: clamp(14px,1.4vw,100px);
+    padding: 10px 24px;
+
+    }
 }
 
 
@@ -833,13 +657,12 @@ main {
 }
 
 .footer-center p{
-    font-size: clamp(5px, 0.5vw, 16px);
+    font-size: var(--fs-footer);
     color: white;
-    font-family: 'Pan-Regular';
+    font-family: 'Vag-Thin';
     text-align: center;
     justify-self: center;
     flex:1;
-    padding:0% 30%;
 }
 
 
