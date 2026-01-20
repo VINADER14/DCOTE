@@ -500,7 +500,7 @@ a.current-page span::after {
 .volumes {
     display:flex;
     justify-content:center;
-    gap:35px;
+    gap:30px;
     align-items:center;
 }
 
@@ -526,6 +526,8 @@ a.current-page span::after {
     height: 100%;
     display: block;
     object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 
 }
 
@@ -542,11 +544,11 @@ a.current-page span::after {
 .volume-desc{
     background: linear-gradient(180deg,#df0e5441, #0b172b);
     color:white;
-    padding: 20px 20px;
+    padding:clamp(1px,1.3vw,20px);
     display: flex;
     flex-direction: column;
     align-items:center;
-    gap:20px;
+    gap:clamp(1px,0.65vw,10px);
     justify-content: space-evenly;
 }
 
@@ -555,13 +557,13 @@ a.current-page span::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap:clamp(1px,0.65vw,10px);
 }
 
 .underline-line {
-  height: 1px;
-  background: white;
-  width: 65%;
+    height: 1px;
+    background: white;
+    width: 65%;
 }
 
 .read-btn {
@@ -578,7 +580,7 @@ a.current-page span::after {
 
 .last-line{
     display: flex;
-    gap:5px;
+    gap:clamp(1px,0.325vw,5px);
     align-items: center;
     font-size: var(--fs-text);
 }

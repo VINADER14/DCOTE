@@ -1,28 +1,95 @@
 @font-face {
-    font-family: 'Pan-Thin';
-    src: url('fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
+    font-family: 'Vag-Heavy';
+    src: url('fonts/VAG\ Rounded\ Next\ Heavy.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Pan-Regular';
-    src: url('fonts/VAG\ Rounded\ Next\ Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Pan-Light';
-    src: url('fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Pan-Bold';
+    font-family: 'Vag-Bold';
     src: url('fonts/VAG\ Rounded\ Next\ Bold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Pan-Medium';
+    font-family: 'Vag-Medium';
     src: url('fonts/VAG\ Rounded\ Next\ Medium.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Vag-Regular';
+    src: url('fonts/VAG\ Rounded\ Next\ Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Vag-Thin';
+    src: url('fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
+}
+
+:root {
+    --fs-title1: clamp(5px, 2.75vw, 42px);
+    --fs-title2: clamp(5px, 2.35vw, 36px);
+    --fs-title3: clamp(5px, 1.8vw, 28px);
+    --fs-text: clamp(5px, 1.15vw, 18px);
+    --fs-nav: clamp(5px, 0.91vw, 14px);
+    --fs-login: clamp(5px, 1.30vw, 20px);
+    --fs-footer: clamp(5px, 0.78vw, 12px);
+    --fs-nav-links: clamp(5px, 1.17vw, 18px);
+}
+
+h1{
+    font-size: var(--fs-title1);
+    font-family: 'Vag-Heavy';
+    line-height: 1.15em;
+    color: white;
+    margin:0px;
+    font-weight: 400;
+}
+
+h2{
+    font-size: var(--fs-title2);
+    font-family: 'Vag-Bold';
+    line-height: 1.2em;   
+    color: white;
+    margin:0px; 
+    font-weight: 400;
+}
+
+h3{
+    font-size: var(--fs-title3);
+    font-family: 'Vag-Medium';
+    line-height: 1.25em;
+    color: white;
+    margin:0px;
+    font-weight: 400;
+}
+
+p{
+    font-size: var(--fs-text);
+    font-family: 'Vag-Regular';
+    line-height: 1.4em;
+    color: white;
+    margin:0px;
+}
+
+button {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 3px solid rgb(229, 11, 85);
+    border-radius: 10px;
+    padding-block: 6px;
+    padding-inline: 15px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #33333300;
+    align-items: center;
+    font-family: 'Vag-Bold';
+}
+
+
+button:hover {
+    background-color: rgb(143, 17, 68);
+    border-color: rgb(143, 17, 68);
+}
 
 body {
     margin: 0;
@@ -44,14 +111,17 @@ body {
 
 
 main {
-    max-width: 1240px;
+    max-width: 1540px;
     margin: 0 auto;
-    padding: 35px;
+    padding: 30px;
     flex: 1;
-    gap: 35px;
+    gap: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
+
+
 
 
 /* ==== Навбар НАЧАЛО ==== */
@@ -103,8 +173,8 @@ main {
     margin: 0 20px;
     color: white;
     text-decoration: none;
-    font-family: 'Pan-Regular', sans-serif;
-    font-size: clamp(11px,0.6vw,100px)
+    font-family: 'Vag-Medium', sans-serif;
+    font-size: var(--fs-nav)
 }
 
 .navbar a span {
@@ -134,15 +204,18 @@ main {
 
 /* ==== Навбар правая часть ==== */
 
+.navbar .right {
+    min-width: 130px;
+}
 
 .navbar .right button {
     margin: 0 20px;
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    font-family: 'Pan-Regular', sans-serif;
-    font-size: clamp(14px,0.8vw,100px);
-    border: 2px solid rgb(229, 11, 85);
+    font-family: 'Vag-Bold', sans-serif;
+    font-size: var(--fs-login);
+    border: 3px solid rgb(229, 11, 85);
     border-radius: 10px;
     padding-block: 6px;
     padding-inline: 15px;
@@ -151,7 +224,6 @@ main {
     cursor: pointer;
     background-color: #33333300;
     align-items: center;
-    min-width: 130px;
 }
 
 
@@ -307,10 +379,6 @@ main {
         gap: 20px;
     }
 
-    .cont-1,.cont-2,.dormitory .desc{
-        padding: 20px !important;
-        gap: 20px !important;
-    }
 }
 
 
@@ -380,16 +448,15 @@ main {
     z-index: 100;
 }
 
-/* ==== НАВБАР КОНЕЦ ==== */
-
-
 
 .navigation-links{
     display:flex;
-    font-size: clamp(14px,0.8vw,100px);
+    font-size: var(--fs-nav-links);
+    font-family: 'Vag-Medium';
     color:white;
     gap:8px;
     justify-content:center;
+    margin-top: 10px;
 }
 
 .navigation-links p{
@@ -408,7 +475,6 @@ main {
 
 .current-page {
     color: rgb(229, 11, 85) !important;
-    font-family: 'Pan-Regular', sans-serif;
 }
 
 a.current-page  span {
@@ -427,11 +493,13 @@ a.current-page span::after {
     background: rgb(229, 11, 85);
 }
 
+/* ==== НАВБАР КОНЕЦ ==== */
+
 
 .buttons-containers {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 30px;
 }
 
 
@@ -476,55 +544,20 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     position: relative;
-    font-family: 'Pan-Regular', sans-serif;
-    gap:15px;
+    padding:clamp(1px,1.3vw,20px);
+    gap:clamp(1px,0.65vw,10px);
 }
 
-
-
-.banner-info button, .about-school button {
-    color: white;
-    font-family: 'Pan-Bold', sans-serif;
-    font-size: clamp(10px, 1.2vw + 0.72px, 18px);
-    border: 2px solid rgb(229, 11, 85);
-    border-radius: 0.6em;
-    padding: 0.5em 1.4em;
-    background: transparent;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-block: 0px;
-    display: inline-flex;
-    justify-content: center;
+.banner-info .text{
+    display: flex;
+    flex-direction: column;
+    gap:clamp(1px,1.3vw,20px);
     align-items: center;
 }
 
-.banner-info button{
-    margin-bottom: 15px;
-}
 
-.banner-info button:hover,.about-school button:hover {
-    background-color: rgb(143, 17, 68);
-    border-color: rgb(143, 17, 68);
-}
 
-.banner-info h2 {
-    font-size: clamp(16px, 3.6vw + 0.1px, 48px);
-    text-align: center;
-    color: white;
-    font-family: 'Pan-Bold', sans-serif;
-    margin:0px;
-    margin-top: 15px;
-}
 
-.banner-info p {
-    font-size: clamp(10px, 1.2vw + 0.72px, 18px);
-    margin: 0px;
-    color: white;
-    text-align: center;
-    font-family: 'Pan-Regular', sans-serif;
-    padding-inline: 60px;
-    padding: 0% 0%;
-}
 
 
 
@@ -551,13 +584,12 @@ a.current-page span::after {
 }
 
 .footer-center p{
-    font-size: clamp(5px, 0.5vw, 16px);
+    font-size: var(--fs-footer);
     color: white;
-    font-family: 'Pan-Regular';
+    font-family: 'Vag-Thin';
     text-align: center;
     justify-self: center;
     flex:1;
-    padding:0% 30%;
 }
 
 
@@ -660,3 +692,4 @@ a.current-page span::after {
     transition: none !important;
   }
 }
+
