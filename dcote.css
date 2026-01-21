@@ -684,6 +684,75 @@ main {
     }
 }
 
+.content-line4 .top-classes,.content-line4 .top-users{
+    padding:clamp(1px,1.3vw,20px);
+    display: flex;
+    flex-direction: column;
+    gap:clamp(1px,0.65vw,10px);
+}
+
+.content-line4 .top-classes h1,.content-line4 .top-users h1{
+    text-align: center;
+}
+
+.content-line4 button{
+    font-family: 'Vag-Bold';
+    font-size: var(--fs-nav-links);
+}
+
+.content-line4{
+    display: flex;
+    gap:30px;
+    width: 100%;
+}
+
+.content-line4 .top-classes{
+    width: 50%;
+    background: linear-gradient(#df0e5441 50%, #0b172b);
+    flex:1;
+    border-radius: 10px;
+}
+
+.top-classes .top-classes-buttons .classes-button-active{
+    background-color: rgb(143, 17, 68);
+    border-color: rgb(143, 17, 68);
+}
+
+
+.top-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+.top-table td{
+    padding-block:clamp(1px,0.325vw,5px);
+}
+
+.top-table img{
+    height: clamp(1px,6.5vw,100px);
+    width: clamp(1px,6.5vw,100px);
+    border-radius: 10px;
+}
+
+.top-table .class-lider{
+    padding-left: clamp(1px,0.65vw,10px);
+}
+
+.content-line4 .top-users{
+    width: 50%;
+    background: linear-gradient(#df0e5441 50%, #0b172b);
+    flex:1;
+    border-radius: 10px;
+
+}
+
+.content-line4 .top-classes-buttons{
+    display: flex;
+    justify-content: center;
+    gap:clamp(1px,1.3vw,20px);
+}
 
 .buttons-containers {
     display: flex;
