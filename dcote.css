@@ -73,10 +73,10 @@ button {
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: 10px;
-    padding-block: 6px;
-    padding-inline: 15px;
+    border: clamp(0.01px,0.195vw,3px) solid rgb(229, 11, 85);
+    border-radius: clamp(1px,0.65vw,10px);
+    padding-block: clamp(1px,0.39vw,6px);
+    padding-inline: clamp(1px,0.975vw,15px);
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -215,7 +215,7 @@ main {
     font-family: 'Vag-Bold', sans-serif;
     font-size: var(--fs-login);
     border: 3px solid rgb(229, 11, 85);
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
     padding-block: 6px;
     padding-inline: 15px;
     display: flex;
@@ -332,7 +332,7 @@ main {
         font-family: 'Pan-Regular', sans-serif;
         font-size: 14px;
         border: 2px solid rgb(229, 11, 85);
-        border-radius: 10px;
+        border-radius: clamp(1px,0.65vw,10px);
         padding-block: 6px;
         padding-inline: 15px;
         justify-content: center;
@@ -460,7 +460,7 @@ main {
     display: flex;
     flex: 2;
     background: linear-gradient(90deg,#df0e5431 50%, #0b172b);
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
     position: relative;
     overflow: hidden;
 }
@@ -523,7 +523,7 @@ main {
 .content-line2, .content-line3{
     display: flex;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
 }
 
 .content-line2 .about-school{
@@ -591,7 +591,7 @@ main {
     display: flex;
     flex: 1;
     background: linear-gradient(#df0e5441 50%, #0b172b);
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
     position: relative;
     overflow: hidden;
     flex-direction: column;
@@ -684,11 +684,18 @@ main {
     }
 }
 
-.content-line4 .top-classes,.content-line4 .top-users{
+.content-line4 .top-classes{
     padding:clamp(1px,1.3vw,20px);
     display: flex;
     flex-direction: column;
     gap:clamp(1px,0.65vw,10px);
+}
+
+.content-line4 .top-users{
+    padding:clamp(1px,1.3vw,20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content-line4 .top-classes h1,.content-line4 .top-users h1{
@@ -710,7 +717,7 @@ main {
     width: 50%;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     flex:1;
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
 }
 
 .top-classes .top-classes-buttons .classes-button-active{
@@ -719,33 +726,81 @@ main {
 }
 
 
-.top-table table {
+.top-table,.users-table table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    table-layout: fixed;
 }
 
 .top-table td{
-    padding-block:clamp(1px,0.325vw,5px);
+    padding-block:clamp(1px,0.65vw,10px);
 }
 
 .top-table img{
     height: clamp(1px,6.5vw,100px);
     width: clamp(1px,6.5vw,100px);
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
+    display: block; 
+    margin: 0 auto;
 }
 
 .top-table .class-lider{
     padding-left: clamp(1px,0.65vw,10px);
 }
 
+.top-table .class-points{
+    text-align: right;
+}
+
+.content-line4 .full-stat{
+    display: flex;
+    justify-content: center;
+}
+
 .content-line4 .top-users{
     width: 50%;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     flex:1;
-    border-radius: 10px;
+    border-radius: clamp(1px,0.65vw,10px);
 
+}
+
+
+.top-users img{
+    height: clamp(1px,3.25vw,50px);
+    width: clamp(1px,3.25vw,50px);
+    border-radius: clamp(1px,0.65vw,10px);
+    display: block; 
+    margin: 0 0;
+}
+
+.top-users .nickname, .top-users .nickname-head{
+    padding-left: clamp(1px,0.65vw,10px);
+    text-align: left;
+}
+
+.users-table td{
+    padding-block:clamp(1px,0.65vw,10px);
+}
+
+.top-users .rank, .top-users .rank-head{
+    text-align: left;
+}
+
+.top-users .status, .top-users .status-head{
+    text-align: center;
+}
+
+.top-users .rating, .top-users .rating-head{
+    text-align: right;
+}
+
+.top-users .status p, .top-users .nickname p {
+    font-family: 'Vag-Bold';
+}
+
+.top-users .status p{
+    color: rgb(220, 10, 80);
 }
 
 .content-line4 .top-classes-buttons{
@@ -753,6 +808,12 @@ main {
     justify-content: center;
     gap:clamp(1px,1.3vw,20px);
 }
+
+.content-line4 .top-users th{
+    font-weight: 400;
+}
+
+
 
 .buttons-containers {
     display: flex;
@@ -765,7 +826,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-radius: 12px;
+    border-radius: clamp(1px,0.78vw,12px);
     flex: 1;
     overflow: hidden;
     background: linear-gradient(#df0e5431 80%, #0b172b);
