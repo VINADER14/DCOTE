@@ -524,7 +524,7 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(90deg,#df0e5431 50%, #0b172b);
-    padding: 15px;
+    padding:clamp(1px,1.3vw,20px);
     z-index: 10;
 }
 
@@ -549,9 +549,10 @@ a.current-page span::after {
 
 .auth-form input{
     background: transparent;
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: 7px;
-    padding: 5px 10px;
+    border: clamp(0.01px,0.195vw,3px) solid rgb(229, 11, 85);
+    border-radius: clamp(1px,0.455vw,7px);
+    padding-block: clamp(1px,0.39vw,6px);
+    padding-inline: clamp(1px,0.975vw,15px);
     outline: none;
     color: inherit;
     font-size: inherit;

@@ -214,10 +214,6 @@ main {
     transition: 0.3s;
     font-family: 'Vag-Bold', sans-serif;
     font-size: var(--fs-login);
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: clamp(1px,0.65vw,10px);
-    padding-block: 6px;
-    padding-inline: 15px;
     display: flex;
     justify-content: center;
     cursor: pointer;
