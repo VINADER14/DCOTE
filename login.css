@@ -73,10 +73,10 @@ button {
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: 10px;
-    padding-block: 9px;
-    padding-inline: 35px;
+    border: clamp(0.01px,0.195vw,3px) solid rgb(229, 11, 85);
+    border-radius: clamp(1px,0.65vw,10px);
+    padding-block: clamp(1px,0.39vw,6px);
+    padding-inline: clamp(1px,0.975vw,15px);
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -214,10 +214,6 @@ main {
     transition: 0.3s;
     font-family: 'Vag-Bold', sans-serif;
     font-size: var(--fs-login);
-    border: 3px solid rgb(229, 11, 85);
-    border-radius: 10px;
-    padding-block: 6px;
-    padding-inline: 15px;
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -332,7 +328,7 @@ main {
         font-family: 'Pan-Regular', sans-serif;
         font-size: 14px;
         border: 2px solid rgb(229, 11, 85);
-        border-radius: 10px;
+        border-radius: clamp(1px,0.65vw,10px);
         padding-block: 6px;
         padding-inline: 15px;
         justify-content: center;
@@ -447,14 +443,13 @@ main {
     z-index: 100;
 }
 
-/* ==== НАВБАР КОНЕЦ ==== */
 
 
 .navigation-links{
     display:flex;
     font-size: var(--fs-nav-links);
     font-family: 'Vag-Medium';
-	color:white;
+    color:white;
     gap:8px;
     justify-content:center;
     margin-top: 10px;
@@ -494,22 +489,32 @@ a.current-page span::after {
     background: rgb(229, 11, 85);
 }
 
+/* ==== НАВБАР КОНЕЦ ==== */
 
-.auth-container{
+
+
+
+
+
+
+
+
+
+.page-login .auth-container{
     display: flex;
     border-radius: 10px;
     overflow: hidden;
     
 }
 
-.auth-image{
+.page-login .auth-image{
     width: 35%;
     overflow: hidden;
     aspect-ratio: 0.75;
     z-index: 100;
 }
 
-.auth-image img{
+.page-login .auth-image img{
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -518,7 +523,7 @@ a.current-page span::after {
     border-radius: 10px;
 }
 
-.auth-form{
+.page-login .auth-form{
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -528,11 +533,11 @@ a.current-page span::after {
     z-index: 10;
 }
 
-.auth-form h1{
+.page-login .auth-form h1{
     text-align: center;
 }
 
-.auth-form form{
+.page-login .auth-form form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -540,14 +545,14 @@ a.current-page span::after {
     gap: 30px;
 }
 
-.auth-form button {
+.page-login .auth-form button {
     font-family: 'Vag-Bold', sans-serif;
     font-size: var(--fs-nav-links);
 
 }
 
 
-.auth-form input{
+.page-login .auth-form input{
     background: transparent;
     border: clamp(0.01px,0.195vw,3px) solid rgb(229, 11, 85);
     border-radius: clamp(1px,0.455vw,7px);
@@ -564,7 +569,7 @@ a.current-page span::after {
     width: 65%;
 }
 
-.auth-form a{
+.page-login .auth-form a{
     text-decoration: none;
     color: rgb(229, 11, 85);
     font-family: 'Vag-Medium';
@@ -573,13 +578,26 @@ a.current-page span::after {
 
 
 
-.input-group{
+.page-login .input-group{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap:7px
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer-nav {
     margin-top: 0px;

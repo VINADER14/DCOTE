@@ -494,14 +494,19 @@ a.current-page span::after {
 
 
 
-.volumes {
+
+
+
+
+
+.page-ranobe_main .volumes {
     display:flex;
     justify-content:center;
     gap:30px;
     align-items:center;
 }
 
-.volume-box {
+.page-ranobe_main .volume-box {
     width:25%;
     border-radius: clamp(1px,0.65vw,10px);
     overflow: hidden;
@@ -509,7 +514,7 @@ a.current-page span::after {
     flex:1;
 }
 
-.volume-image{
+.page-ranobe_main .volume-image{
     flex-shrink: 0;
     z-index: 20;
     aspect-ratio: 7 / 10;
@@ -518,7 +523,7 @@ a.current-page span::after {
 
 }
 
-.volume-image img {
+.page-ranobe_main .volume-image img {
     width: 100%;
     height: 100%;
     display: block;
@@ -528,17 +533,17 @@ a.current-page span::after {
 
 }
 
-.volume-desc h2{
+.page-ranobe_main .volume-desc h2{
     margin:0px;
     text-align: center;
 }
 
-.volume-desc p{
+.page-ranobe_main .volume-desc p{
     margin:0px;
 }
 
 
-.volume-desc{
+.page-ranobe_main .volume-desc{
     background: linear-gradient(180deg,#df0e5441, #0b172b);
     color:white;
     padding:clamp(1px,1.3vw,20px);
@@ -549,7 +554,7 @@ a.current-page span::after {
     justify-content: space-evenly;
 }
 
-.zalupa{
+.page-ranobe_main .zalupa{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -557,51 +562,55 @@ a.current-page span::after {
     gap:clamp(1px,0.65vw,10px);
 }
 
-.underline-line {
+.page-ranobe_main .underline-line {
     height: 1px;
     background: white;
     width: 65%;
 }
 
-.read-btn {
+.page-ranobe_main .read-btn {
     font-family: 'Vag-Bold', sans-serif;
     font-size: var(--fs-nav-links);
 }
 
 
-.read-btn:hover {
-    background-color: rgb(143, 17, 68);
-    border-color: rgb(143, 17, 68);
-}
 
-.last-line{
+
+.page-ranobe_main .last-line{
     display: flex;
     gap:clamp(1px,0.325vw,5px);
     align-items: center;
     font-size: var(--fs-text);
 }
 
-.last-line .some-logos{
+
+.page-ranobe_main .last-line .some-logos{
     width: 1.4em;
     height: 1.4em;
 }
 
-.last-line .in-process{
+.page-ranobe_main .last-line .in-process{
     color:#ffb147;
 }
 
-.last-line .completed{
+.page-ranobe_main .last-line .completed{
     color:#64c396;
 }
 
-.check-circle{
+.page-ranobe_main .check-circle{
     fill:#64c396;
 }
 
-.last-line .check-circle{
+.page-ranobe_main .last-line .check-circle{
     width: 1.4em;
     height: 1.4em;
 }
+
+
+
+
+
+
 
 @media (max-width: 855px){
     .volumes{
@@ -631,6 +640,16 @@ a.current-page span::after {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 .footer-nav {

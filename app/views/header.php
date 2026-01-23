@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico?v=3">
-    <title>Авторизация | DCOTE</title>
-    <link rel="stylesheet" href="login.css?v=7">
+    <title><?= $pageTitle ?? 'DCOTE' ?></title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
+    <link rel="stylesheet" href="/css/style.css?v=10">
 </head>
-<body class="page-login">
+<body>
     <svg style="display: none;">
     <symbol id="close" viewBox="0 0 1000 1000">
         <rect x="-153.88" y="482.59" width="1309.92" height="35.17" rx="9" ry="9"
@@ -77,7 +76,7 @@
             <a href="https://dcote/project"><span>О ПРОЕКТЕ</span></a>
         </div>
         <div class="right">
-            <button class="login-btn scale-in" onclick="window.location.href='login.php'">ВОЙТИ</button>
+            <button class="login-btn scale-in" onclick="window.location.href='login.html'">ВОЙТИ</button>
         </div>
         <div class="right-mobile">
             <button class="login-btn-mobile" onclick="window.location.href='login.php'">ВОЙТИ</button>
@@ -99,90 +98,3 @@
     </div>
     <div class="overlay" id="overlay"></div>
     </nav>
-    <div class="navigation-links">
-        <a href="https://dcote"><span>ГЛАВНАЯ</span></a>
-        <p>/</p>
-        <a class="current-page" href="about_school.html"><span>АВТОРИЗАЦИЯ</span></a>
-    </div>
-    <main>
-        <div class="auth-container">
-            <div class="auth-image scale-in">
-                <img src="images/auth/auth_4.webp" alt="base_dcote_image">
-            </div>
-            <div class="auth-form scale-in slide-in-left">
-                <form method="post">
-                    <h1>АВТОРИЗАЦИЯ</h1>
-                    <div class="input-group">
-                        <label for="email"><h3>Имя пользователя</h3></label>
-                        <input id="email" name="email" required>
-                        <p>Забыл(а) имя пользователя? <a href="https://dcote">Восстановить</a></p>
-                    </div>
-                    <div class="input-group">
-                        <label for="password"><h3>Пароль</h3></label>
-                        <input type="password" id="password" name="password" required>
-                        <p>Забыл(а) пароль? <a href="https://dcote">Восстановить</a></p>
-                    </div>
-                    <div class="input-group">
-                        <button type="submit" class="submit-btn">АВТОРИЗОВАТЬСЯ</button>
-                        <p>Нет аккаунта? <a href="https://dcote"> Зарегистрируйся</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
-    <footer class="footer-nav">
-        <div class="footer-left">
-            <a href="https://x.com/aandreev06" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#x-logo"></use></svg></a>
-            <a href="https://dcote.ru" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#ds-logo"></use></svg></a>
-            <a href="https://t.me/DCOTEFILES" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#tg-logo"></use></svg></a>
-        </div>
-        <div class="footer-center scale-in">
-            <p>Мы не претендуем на авторство и/или какие-либо иные права на какой-либо контент с авторским правом, представленный на сайте.</p>
-        </div>
-        <div class="footer-right">
-            <a href="https://dcote.ru" class="logo-link">
-            <img src="images/dcote_logo.png" alt="DCOTE" class="logo scale-in"> </a>
-        </div>
-    </footer>
-<script>
-const hamburger = document.getElementById('hamburgerBtn');
-const sideMenu = document.getElementById('sideMenu');
-const closeBtn = document.getElementById('closeMenu');
-const overlay = document.getElementById('overlay');
-
-
-hamburger.addEventListener('click', () => {
-    sideMenu.classList.add('open');
-    overlay.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-});
-
-overlay.addEventListener('click', () => {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-});
-
-if (!('IntersectionObserver' in window)) {
-document
-    .querySelectorAll('.scale-in, .slide-in-left, .slide-in-right, .slide-in-top')
-    .forEach(el => el.classList.add('show'));
-} else {
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-    }
-    });
-}, { threshold: 0.1 });
-document
-    .querySelectorAll('.scale-in, .slide-in-left, .slide-in-right, .slide-in-top')
-    .forEach(el => observer.observe(el));
-}
-</script>
-</body>
-</html>

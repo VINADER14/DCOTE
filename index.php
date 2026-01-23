@@ -1,5 +1,5 @@
 <?php
 // Редирект на dcote.php
-header("Location: dcote.html");
+header("Location: dcote.php");
 exit;
 ?>

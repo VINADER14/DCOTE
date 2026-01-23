@@ -496,14 +496,20 @@ a.current-page span::after {
 /* ==== НАВБАР КОНЕЦ ==== */
 
 
-.buttons-containers {
+
+
+
+
+
+
+.page-news_main .buttons-containers {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
 
-.base-dcote {
+.page-news_main .base-dcote {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -513,14 +519,14 @@ a.current-page span::after {
     background: linear-gradient(#df0e5431 80%, #0b172b);
 }
 
-.base-dcote-image {
+.page-news_main .base-dcote-image {
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
     z-index: 20;
 }
 
-.image-wrapper {
+.page-news_main .image-wrapper {
     width: 100%;
     aspect-ratio: 2.8/1;
     overflow: hidden;
@@ -528,7 +534,7 @@ a.current-page span::after {
     box-sizing: border-box;
 }
 
-.base-dcote-image img {
+.page-news_main .base-dcote-image img {
     width: 100%;
     display: block;
     object-fit: cover;
@@ -538,7 +544,7 @@ a.current-page span::after {
 }
 
 
-.banner-info {
+.page-news_main .banner-info {
     display: flex;
     flex:1;
     flex-direction: column;
@@ -548,12 +554,21 @@ a.current-page span::after {
     gap:clamp(1px,0.65vw,10px);
 }
 
-.banner-info .text{
+.page-news_main .banner-info .text{
     display: flex;
     flex-direction: column;
     gap:clamp(1px,1.3vw,20px);
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
 
 
 
