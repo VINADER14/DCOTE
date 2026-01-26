@@ -1,9 +1,9 @@
 <?php
-$pageTitle = 'DCOTE | Главная';
+$pageTitle = 'Главная | DCOTE';
 $bodyClass = 'page-home';
 include __DIR__ . '/app/views/header.php';
 ?>
-    <main>
+    <main class="page-dcote_main">
         <div class="content-line1">
             <div class="description scale-in">
                 <div class="image_base scale-in"> 
@@ -56,7 +56,7 @@ include __DIR__ . '/app/views/header.php';
                         Сам кампус располагается на отдельном, искусственно сконструированном острове, площадь которого составляет около
                         шестиста тысяч квадратных метров.</p>
                     <div class="button">
-                        <button class="tg-btn" onclick="window.location.href='about-school'">БОЛЬШЕ ИНФОРМАЦИИ</button>
+                        <button class="tg-btn" onclick="window.location.href='/about_school.php'">БОЛЬШЕ ИНФОРМАЦИИ</button>
                     </div>
                 </div>
             </div>

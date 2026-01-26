@@ -1,9 +1,18 @@
 # Включаем модуль перезаписи
 RewriteEngine On
 
-# Если файл или папка существуют — ничего не делаем
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# Запрещаем прямой доступ ко всем .php-файлам, кроме index.php
+<Files "*.php">
+    Require all denied
+</Files>
+<Files "index.php">
+    Require all granted
+</Files>
 
-# Все запросы без расширения добавляем .php
-; RewriteRule ^([^/.]+)$ $1.php [L]
+# Если запрашиваемый путь — это реальный файл или папка → отдаём как есть
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Всё остальное → передаём в index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

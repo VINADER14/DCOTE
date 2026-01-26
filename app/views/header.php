@@ -63,11 +63,11 @@
     </svg>
     <nav class="navbar">
         <div class="left"> 
-            <a href="https://dcote.online/dcote.html" class="logo-link scale-in">
+            <a href="/dcote.php" class="logo-link scale-in">
             <img src="images/dcote_logo.png" fetchpriority="high" decoding="async" alt="DCOTE" class="logo"> </a>
         </div>
         <div class="center">
-            <a href="https://dcote/news"><span>НОВОСТИ</span></a>
+            <a href=""><span>НОВОСТИ</span></a>
             <a href="ranobe.html"><span>РАНОБЕ</span></a>
             <a href="https://dcote/anime"><span>АНИМЕ</span></a>
             <a href="https://dcote/manga"><span>МАНГА</span></a>

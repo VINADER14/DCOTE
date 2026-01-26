@@ -83,6 +83,7 @@ button {
     cursor: pointer;
     background-color: #33333300;
     align-items: center;
+    font-family: 'Vag-Bold';
 }
 
 
@@ -652,16 +653,16 @@ a.current-page span::after {
 
 
 
+/* Главная страница начало */
 
-
-.content-line1 {
+.page-dcote_main .content-line1 {
     display: flex;
     gap: 30px;
     align-items: stretch;
     flex-wrap: wrap;
 }
 
-.description {
+.page-dcote_main .description {
     display: flex;
     flex: 2;
     background: linear-gradient(90deg,#df0e5431 50%, #0b172b);
@@ -671,21 +672,21 @@ a.current-page span::after {
 }
 
 @media (max-width: 1060px){
-    .content-line1{
+    .page-dcote_main .content-line1{
         gap: 20px;
     }
 }
 
-.description {
+.page-dcote_main .description {
     flex: 2 2 510px !important;
 }
 
-.updates {
+.page-dcote_main .updates {
     flex: 1 1 270px !important;
 }
 
 
-.image_base {
+.page-dcote_main .image_base {
     width: 33%;
     aspect-ratio: 0.8;
     position: relative;
@@ -695,7 +696,7 @@ a.current-page span::after {
     z-index: 20;
 }
 
-.image_base img {
+.page-dcote_main .image_base img {
     display: block;
     width: 100%;
     height: 100%;
@@ -708,7 +709,7 @@ a.current-page span::after {
 
 
 
-.description-text {
+.page-dcote_main .description-text {
     width: 67%;
     display: flex;
     flex-direction: column;
@@ -716,22 +717,22 @@ a.current-page span::after {
     gap:clamp(1px,0.65vw,10px)
 }
 
-.description-text h2 {
+.page-dcote_main .description-text h2 {
     margin: 0px;
     text-align: center;
 }
 
-.description-text p {
+.description-text .page-dcote_main  p {
     margin: 0px;
 }
 
-.content-line2, .content-line3{
+.page-dcote_main .content-line2, .content-line3{
     display: flex;
     overflow: hidden;
     border-radius: clamp(1px,0.65vw,10px);
 }
 
-.content-line2 .about-school{
+.page-dcote_main .content-line2 .about-school{
     padding:clamp(1px,1.3vw,20px);
     gap:clamp(1px,0.65vw,10px);
     background: linear-gradient(90deg,#df0e5441, #0b172b);
@@ -740,13 +741,13 @@ a.current-page span::after {
     flex-direction: column;
 }
 
-.content-line2 .about-school .text{
+.page-dcote_main .content-line2 .about-school .text{
     display: flex;
     flex-direction: column;
     gap: clamp(1px,1.3vw,20px);
 }
 
-.content-line2 .about-school .button{
+.page-dcote_main .content-line2 .about-school .button{
     display: flex;
     justify-content: center;
     margin: 0px !important;
@@ -754,16 +755,16 @@ a.current-page span::after {
 
 
 
-.content-line2 .about-school p,.content-line3 .about-island p {
+.page-dcote_main .content-line2 .about-school p,.content-line3 .about-island p {
     margin: 0px;
 }
 
-.content-line2 .about-school h1,.content-line3 .about-island h1 {
+.page-dcote_main .content-line2 .about-school h1,.content-line3 .about-island h1 {
     margin: 0px;
     text-align: center;
 }
 
-.content-line3 .about-island{
+.page-dcote_main .content-line3 .about-island{
     padding: clamp(1px,1.3vw,20px);
     background: linear-gradient(90deg, #0b172b,#df0e5441);
     width: 64%;
@@ -772,19 +773,19 @@ a.current-page span::after {
     flex-direction: column;
 }
 
-.school-image-base{
+.page-dcote_main .school-image-base{
     width: 50%;
     overflow: hidden;
     z-index: 20;
 }
 
-.island-image-base{
+.page-dcote_main .island-image-base{
     width: 36%;
     overflow: hidden;
     z-index: 20;
 }
 
-.school-image-base img, .island-image-base img{
+.page-dcote_main .school-image-base img, .island-image-base img{
     width: 100%;
     height: 100%;
     aspect-ratio: 2/1;
@@ -792,7 +793,7 @@ a.current-page span::after {
     object-fit: cover;
 }
 
-.updates {
+.page-dcote_main .updates {
     display: flex;
     flex: 1;
     background: linear-gradient(#df0e5441 50%, #0b172b);
@@ -808,27 +809,27 @@ a.current-page span::after {
 
 }
 
-.updates .updates-link:hover{
+.page-dcote_main .updates .updates-link:hover{
     color: rgb(224, 11, 82);
 }
 
-.updates .updates-link {
+.page-dcote_main .updates .updates-link {
     transition: 0.3s;
 }
 
 
 
-.updates ul {
+.page-dcote_main .updates ul {
     list-style: none;
     padding: 0;
 }
 
-.updates li {
+.page-dcote_main .updates li {
     margin-bottom: 8px;
     font-size: 20px;
 }
 
-.updates a {
+.page-dcote_main .updates a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     display: inline-block;
@@ -836,112 +837,112 @@ a.current-page span::after {
 }
 
 
-.updates .highlight {
+.page-dcote_main .updates .highlight {
     color: rgb(168, 7, 61);
     font-weight: bold;
     font-size: 20px;
 }
 
-.updates .spoiler {
+.page-dcote_main .updates .spoiler {
     color: rgb(168, 7, 61);
     font-size: 20px;
 }
 
 @media (max-width: 855px){
-    .content-line1 .description{
+    .page-dcote_main .content-line1 .description{
         flex-direction: column;
     }
-    .content-line1 .description .image_base{
+    .page-dcote_main .content-line1 .description .image_base{
         width: 100% !important;
         max-width: none !important;
     }
-    .content-line1 .description .description-text{
+    .page-dcote_main .content-line1 .description .description-text{
         width: auto !important;
         gap: 10px;
     }
-    .content-line1 .updates{
+    .page-dcote_main .content-line1 .updates{
         min-height: 300px;
 
     }
 
-    .content-line2, .content-line3{
+    .page-dcote_main .content-line2, .content-line3{
         flex-direction: column;
     }
 
-    .content-line2 .school-image-base{
+    .page-dcote_main .content-line2 .school-image-base{
         width: 100% !important;
     }
 
-    .content-line2 .about-school{
+    .page-dcote_main .content-line2 .about-school{
         width: auto !important;
         gap: 10px;
         background: linear-gradient(0deg, #0b172b,#df0e5441);
     }
 
-    .content-line3 .island-image-base{
+    .page-dcote_main .content-line3 .island-image-base{
         width: 100% !important;
     }
     
-    .content-line3 .about-island {
+    .page-dcote_main .content-line3 .about-island {
         width: auto !important;
         gap:10px;
         background: linear-gradient(180deg, #0b172b,#df0e5441);
     }
 }
 
-.content-line4 .top-classes{
+.page-dcote_main .content-line4 .top-classes{
     padding:clamp(1px,1.3vw,20px);
     display: flex;
     flex-direction: column;
     gap:clamp(1px,0.65vw,10px);
 }
 
-.content-line4 .top-users{
+.page-dcote_main .content-line4 .top-users{
     padding:clamp(1px,1.3vw,20px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.content-line4 .top-classes h1,.content-line4 .top-users h1{
+.page-dcote_main .content-line4 .top-classes h1,.content-line4 .top-users h1{
     text-align: center;
 }
 
-.content-line4 button{
+.page-dcote_main .content-line4 button{
     font-family: 'Vag-Bold';
     font-size: var(--fs-nav-links);
 }
 
-.content-line4{
+.page-dcote_main .content-line4{
     display: flex;
     gap:30px;
     width: 100%;
 }
 
-.content-line4 .top-classes{
+.page-dcote_main .content-line4 .top-classes{
     width: 50%;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     flex:1;
     border-radius: clamp(1px,0.65vw,10px);
 }
 
-.top-classes .top-classes-buttons .classes-button-active{
+.page-dcote_main .top-classes .top-classes-buttons .classes-button-active{
     background-color: rgb(143, 17, 68);
     border-color: rgb(143, 17, 68);
 }
 
 
-.top-table,.users-table table {
+.page-dcote_main .top-table,.users-table table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-.top-table td{
+.page-dcote_main .top-table td{
     padding-block:clamp(1px,0.65vw,10px);
 }
 
-.top-table img{
+.page-dcote_main .top-table img{
     height: clamp(1px,6.5vw,100px);
     width: clamp(1px,6.5vw,100px);
     border-radius: clamp(1px,0.65vw,10px);
@@ -949,29 +950,28 @@ a.current-page span::after {
     margin: 0 auto;
 }
 
-.top-table .class-lider{
+.page-dcote_main .top-table .class-lider{
     padding-left: clamp(1px,0.65vw,10px);
 }
 
-.top-table .class-points{
+.page-dcote_main .top-table .class-points{
     text-align: right;
 }
 
-.content-line4 .full-stat{
+.page-dcote_main .content-line4 .full-stat{
     display: flex;
     justify-content: center;
 }
 
-.content-line4 .top-users{
+.page-dcote_main .content-line4 .top-users{
     width: 50%;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     flex:1;
     border-radius: clamp(1px,0.65vw,10px);
-
 }
 
 
-.top-users img{
+.page-dcote_main .top-users img{
     height: clamp(1px,3.25vw,50px);
     width: clamp(1px,3.25vw,50px);
     border-radius: clamp(1px,0.65vw,10px);
@@ -979,55 +979,55 @@ a.current-page span::after {
     margin: 0 0;
 }
 
-.top-users .nickname, .top-users .nickname-head{
+.page-dcote_main .top-users .nickname, .top-users .nickname-head{
     padding-left: clamp(1px,0.65vw,10px);
     text-align: left;
 }
 
-.users-table td{
+.page-dcote_main .users-table td{
     padding-block:clamp(1px,0.65vw,10px);
 }
 
-.top-users .rank, .top-users .rank-head{
+.page-dcote_main .top-users .rank, .top-users .rank-head{
     text-align: left;
 }
 
-.top-users .status, .top-users .status-head{
+.page-dcote_main .top-users .status, .top-users .status-head{
     text-align: center;
 }
 
-.top-users .rating, .top-users .rating-head{
+.page-dcote_main .top-users .rating, .top-users .rating-head{
     text-align: right;
 }
 
-.top-users .status p, .top-users .nickname p {
+.page-dcote_main .top-users .status p, .top-users .nickname p {
     font-family: 'Vag-Bold';
 }
 
-.top-users .status p{
+.page-dcote_main .top-users .status p{
     color: rgb(220, 10, 80);
 }
 
-.content-line4 .top-classes-buttons{
+.page-dcote_main .content-line4 .top-classes-buttons{
     display: flex;
     justify-content: center;
     gap:clamp(1px,1.3vw,20px);
 }
 
-.content-line4 .top-users th{
+.page-dcote_main .content-line4 .top-users th{
     font-weight: 400;
 }
 
 
 
-.buttons-containers {
+.page-dcote_main .buttons-containers {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
 
-.base-dcote {
+.page-dcote_main .base-dcote {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -1037,14 +1037,14 @@ a.current-page span::after {
     background: linear-gradient(#df0e5431 80%, #0b172b);
 }
 
-.base-dcote-image {
+.page-dcote_main .base-dcote-image {
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
     z-index: 20;
 }
 
-.image-wrapper {
+.page-dcote_main .image-wrapper {
     width: 100%;
     aspect-ratio: 2.8/1;
     overflow: hidden;
@@ -1052,7 +1052,7 @@ a.current-page span::after {
     box-sizing: border-box;
 }
 
-.base-dcote-image img {
+.page-dcote_main .base-dcote-image img {
     width: 100%;
     display: block;
     object-fit: cover;
@@ -1062,7 +1062,7 @@ a.current-page span::after {
 }
 
 
-.banner-info {
+.page-dcote_main .banner-info {
     display: flex;
     flex:1;
     flex-direction: column;
@@ -1075,11 +1075,11 @@ a.current-page span::after {
 
 
 
-.banner-info button, .about-school button {
+.page-dcote_main .banner-info button, .about-school button {
     font-family: 'Vag-Bold', sans-serif;
 }
 
-.banner-info .text{
+.page-dcote_main .banner-info .text{
     display: flex;
     flex-direction: column;
     gap:clamp(1px,1.3vw,20px);
@@ -1087,7 +1087,194 @@ a.current-page span::after {
 }
 
 
-.banner-info p {
+.page-dcote_main .banner-info p {
     margin: 0px;
     text-align: center;
 }
+
+
+/* Главная страница конец */
+
+
+
+
+
+
+/* Рег, логин начало */
+
+.page-login .auth-container,
+.page-reg .auth-container {
+    display: flex;
+    border-radius: clamp(1px, 0.65vw, 10px);
+    overflow: hidden;
+}
+
+.page-login .auth-image,
+.page-reg .auth-image {
+    width: 35%;
+    overflow: hidden;
+    aspect-ratio: 0.75;
+    z-index: 100;
+}
+
+.page-login .auth-image img,
+.page-reg .auth-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    object-position: top;
+    border-top-left-radius: clamp(1px, 0.65vw, 10px);
+    border-bottom-left-radius: clamp(1px, 0.65vw, 10px);
+}
+
+.page-login .auth-form,
+.page-reg .auth-form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, #df0e5431 50%, #0b172b);
+    padding: clamp(1px, 1.3vw, 20px);
+    z-index: 10;
+}
+
+.page-login .auth-form h1,
+.page-reg .auth-form h1 {
+    text-align: center;
+}
+
+.page-login .auth-form form,
+.page-reg .auth-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.page-login .auth-form button,
+.page-reg .auth-form button {
+    font-family: 'Vag-Bold', sans-serif;
+    font-size: var(--fs-nav-links);
+}
+
+.page-login .auth-form input,
+.page-reg .auth-form .input-group input {
+    background: transparent;
+    border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
+    border-radius: clamp(1px, 0.455vw, 7px);
+    padding-block: clamp(1px, 0.39vw, 6px);
+    padding-inline: clamp(1px, 0.975vw, 15px);
+    outline: none;
+    color: inherit;
+    font-size: var(--fs-text);
+    font-family: 'Vag-Regular';
+    line-height: 1.4em;
+    color: white;
+    margin: 0;
+    width: 65%;
+}
+
+.page-login .auth-form a,
+.page-reg .auth-form a {
+    text-decoration: none;
+    color: rgb(229, 11, 85);
+    font-family: 'Vag-Medium';
+}
+
+.page-login .input-group,
+.page-reg .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 7px;
+}
+
+/* Стилизация чекбокса (только на странице регистрации) */
+.page-reg .check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-reg .checkbox-input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgb(229, 11, 85);
+    border-radius: 0.25rem;
+    background-color: #ffffff00;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin: 0;
+}
+
+.page-reg .checkbox-input:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23e50b55' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.page-reg .checkbox-input:hover {
+    background-color: rgba(229, 11, 84, 0.5);
+}
+
+.page-reg .checkbox-input:checked:hover {
+    background-color: rgba(229, 11, 84, 0.5);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+/* Рег, логин конец */
+
+
+
+
+
+/* 404 начало */
+.page-404 .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.page-404 {
+    justify-content: flex-start;
+}
+.page-404 .text-404 {
+    font-size: clamp(5px, 42.315vw, 651px);
+    line-height: 1;
+    margin: 0;
+    z-index: 0; 
+}
+
+
+
+.page-404 .ptichka {
+    width: clamp(1px, 47.32vw, 728px);
+    height: clamp(1px,44.135vw,679px);
+    display: block;
+    z-index: 1;
+    margin-top: calc(-0.6 * clamp(5px, 42.315vw, 651px));
+}
+
+.page-404 .desc-404{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px,1.3vw,20px);
+    align-items: center;
+}
+
+.page-404 .desc-404{
+    z-index: 2;
+    text-align: center;
+    margin-top: calc(-0.15 * clamp(1px,44.135vw,679px));
+}
+
+.page-404 .desc-404 h2{
+    font-size: clamp(1px, 4.68vw, 72px);
+}
+.page-404 .desc-404 h3{
+    font-family: 'Vag-Bold';
+}
+
+/* 404 конец */
