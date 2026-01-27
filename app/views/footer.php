@@ -1,14 +1,14 @@
     <footer class="footer-nav">
         <div class="footer-left">
             <a href="https://x.com/aandreev06" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#x-logo"></use></svg></a>
-            <a href="https://dcote.ru" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#ds-logo"></use></svg></a>
+            <a href="/dcote_main" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#ds-logo"></use></svg></a>
             <a href="https://t.me/DCOTEFILES" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#tg-logo"></use></svg></a>
         </div>
         <div class="footer-center scale-in">
             <p>Мы не претендуем на авторство и/или какие-либо иные права на какой-либо контент с авторским правом, представленный на сайте.</p>
         </div>
         <div class="footer-right">
-            <a href="https://dcote.ru" class="logo-link">
+            <a href="/dcote_main" class="logo-link">
             <img src="images/dcote_logo.png" alt="DCOTE" class="logo scale-in"> </a>
         </div>
     </footer>

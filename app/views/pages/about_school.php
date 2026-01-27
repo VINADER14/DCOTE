@@ -1,8 +1,4 @@
-<?php
-$pageTitle = 'Кодо Икусэй | DCOTE';
-$bodyClass = 'page-home';
-include __DIR__ . '/app/views/header.php';
-?>
+
     <main>
         <div class="cont-1 scale-in">
             <div class="title"><h1>ПРАВИЛА ДЛЯ УЧЕНИКОВ</h1></div>
@@ -167,6 +163,5 @@ include __DIR__ . '/app/views/header.php';
             </div>
         </div>
     </main>
-<?php include __DIR__ . '/app/views/footer.php'; ?>
 </body>
 </html>

@@ -1,8 +1,4 @@
-<?php
-$pageTitle = 'Главная | DCOTE';
-$bodyClass = 'page-home';
-include __DIR__ . '/app/views/header.php';
-?>
+
     <main class="page-dcote_main">
         <div class="content-line1">
             <div class="description scale-in">
@@ -37,7 +33,7 @@ include __DIR__ . '/app/views/header.php';
                     </ul>
                 </div>
                 <div class="updates-link-wrapper">
-                    <a class ="updates-link" href="https://dcote/news">Больше новостей</a>
+                    <a class ="updates-link" href="/news_main">Больше новостей</a>
                 </div>
             </div>
         </div>
@@ -56,7 +52,7 @@ include __DIR__ . '/app/views/header.php';
                         Сам кампус располагается на отдельном, искусственно сконструированном острове, площадь которого составляет около
                         шестиста тысяч квадратных метров.</p>
                     <div class="button">
-                        <button class="tg-btn" onclick="window.location.href='/about_school.php'">БОЛЬШЕ ИНФОРМАЦИИ</button>
+                        <button class="tg-btn" onclick="window.location.href='/about_school'">БОЛЬШЕ ИНФОРМАЦИИ</button>
                     </div>
                 </div>
             </div>
@@ -253,6 +249,5 @@ include __DIR__ . '/app/views/header.php';
             </div>
         </div>
     </main>
-<?php include __DIR__ . '/app/views/footer.php'; ?>
 </body>
 </html>

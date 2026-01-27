@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
-    <link rel="stylesheet" href="/css/style.css?v=10">
+    <link rel="stylesheet" href="/css/style.css?v=13">
 </head>
 <body>
     <svg style="display: none;">
@@ -63,23 +63,23 @@
     </svg>
     <nav class="navbar">
         <div class="left"> 
-            <a href="/dcote.php" class="logo-link scale-in">
+            <a href="/dcote_main" class="logo-link scale-in">
             <img src="images/dcote_logo.png" fetchpriority="high" decoding="async" alt="DCOTE" class="logo"> </a>
         </div>
         <div class="center">
-            <a href=""><span>НОВОСТИ</span></a>
-            <a href="ranobe.html"><span>РАНОБЕ</span></a>
-            <a href="https://dcote/anime"><span>АНИМЕ</span></a>
-            <a href="https://dcote/manga"><span>МАНГА</span></a>
-            <a href="https://dcote/arts"><span>ИЛЛЮСТРАЦИИ</span></a>
-            <a href="https://dcote/characters"><span>ПЕРСОНАЖИ</span></a>
-            <a href="https://dcote/project"><span>О ПРОЕКТЕ</span></a>
+            <a href="/news_main"><span>НОВОСТИ</span></a>
+            <a href="/ranobe_main"><span>РАНОБЕ</span></a>
+            <a href="/anime"><span>АНИМЕ</span></a>
+            <a href="/manga"><span>МАНГА</span></a>
+            <a href="/illustrations"><span>ИЛЛЮСТРАЦИИ</span></a>
+            <a href="/characters"><span>ПЕРСОНАЖИ</span></a>
+            <a href="/project"><span>О ПРОЕКТЕ</span></a>
         </div>
         <div class="right">
-            <button class="login-btn scale-in" onclick="window.location.href='login.html'">ВОЙТИ</button>
+            <button class="login-btn scale-in" onclick="window.location.href='/login'">ВОЙТИ</button>
         </div>
         <div class="right-mobile">
-            <button class="login-btn-mobile" onclick="window.location.href='login.php'">ВОЙТИ</button>
+            <button class="login-btn-mobile" onclick="window.location.href='/login'">ВОЙТИ</button>
             <button class="hamburger" id="hamburgerBtn"><svg width="30" height="30"><use href="#hamburger"></use></svg></button>
         </div>
     <div class="side-menu" id="sideMenu">

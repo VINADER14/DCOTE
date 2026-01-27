@@ -1,14 +1,10 @@
-<?php
-$pageTitle = 'Регистрация | DCOTE';
-$bodyClass = 'page-home';
-include __DIR__ . '/app/views/header.php';
-?>
+
     <div class="navigation-links">
-        <a href="https://dcote"><span>ГЛАВНАЯ</span></a>
+        <a href="/dcote_main"><span>ГЛАВНАЯ</span></a>
         <p>/</p>
-        <a  href="about_school.html"><span>АВТОРИЗАЦИЯ</span></a>
+        <a  href="/login"><span>АВТОРИЗАЦИЯ</span></a>
         <p>/</p>
-        <a class="current-page" href="about_school.html"><span>РЕГИСТРАЦИЯ</span></a>
+        <a class="current-page" href="/reg"><span>РЕГИСТРАЦИЯ</span></a>
     </div>
     <main class="page-reg">
         <div class="auth-container">
@@ -45,6 +41,5 @@ include __DIR__ . '/app/views/header.php';
             </div>
         </div>
     </main>
-<?php include __DIR__ . '/app/views/footer.php'; ?>
 </body>
 </html>
