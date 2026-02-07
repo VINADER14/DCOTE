@@ -18,7 +18,6 @@ const sideMenu = document.getElementById('sideMenu');
 const closeBtn = document.getElementById('closeMenu');
 const overlay = document.getElementById('overlay');
 
-
 hamburger.addEventListener('click', () => {
     sideMenu.classList.add('open');
     overlay.classList.add('active');

@@ -1,9 +1,9 @@
 <?php
-// Получаем чистый путь из URL
+
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $path = trim($path, '/');
 define('ROOT', __DIR__);
-// Определяем, какую страницу показать
+
 if ($path === '' || $path === 'dcote_main') {
     $pageTitle = 'Главная | DCOTE';
     include __DIR__ . '/app/views/header.php';

@@ -23,6 +23,8 @@
     src: url('/fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
 }
 
+
+
 :root {
     --fs-title1: clamp(5px, 2.75vw, 42px);
     --fs-title2: clamp(5px, 2.35vw, 36px);
@@ -1633,7 +1635,7 @@ a.current-page span::after {
 }
 
 
-.page-about_school .cont-2{
+.page-about_school .cont-2,.page-about_school .cont-3{
     gap:clamp(1px,1.3vw,20px);
     display: flex;
     flex-direction: column;
@@ -1684,7 +1686,9 @@ a.current-page span::after {
 }
 
 
-
+.page-about_school .cont-3{
+    align-items: center;
+}
 
 
 
@@ -1732,7 +1736,8 @@ a.current-page span::after {
 }
 
 .slides img:hover{
-    scale: 1.01;
+    scale: 1.05;
+    cursor: pointer;
 }
 
 .slider-button-wrapper{
@@ -1761,3 +1766,72 @@ a.current-page span::after {
     height: 1.3vw;
     fill: white;
 }
+
+.close-icon{
+    width: 2.3vw;
+    height: 2.3vw;
+    fill: white;
+}
+
+.download-icon{
+    width: 4vw;
+    height: 4vh;
+    fill: white;
+}
+
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.fullscreen-modal.hidden {
+  display: none;
+}
+
+#modalImage {
+  max-width: 90vw;
+  max-height: 65vh;
+  object-fit: contain;
+  opacity: 1;
+}
+
+/* Кнопки (как раньше) */
+.modal-close,
+.modal-nav,.modal-download {
+    position: absolute;
+    background: rgb(101, 12, 48);
+    border: none;
+    width: 4.5vw;
+    height: 4.5vw;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 999px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal-close { top: clamp(1px, 1.95vw, 30px); right: calc(clamp(1px, 1.95vw, 30px) + var(--scrollbar-width, 0px)); }
+.modal-nav.prev { left: clamp(1px, 1.95vw, 30px); }
+.modal-nav.next { right: calc(clamp(1px, 1.95vw, 30px) + var(--scrollbar-width, 0px)); }
+.modal-download { left:clamp(1px, 1.95vw, 30px);top:clamp(1px, 1.95vw, 30px);}
+
+
+.modal-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none; /* чтобы не мешал кликам на фон */
+}
+
