@@ -1,9 +1,8 @@
-
     <main class="page-dcote_main">
         <div class="content-line1">
             <div class="description scale-in">
                 <div class="image_base scale-in"> 
-                    <img src="images/index/base_dcote1.webp" fetchpriority="high" decoding="async" alt="Аяно, Арису, Сузуне, Кей, Рьюен, Шалава рядом"/>
+                    <img src="images/index/base_dcote1.webp" fetchpriority="high" decoding="async" alt="Аяно, Арису, Сузуне, Кей, Рьюен, ш@лава рядом"/>
                 </div>
                 <div class="description-text slide-in-left">
                     <div class="title">
