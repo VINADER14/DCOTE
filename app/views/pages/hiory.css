@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Pan-Regular', sans-serif;
+    background-image: url('/images/1000083521.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+.hero img{
+    max-width: 50vw;
+    opacity: 0;
+    transform: translateY(-2vh);
+    filter: blur(6px);
+    animation: fadeinimage 0.5s forwards 0.1s ease-out;
+}
+
+.hero{
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.honey {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@keyframes fadeinimage {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.fade-to-black{
+    position: absolute;
+    width: 100vw;
+    height: 5vh;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0),rgb(0, 0, 0))
+}

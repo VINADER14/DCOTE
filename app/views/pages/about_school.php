@@ -60,17 +60,17 @@
                 как для парней, так и для девушек. Он представляет собой стандартные спортивные штаны,
                 футболку, ветровку и кроссовки.</p></div>
                 <h3>Визуальные примеры</h3>
-        <div class="slider-wrapper">
-            <div class="slider-button-wrapper"><div><button class="slider-btn prev" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
-            <div class="slider">
-                <div class="slides">
-                    <img src="/images/about_school/game-fullbody_ayano3.jpg" alt="Аяно 1">
-                    <img src="/images/about_school/game-fullbody_ayano7.jpg" alt="Аяно врафылвдро">
-                    <img src="/images/about_school/game-fullbody_ayano8.jpg" alt="Аяно 3">
+            <div class="slider-wrapper">
+                <div class="slider-button-wrapper"><div><button class="slider-btn prev inactive" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
+                <div class="slider">
+                    <div class="slides">
+                        <img src="/images/about_school/game-fullbody_ayano3.jpg" alt="Аяно 1">
+                        <img src="/images/about_school/game-fullbody_ayano7.jpg" alt="Аяно врафылвдро">
+                        <img src="/images/about_school/game-fullbody_ayano8.jpg" alt="Аяно 3">
+                    </div>
                 </div>
+                <div class="slider-button-wrapper"><div><button class="slider-btn next" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
             </div>
-            <div class="slider-button-wrapper"><div><button class="slider-btn next" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
-        </div>
         </div>
         <div class="dormitory">
             <div class="desc slide-in-right">
@@ -260,7 +260,7 @@
                 и мониторинга развития учащихся.<br><br>
                 Доступ к базе ограничен и предназначен исключительно для служебного использования.<br><br>
                 <i>* К сожалению, официально представлена лишь небольшая часть реестра.</i></p>
-            <div class="slider-wrapper" data-slider-id="database">
+            <!-- <div class="slider-wrapper" data-slider-id="database">
                 <div class="slider-button-wrapper"><div><button class="slider-btn prev" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
                 <div class="slider" id="mySlider">
                     <div class="slides">
@@ -271,37 +271,112 @@
                 </div>
                 <div class="slider-button-wrapper"><div><button class="slider-btn next" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
             </div>
-        </div>
+        </div> -->
     </main>
     <div id="fullscreenModal" class="fullscreen-modal hidden">
-    <div class="slider-button-wrapper modal-download"><div><button class="slider-btn" aria-label="Скачать"><svg class="download-icon" width="24" height="24"><use href="#download-icon"></use></svg></button></div></div>
-    <div class="slider-button-wrapper modal-close"><div><button class="slider-btn" aria-label="Закрыть"><svg class="close-icon" width="24" height="24"><use href="#close-cross"></use></svg></button></div></div>
-    <div class="slider-button-wrapper modal-nav prev"><div><button class="slider-btn" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
-    <div class="slider-button-wrapper modal-nav next"><div><button class="slider-btn" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
-    <img id="modalImage" src="" alt="Полноэкранный просмотр">
-    <div id="modalCaption"><h1 class="modal-caption"></h1></div>
+        <div class="slider-button-wrapper modal-download"><div><button class="slider-btn" aria-label="Скачать"><svg class="download-icon" width="24" height="24"><use href="#download-icon"></use></svg></button></div></div>
+        <div class="slider-button-wrapper modal-close"><div><button class="slider-btn" aria-label="Закрыть"><svg class="close-icon" width="24" height="24"><use href="#close-cross"></use></svg></button></div></div>
+        <div class="slider-button-wrapper modal-nav prev"><div><button class="slider-btn" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
+        <div class="slider-button-wrapper modal-nav next"><div><button class="slider-btn" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
+        <img id="modalImage" src="" alt="Полноэкранный просмотр">
+        <div id="modalCaption"><h1 class="modal-caption"></h1></div>
     </div>
 </body>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('fullscreenModal');
-    const sliders = document.querySelectorAll('.slider');
-
-    const closeModalBtn = modal.querySelector('.modal-close');
-    const prevBtn = modal.querySelector('.prev');
-    const nextBtn = modal.querySelector('.next');
-    const modalImage = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption');
-    let currentModalIndex = 0;
-    let currentSliderImages = [];
-
-
-
-
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const slider = sliderWrapper.querySelector('.slider')
+    const prevBtn = sliderWrapper.querySelector('.prev');
+    const nextBtn = sliderWrapper.querySelector('.next');
+    const slidesContainer = sliderWrapper.querySelector('.slides')
+    let currentIndex=0;
+    const fcModal = document.getElementById('fullscreenModal')
+    const closeBtn = fcModal.querySelector('.modal-close')
+    const modalPrevBtn = fcModal.querySelector('.prev .slider-btn');
+    const modalNextBtn = fcModal.querySelector('.next .slider-btn');
+    const slideImages = slidesContainer.querySelectorAll('img');
+    let modalIndex
 
 
-    
-    function  disableScroll() {
+    const totalSlides = slidesContainer.children.length;
+    function updateSlider() {
+        const offset = slider.offsetWidth;
+        slidesContainer.style.transform = `translateX(${-currentIndex* offset}px)`
+    }
+
+    modalNextBtn.addEventListener('click',() =>{
+        if(modalIndex< slideImages.length-1){
+            modalIndex++
+            const currentImg = slideImages[modalIndex];
+            document.getElementById('modalImage').src = currentImg.src;
+            document.querySelector('.modal-caption').textContent = currentImg.alt;
+            modalPrevBtn.classList.remove('inactive');
+            modalNextBtn.classList.remove('inactive');
+            if (modalIndex===slideImages.length-1){
+                modalNextBtn.classList.add('inactive');
+            }
+        }
+    });
+
+    modalPrevBtn.addEventListener('click',() =>{
+        if(modalIndex>0){
+            modalIndex--
+            const currentImg = slideImages[modalIndex];
+            document.getElementById('modalImage').src = currentImg.src;
+            document.querySelector('.modal-caption').textContent = currentImg.alt;
+            modalPrevBtn.classList.remove('inactive');
+            modalNextBtn.classList.remove('inactive');
+            if (modalIndex===0){
+                modalPrevBtn.classList.add('inactive');
+            }
+        }
+    });
+
+    slider.addEventListener('click',() =>{
+        modalIndex = currentIndex;
+        const currentImg = slideImages[modalIndex];
+        if (modalIndex===slideImages.length-1){
+            modalNextBtn.classList.add('inactive');
+        };
+        if (modalIndex===0){
+            modalPrevBtn.classList.add('inactive');
+        }
+        fcModal.classList.remove('hidden')
+        document.getElementById('modalImage').src = currentImg.src;
+        document.querySelector('.modal-caption').textContent = currentImg.alt;
+        disableScroll()
+    });
+
+    closeBtn.addEventListener('click',() =>{
+        fcModal.classList.add('hidden')
+        enableScroll()
+    });
+
+    nextBtn.addEventListener('click',() =>{
+        if(currentIndex< totalSlides-1) {
+            currentIndex++;
+            updateSlider();
+            prevBtn.classList.remove('inactive');
+            nextBtn.classList.remove('inactive');
+            if(currentIndex===totalSlides-1){
+            nextBtn.classList.add('inactive');
+            }
+        } 
+    });
+
+    prevBtn.addEventListener('click',() =>{
+        if(currentIndex>0) {
+            prevBtn.classList.remove('inactive');
+            nextBtn.classList.remove('inactive');
+            currentIndex--;
+            updateSlider();
+            if(currentIndex===0){
+            prevBtn.classList.add('inactive');
+            }
+        }
+    });
+
+    function disableScroll() {
         document.addEventListener('wheel', blockDefault, {passive:false});
         document.addEventListener('touchmove', blockDefault, {passive:false});
         document.addEventListener('keydown', blockScrollKeys);
@@ -322,13 +397,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (keys.includes(e.key)){
             e.preventDefault();
         }
-    }
-
-
-    function closeFullscreen() {
-        modal.classList.add('hidden');
-        enableScroll();
-        document.documentElement.style.removeProperty('--scrollbar-width');
     }
 
 

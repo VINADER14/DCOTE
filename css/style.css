@@ -1716,11 +1716,12 @@ a.current-page span::after {
     overflow: hidden;
     margin: 0;
     border-radius: clamp(1px, 0.65vw, 10px);
+    background: white;
 }
 
 .slides {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
+    display: flex;
+    transition: transform 0.4s ease-in-out;
 
 }
 
@@ -1732,11 +1733,12 @@ a.current-page span::after {
     object-fit: cover;
     display: block;
     flex-shrink: 0;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease;
+    transform: scale(1);
 }
 
-.slides img:hover{
-    scale: 1.05;
+.slides img:hover {
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -1760,6 +1762,11 @@ a.current-page span::after {
     padding: 0;
     box-sizing: border-box;
 }
+
+.slider-btn.inactive{
+    background: grey !important;
+}
+
 
 .slider-icon{
     width: 0.845vw;
@@ -1832,6 +1839,6 @@ a.current-page span::after {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  pointer-events: none; /* чтобы не мешал кликам на фон */
+  pointer-events: none;
 }
 
