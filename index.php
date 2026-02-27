@@ -6,6 +6,7 @@ define('ROOT', __DIR__);
 
 if ($path === '' || $path === 'dcote_main') {
     $pageTitle = 'Главная | DCOTE';
+    $desc = 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!';
     include __DIR__ . '/app/views/header.php';
     include __DIR__ . '/app/views/pages/dcote_main.php';
     include __DIR__ . '/app/views/footer.php';
@@ -31,6 +32,7 @@ if ($path === '' || $path === 'dcote_main') {
 
 } elseif ($path === 'news_main') {
     $pageTitle = 'Новости | DCOTE';
+    $desc = 'Новостные публикации, связанные со всеми информационными отраслями произведения. Всё об аниме, манге, ранобэ и прочем.';
     include __DIR__ . '/app/views/header.php';
     include __DIR__ . '/app/views/pages/news_main.php';
     include __DIR__ . '/app/views/footer.php';
@@ -43,6 +45,7 @@ if ($path === '' || $path === 'dcote_main') {
 
 } elseif ($path === 'about_school') {
     $pageTitle = 'Кодо Икусей | DCOTE';
+    $desc = 'Подробная информация о столичной старшей школе продвинутого воспитания. Правила, униформа, карта, база данных и не только!';
     include __DIR__ . '/app/views/header.php';
     include __DIR__ . '/app/views/pages/about_school.php';
     include __DIR__ . '/app/views/footer.php';
@@ -51,6 +54,12 @@ if ($path === '' || $path === 'dcote_main') {
     $pageTitle = 'Персонажи | DCOTE';
     include __DIR__ . '/app/views/header.php';
     include __DIR__ . '/app/views/pages/characters.php';
+    include __DIR__ . '/app/views/footer.php';
+
+} elseif ($path === 'rules') {
+    $pageTitle = 'Правила сайта | DCOTE';
+    include __DIR__ . '/app/views/header.php';
+    include __DIR__ . '/app/views/pages/rules.php';
     include __DIR__ . '/app/views/footer.php';
 
 } else {

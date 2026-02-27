@@ -1596,7 +1596,7 @@ a.current-page span::after {
     align-items: center;
 }
 
-.page-about_school h1,h3{
+.page-about_school h1, .page-about_school h3{
     text-align: center;
 }
 
@@ -1659,7 +1659,6 @@ a.current-page span::after {
 
 .page-about_school .cont-2 h3{
     text-align: left;
-
 }
 
 .page-about_school .cont-2 .classroom .text{
@@ -1694,16 +1693,7 @@ a.current-page span::after {
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* СЛАЙДЕР !!!!! */
 
 .slider-wrapper{
     display: flex;
@@ -1724,7 +1714,6 @@ a.current-page span::after {
     transition: transform 0.4s ease-in-out;
 
 }
-
 
 
 .slides img {
@@ -1751,8 +1740,8 @@ a.current-page span::after {
 .slider-btn {
     background: rgb(101, 12, 48);
     border: none;
-    width: 4.5vw;
-    height: 4.5vw;
+    width: clamp(1px,4.5vw,70px);
+    height: clamp(1px,4.5vw,70px);
     cursor: pointer;
     z-index: 10;
     border-radius: 999px;
@@ -1768,21 +1757,9 @@ a.current-page span::after {
 }
 
 
-.slider-icon{
-    width: 0.845vw;
-    height: 1.3vw;
-    fill: white;
-}
-
-.close-icon{
-    width: 2.3vw;
-    height: 2.3vw;
-    fill: white;
-}
-
-.download-icon{
-    width: 4vw;
-    height: 4vh;
+.slider-icon, .close-icon, .download-icon{
+    width: clamp(1px,2.1vw,32px);
+    height: clamp(1px,2.1vw,32px);
     fill: white;
 }
 
@@ -1802,7 +1779,7 @@ a.current-page span::after {
 }
 
 .fullscreen-modal.hidden {
-  display: none;
+    display: none;
 }
 
 #modalImage {
@@ -1816,7 +1793,6 @@ a.current-page span::after {
 .modal-close,
 .modal-nav,.modal-download {
     position: absolute;
-    background: rgb(101, 12, 48);
     border: none;
     width: 4.5vw;
     height: 4.5vw;
@@ -1834,11 +1810,29 @@ a.current-page span::after {
 
 
 .modal-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  pointer-events: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none;
 }
 
+/* СЛАЙДЕР КОНЕЦ !!!!! */
+
+
+
+
+
+.page-rules .cont-1{
+    background: linear-gradient(360deg, #0b172b,#df0e5441); 
+    border-radius: clamp(1px, 0.65vw, 10px);
+    padding:clamp(1px,1.3vw,20px);
+    gap:clamp(1px,1.95vw,30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-rules h1 {
+    text-align: center;
+}
