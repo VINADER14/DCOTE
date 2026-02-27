@@ -1,17 +1,21 @@
 <svg style="display: none;">
-<symbol id="arrow-right" viewBox="0 0 25 42">
-  <path d="M1.2206398,1.239114 C2.8026583,-0.352735 5.3436172,-0.4118333 7.0,1.0675785 L7.1590153,1.2206482 L23.1611748,17.1233571 C25.1319602,19.0819718 25.1995454,22.2312919 23.3527322,24.2754674 L23.1795659,24.4581932 L7.1590166,40.3793505 C5.51408,42.0140701 2.8553922,42.0057967 1.2206146,40.3608606 C-0.361347,38.7689547 -0.4046127,36.2276769 1.0850712,34.5838107 L1.2391492,34.4224839 L14.946,20.799 L1.2391492,7.1775161 C-0.2996625,5.6482622 -0.4061969,3.2229032 0.9247365,1.5696317 L1.0675472,1.4014262 L1.2206398,1.239114 Z"/>
+<symbol id="arrow-right" viewBox="0 0 24 24">
+     <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9 6l6 6l-6 6"/>
 </symbol>
-<symbol id="arrow-left" viewBox="0 0 25 42">
-  <path d="M23.7793602,1.239114 C22.1973417,-0.352735 19.6563828,-0.4118333 18.0,1.0675785 L17.8409847,1.2206482 L1.8388252,17.1233571 C-0.1319602,19.0819718 -0.1995454,22.2312919 1.6472678,24.2754674 L1.8204341,24.4581932 L17.8409834,40.3793505 C19.48592,42.0140701 22.1446078,42.0057967 23.7793854,40.3608606 C25.361347,38.7689547 25.4046127,36.2276769 23.9149288,34.5838107 L23.7608508,34.4224839 L10.054,20.799 L23.7608508,7.1775161 C25.2996625,5.6482622 25.4061969,3.2229032 24.0752635,1.5696317 L23.9324528,1.4014262 L23.7793602,1.239114 Z"/>
+<symbol id="arrow-left" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6"/>
 </symbol>
 <symbol id="close-cross" viewBox="0 0 24 24">
-  <path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"/>
+    <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M18 6l-12 12"/>
+    <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M6 6l12 12"/>
 </symbol>
 <symbol id="download-icon" viewBox="0 0 24 24">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill='none' stroke-width="2.5" d="M12 5v8.5m0 0l3-3m-3 3l-3-3M5 15v2a2 2 0 002 2h10a2 2 0 002-2v-2"/>
+  <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/>
+  <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M7 11l5 5l5 -5"/>
+  <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M12 4l0 12"/>
 </symbol>
 </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
 <div class="navigation-links">
             <a href="/dcote_main"><span>ГЛАВНАЯ</span></a>
             <p>/</p>
@@ -61,15 +65,23 @@
                 футболку, ветровку и кроссовки.</p></div>
                 <h3>Визуальные примеры</h3>
             <div class="slider-wrapper">
-                <div class="slider-button-wrapper"><div><button class="slider-btn prev inactive" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
+                <div class="slider-button-wrapper prev"><div><button class="slider-btn inactive" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
                 <div class="slider">
                     <div class="slides">
-                        <img src="/images/about_school/game-fullbody_ayano3.jpg" alt="Аяно 1">
-                        <img src="/images/about_school/game-fullbody_ayano7.jpg" alt="Аяно врафылвдро">
-                        <img src="/images/about_school/game-fullbody_ayano8.jpg" alt="Аяно 3">
+                        <img src="/images/about_school/game-fullbody ayano2.jpg" alt="Официальный полный комплект">
+                        <img src="/images/about_school/game-fullbody ayano7.jpg" alt="Официальный комплект без пиджака с рубашкой с длинными рукавами">
+                        <img src="/images/about_school/game-fullbody ayano3.jpg" alt="Официальный комплект без пиджака с рубашкой с короткими рукавами">
+                        <img src="/images/about_school/game-fullbody ayano1.jpg" alt="Официальный спортивный комплект">
+                        <img src="/images/about_school/game-fullbody ayano4.jpg" alt="Официальный спортивный комплект без ветровки">
+                        <img src="/images/about_school/game-fullbody ayano8.jpg" alt="Официальный комплект купальника">
+                        <img src="/images/about_school/game-fullbody horikita3.jpg" alt="Официальный полный комплект">
+                        <img src="/images/about_school/game-fullbody horikita9.jpg" alt="Официальный комплект без пиджака со свитером-жилетом">
+                        <img src="/images/about_school/game-fullbody horikita4.jpg" alt="Официальный спортивный комплект">
+                        <img src="/images/about_school/game-fullbody horikita11.jpg" alt="Официальный спортивный комплект без ветровки">
+                        <img src="/images/about_school/game-fullbody horikita10.jpg" alt="Официальный комплект купальника">
                     </div>
                 </div>
-                <div class="slider-button-wrapper"><div><button class="slider-btn next" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
+                <div class="slider-button-wrapper next"><div><button class="slider-btn" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
             </div>
         </div>
         <div class="dormitory">
@@ -89,13 +101,13 @@
                     Само общежитие удобно расположено подле общественных зон, таких, как парк или бульвар, например.
                 </p></div>
             </div>
-            <div class="image-wrappper scale-in"><img src="images/about_school/dormitory.avif" alt="Описание изображения"></div>
+            <div class="image-wrappper scale-in"><img src="/images/about_school/dormitory.avif" alt="Описание изображения"></div>
         </div>
         <div class ="cont-2 scale-in">
             <h1>ШКОЛЬНЫЙ КОМПЛЕКС</h1>
             <div class="classroom">
                 <div class="img-wrapper">
-                    <img src="images/about_school/classroom.avif" alt="кабинет">
+                    <img src="/images/about_school/classroom.avif" alt="кабинет">
                 </div>
                 <div class="text">
                     <h3>Классные комнаты</h3>
@@ -106,7 +118,7 @@
             </div>
             <div class="classroom reverse">
                 <div class="img-wrapper">
-                    <img src="images/about_school/studsoviet.webp" alt="кабинет студсовета">
+                    <img src="/images/about_school/studsoviet.webp" alt="кабинет студсовета">
                 </div>
                 <div class="text">
                     <h3>Кабинет студенческого совета</h3>
@@ -119,7 +131,7 @@
             </div>
             <div class="classroom">
                 <div class="img-wrapper">
-                    <img src="images/about_school/swimpool.webp" alt="бассейн">
+                    <img src="/images/about_school/swimpool.webp" alt="бассейн">
                 </div>
                 <div class="text">
                     <h3>Бассейн</h3>
@@ -136,7 +148,7 @@
             </div>
                 <div class="classroom reverse">
                 <div class="img-wrapper">
-                    <img src="images/about_school/biblio.webp" alt="библиотека">
+                    <img src="/images/about_school/biblio.webp" alt="библиотека">
                 </div>
                 <div class="text">
                     <h3>Библиотека</h3>
@@ -147,7 +159,7 @@
             </div>
             <div class="classroom">
                 <div class="img-wrapper">
-                    <img src="images/about_school/gimnasia.webp" alt="гимназия">
+                    <img src="/images/about_school/gimnasia.webp" alt="гимназия">
                 </div>
                 <div class="text">
                     <h3>Гимназия</h3>
@@ -160,7 +172,7 @@
             <h1>ОБЩЕСТВЕННЫЕ МЕСТА</h1>
             <div class="classroom">
                 <div class="img-wrapper">
-                    <img src="images/about_school/keyaki.webp" alt="Кеяки">
+                    <img src="/images/about_school/keyaki.webp" alt="Кеяки">
                 </div>
                 <div class="text">
                     <h3>Торговый центр «Кеяки Молл»</h3>
@@ -171,7 +183,7 @@
             </div>
             <div class="classroom reverse">
                 <div class="img-wrapper">
-                    <img src="images/about_school/pallet.webp" alt="«Паллет»">
+                    <img src="/images/about_school/pallet.webp" alt="«Паллет»">
                 </div>
                 <div class="text">
                     <h3>Кафе «Паллет»</h3>
@@ -183,7 +195,7 @@
             </div>
             <div class="classroom">
                 <div class="img-wrapper">
-                    <img src="images/about_school/sivcamera.webp" alt="Сивкамера">
+                    <img src="/images/about_school/sivcamera.webp" alt="Сивкамера">
                 </div>
                 <div class="text">
                     <h3>Магазин электроники «SIVCAMERA»</h3>
@@ -260,18 +272,18 @@
                 и мониторинга развития учащихся.<br><br>
                 Доступ к базе ограничен и предназначен исключительно для служебного использования.<br><br>
                 <i>* К сожалению, официально представлена лишь небольшая часть реестра.</i></p>
-            <!-- <div class="slider-wrapper" data-slider-id="database">
-                <div class="slider-button-wrapper"><div><button class="slider-btn prev" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
-                <div class="slider" id="mySlider">
+            <div class="slider-wrapper">
+                <div class="slider-button-wrapper prev"><div><button class="slider-btn inactive" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
+                <div class="slider">
                     <div class="slides">
-                        <img src="/images/about_school/ayanokoji-database.webp" alt="Аяно 1">
-                        <img src="/images/about_school/horikita-database.webp" alt="Аяно 2">
-                        <img src="/images/about_school/kushida-database.webp" alt="Аяно 3">
+                        <img src="/images/about_school/ayanokoji-database.webp" alt="Аянокоджи Киётака">
+                        <img src="/images/about_school/horikita-database.webp" alt="Хорикита Сузуне">
+                        <img src="/images/about_school/kushida-database.webp" alt="Кушида Кикё">
                     </div>
                 </div>
-                <div class="slider-button-wrapper"><div><button class="slider-btn next" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
+                <div class="slider-button-wrapper next"><div><button class="slider-btn " aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
             </div>
-        </div> -->
+        </div>
     </main>
     <div id="fullscreenModal" class="fullscreen-modal hidden">
         <div class="slider-button-wrapper modal-download"><div><button class="slider-btn" aria-label="Скачать"><svg class="download-icon" width="24" height="24"><use href="#download-icon"></use></svg></button></div></div>
@@ -284,97 +296,168 @@
 </body>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-    const slider = sliderWrapper.querySelector('.slider')
-    const prevBtn = sliderWrapper.querySelector('.prev');
-    const nextBtn = sliderWrapper.querySelector('.next');
-    const slidesContainer = sliderWrapper.querySelector('.slides')
-    let currentIndex=0;
+    function initSlider(sliderWrapper){
+        const slider = sliderWrapper.querySelector('.slider')
+    const prevBtn = sliderWrapper.querySelector('.prev .slider-btn');
+    const nextBtn = sliderWrapper.querySelector('.next .slider-btn');
+        const slidesContainer = sliderWrapper.querySelector('.slides')
+        let currentIndex=0;
+        const totalSlides = slidesContainer.children.length;
+        const slideImages = slidesContainer.querySelectorAll('img');
+
+        nextBtn.addEventListener('click',() =>{
+            if(currentIndex< totalSlides-1) {
+                currentIndex++;
+                updateSlider();
+                prevBtn.classList.remove('inactive');
+                nextBtn.classList.remove('inactive');
+                if(currentIndex===totalSlides-1){
+                nextBtn.classList.add('inactive');
+                }
+            } 
+        });
+
+        prevBtn.addEventListener('click',() =>{
+            if(currentIndex>0) {
+                prevBtn.classList.remove('inactive');
+                nextBtn.classList.remove('inactive');
+                currentIndex--;
+                updateSlider();
+                if(currentIndex===0){
+                prevBtn.classList.add('inactive');
+                }
+            }
+        });
+        
+        function updateSlider() {
+            const offset = slider.offsetWidth;
+            slidesContainer.style.transform = `translateX(${-currentIndex* offset}px)`
+        }
+
+        slider.addEventListener('click',() =>{
+            openModal(currentIndex,slideImages)
+        });
+    }
+
     const fcModal = document.getElementById('fullscreenModal')
     const closeBtn = fcModal.querySelector('.modal-close')
     const modalPrevBtn = fcModal.querySelector('.prev .slider-btn');
     const modalNextBtn = fcModal.querySelector('.next .slider-btn');
-    const slideImages = slidesContainer.querySelectorAll('img');
     let modalIndex
+    const modalDownloadBtn = fcModal.querySelector('.modal-download');
+    const modalImage = document.getElementById('modalImage');
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let currentSlideImages = [];
+    const modalCaption = document.querySelector('.modal-caption');
 
-
-    const totalSlides = slidesContainer.children.length;
-    function updateSlider() {
-        const offset = slider.offsetWidth;
-        slidesContainer.style.transform = `translateX(${-currentIndex* offset}px)`
+    function openModal(currentIndex,slideImages){
+        modalIndex = currentIndex;
+        currentSlideImages = slideImages;
+        fcModal.classList.remove('hidden')
+        updateModalImage();
+        disableScroll();
     }
 
-    modalNextBtn.addEventListener('click',() =>{
-        if(modalIndex< slideImages.length-1){
-            modalIndex++
-            const currentImg = slideImages[modalIndex];
-            document.getElementById('modalImage').src = currentImg.src;
-            document.querySelector('.modal-caption').textContent = currentImg.alt;
-            modalPrevBtn.classList.remove('inactive');
-            modalNextBtn.classList.remove('inactive');
-            if (modalIndex===slideImages.length-1){
-                modalNextBtn.classList.add('inactive');
-            }
+    function nextSlideInModal() {
+        if (modalIndex < currentSlideImages.length - 1) {
+            modalIndex++;
+            updateModalImage();
         }
+    }
+
+    function prevSlideInModal() {
+        if (modalIndex > 0) {
+            modalIndex--;
+            updateModalImage();
+        }
+    }
+
+    function updateModalImage() {
+        const img = currentSlideImages[modalIndex];
+        modalImage.src = img.src;
+        modalCaption.textContent = img.alt;
+        modalPrevBtn.classList.toggle('inactive', modalIndex === 0);
+        modalNextBtn.classList.toggle('inactive', modalIndex === currentSlideImages.length - 1);
+    }
+
+    modalImage.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
     });
+
+    modalImage.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+
+    function handleSwipe() {
+        const minSwipeDistance = 50;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) < minSwipeDistance) return;
+        if (diff > 0) {
+            nextSlideInModal();
+        } else {
+            prevSlideInModal();
+        }
+    }
+
+
+    modalDownloadBtn.addEventListener('click', () => {
+        const img = document.getElementById('modalImage');
+        const imageUrl = img.src;
+        const link = document.createElement('a');
+        link.href = imageUrl;
+        const fileName = imageUrl.split('/').pop().split('?')[0] || 'image.jpg';
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+
+
+    modalNextBtn.addEventListener('click',() =>{
+        nextSlideInModal();
+    });
+
 
     modalPrevBtn.addEventListener('click',() =>{
-        if(modalIndex>0){
-            modalIndex--
-            const currentImg = slideImages[modalIndex];
-            document.getElementById('modalImage').src = currentImg.src;
-            document.querySelector('.modal-caption').textContent = currentImg.alt;
-            modalPrevBtn.classList.remove('inactive');
-            modalNextBtn.classList.remove('inactive');
-            if (modalIndex===0){
-                modalPrevBtn.classList.add('inactive');
-            }
+        prevSlideInModal();
+    });
+
+
+    document.addEventListener('keydown', (e) => {
+        if (fcModal.classList.contains('hidden')) return;
+
+        if (e.key === 'Escape') {
+            closeModal();
+        } else if (e.key === 'ArrowRight') {
+            nextSlideInModal();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlideInModal();
         }
     });
 
-    slider.addEventListener('click',() =>{
-        modalIndex = currentIndex;
-        const currentImg = slideImages[modalIndex];
-        if (modalIndex===slideImages.length-1){
-            modalNextBtn.classList.add('inactive');
-        };
-        if (modalIndex===0){
-            modalPrevBtn.classList.add('inactive');
-        }
-        fcModal.classList.remove('hidden')
-        document.getElementById('modalImage').src = currentImg.src;
-        document.querySelector('.modal-caption').textContent = currentImg.alt;
-        disableScroll()
-    });
 
     closeBtn.addEventListener('click',() =>{
-        fcModal.classList.add('hidden')
-        enableScroll()
+        closeModal();
     });
 
-    nextBtn.addEventListener('click',() =>{
-        if(currentIndex< totalSlides-1) {
-            currentIndex++;
-            updateSlider();
-            prevBtn.classList.remove('inactive');
-            nextBtn.classList.remove('inactive');
-            if(currentIndex===totalSlides-1){
-            nextBtn.classList.add('inactive');
-            }
-        } 
-    });
-
-    prevBtn.addEventListener('click',() =>{
-        if(currentIndex>0) {
-            prevBtn.classList.remove('inactive');
-            nextBtn.classList.remove('inactive');
-            currentIndex--;
-            updateSlider();
-            if(currentIndex===0){
-            prevBtn.classList.add('inactive');
-            }
+    fcModal.addEventListener('click', (event) => {
+        if (event.target === fcModal) {
+            closeModal();
         }
     });
+
+    function closeModal() {
+        fcModal.classList.add('hidden');
+        enableScroll();
+        modalPrevBtn.classList.remove('inactive');
+        modalNextBtn.classList.remove('inactive');
+    }
+
+
+
 
     function disableScroll() {
         document.addEventListener('wheel', blockDefault, {passive:false});
@@ -399,7 +482,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
+    document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+        initSlider(wrapper);
+    });
 
 
 });

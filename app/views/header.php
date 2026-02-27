@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
-    <link rel="stylesheet" href="/css/style.css?v=22">
+    <link rel="stylesheet" href="/css/style.css?v=24">
+    <meta name="description" content=<?= $desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!'?>>
 </head>
 <body>
     <svg style="display: none;">
