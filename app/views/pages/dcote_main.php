@@ -51,7 +51,7 @@
                         Сам кампус располагается на отдельном, искусственно сконструированном острове, площадь которого составляет около
                         шестиста тысяч квадратных метров.</p>
                     <div class="button">
-                        <button class="tg-btn" onclick="window.location.href='/about_school'">БОЛЬШЕ ИНФОРМАЦИИ</button>
+                        <button class="tg-btn" onclick="window.location.href='/about-school'">БОЛЬШЕ ИНФОРМАЦИИ</button>
                     </div>
                 </div>
             </div>

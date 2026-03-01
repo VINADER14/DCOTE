@@ -23,7 +23,9 @@
     src: url('/fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
 }
 
-
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 :root {
     --fs-title1: clamp(5px, 2.75vw, 42px);
@@ -94,10 +96,11 @@ button:hover {
     border-color: rgb(143, 17, 68);
 }
 
-body {
+body, html {
+    width: 100%;
     margin: 0;
     padding: 0;
-    height: 100%; 
+    overflow-x: hidden;
 }
 
 
@@ -121,7 +124,7 @@ main {
     gap: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
 }
 
 
@@ -719,7 +722,7 @@ a.current-page span::after {
     gap:clamp(1px,0.65vw,10px)
 }
 
-.page-dcote_main .description-text h2 {
+.page-dcote_main .description-text h1 {
     margin: 0px;
     text-align: center;
 }
@@ -1831,8 +1834,87 @@ a.current-page span::after {
     gap:clamp(1px,1.95vw,30px);
     display: flex;
     flex-direction: column;
+
 }
 
 .page-rules h1 {
     text-align: center;
+}
+
+
+.page-about_project .main-title{
+    text-align: center;
+}
+
+.page-about_project .text-wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.page-about_project .text{
+    width: 80%;
+    padding: clamp(1px, 1.3vw, 20px);
+    background: linear-gradient(360deg, #0b172b,#df0e5441); 
+    border-radius: clamp(1px, 0.65vw, 10px);
+    margin-left: -15%; /* ← половина ширины картинки */
+    padding-left: calc(15% + clamp(1px, 1.3vw, 20px));
+    position: relative;
+    z-index: 1;
+    height: clamp(1px,29.25vw,450px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px,1.3vw,20px);
+}
+
+.page-about_project .text .desc{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px,0.65vw,10px);;
+}
+
+.page-about_project .text .title{
+    text-align: center;
+}
+
+.page-about_project .img-wrapper{
+    width: 30%;
+    height: clamp(250px, 39vw, 600px);
+
+    position: relative;
+    z-index: 2; /* Выше фона */
+}
+
+.page-about_project .img-wrapper img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+} 
+
+.page-about_project .text-wrapper.reverse{
+    flex-direction: row-reverse;
+}
+
+.page-about_project .text-wrapper.reverse .text{
+    width: 80%;
+    padding: clamp(15px, 1.3vw, 20px);
+    border-radius: clamp(1px, 0.65vw, 10px);
+    background: linear-gradient(360deg, #0b172b,#df0e5441);
+    margin-right: -15%;
+    padding-right: calc(15% + clamp(1px, 1.3vw, 20px));
+    position: relative;
+    z-index: 1;
+}
+
+.page-about_project .text-wrapper.reverse .text .desc{
+    text-align: end;
+}
+
+.page-about_project .text-wrapper .text .quote{
+    margin-top: auto;
+    text-align: right;
+}
+.page-about_project .text-wrapper.reverse .text .quote{
+    margin-top: auto;
+    text-align: left;
 }

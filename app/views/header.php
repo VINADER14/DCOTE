@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
-    <link rel="stylesheet" href="/css/style.css?v=26">
+    <link rel="stylesheet" href="/css/style.css?v=30">
     <meta name="description" content="<?= htmlspecialchars($desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!') ?>">
 </head>
 <body>
@@ -74,7 +74,7 @@
             <a href="/manga"><span>МАНГА</span></a>
             <a href="/illustrations"><span>ИЛЛЮСТРАЦИИ</span></a>
             <a href="/characters"><span>ПЕРСОНАЖИ</span></a>
-            <a href="/project"><span>О ПРОЕКТЕ</span></a>
+            <a href="/about-project"><span>О ПРОЕКТЕ</span></a>
         </div>
         <div class="right">
             <button class="login-btn scale-in" onclick="window.location.href='/login'">ВОЙТИ</button>

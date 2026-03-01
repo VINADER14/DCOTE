@@ -43,11 +43,11 @@ if ($path === '' || $path === 'dcote_main') {
     include __DIR__ . '/app/views/pages/illustrations.php';
     include __DIR__ . '/app/views/footer.php';
 
-} elseif ($path === 'about_school') {
+} elseif ($path === 'about-school') {
     $pageTitle = 'Кодо Икусей | DCOTE';
     $desc = 'Подробная информация о столичной старшей школе продвинутого воспитания. Правила, униформа, карта, база данных и не только!';
     include __DIR__ . '/app/views/header.php';
-    include __DIR__ . '/app/views/pages/about_school.php';
+    include __DIR__ . '/app/views/pages/about-school.php';
     include __DIR__ . '/app/views/footer.php';
 
 } elseif ($path === 'characters') {
@@ -62,10 +62,16 @@ if ($path === '' || $path === 'dcote_main') {
     include __DIR__ . '/app/views/pages/rules.php';
     include __DIR__ . '/app/views/footer.php';
 
+} elseif ($path === 'about-project') {
+    $pageTitle = 'О проекте | DCOTE';
+    include __DIR__ . '/app/views/header.php';
+    include __DIR__ . '/app/views/pages/about-project.php';
+    include __DIR__ . '/app/views/footer.php';
+
 } else {
     http_response_code(404);
     $pageTitle = '';
     include __DIR__ . '/app/views/header.php';
-    include __DIR__ . '/app/views/pages/page_404.php';
+    include __DIR__ . '/app/views/pages/page-404.php';
     include __DIR__ . '/app/views/footer.php';
 }
