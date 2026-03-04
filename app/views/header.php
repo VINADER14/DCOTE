@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
-    <link rel="stylesheet" href="/css/style.css?v=37">
+    <link rel="stylesheet" href="/css/style.css?v=40">
     <meta name="description" content="<?= htmlspecialchars($desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!') ?>">
 </head>
 <body>
@@ -27,6 +27,9 @@
         d="M536.06,376.08h-96c-35.35,0-64,28.65-64,64v96c0,35.35,28.65,64,64,64h96c35.35,0,64-28.65,64-64v-96c0-35.35-28.65-64-64-64Z"/>
         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48"
         d="M184.06,376.08h-96c-35.35,0-64,28.65-64,64v96c0,35.35,28.65,64,64,64h96c35.35,0,64-28.65,64-64v-96c0-35.35-28.65-64-64-64Z"/>
+    </symbol>
+    <symbol id="dropdown" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M18 10l-6 6l-6 -6"/>
     </symbol>
     <symbol id="tg-logo" viewBox="0 0 512 512">
     <rect width="512" height="512" rx="15%" fill="#df0e53"/>

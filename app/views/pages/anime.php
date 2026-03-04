@@ -11,10 +11,10 @@
         <main class="page-anime">
             <div class="cont scale-in">
                 <div class="image-wrapper">
-                    <img fetchpriority="high" decoding="async" src="/images/anime/anime-banner season-4.avif">
+                    <img fetchpriority="high" decoding="async" src="/images/anime/anime-banner season-4.webp">
                 </div>
                 <div class="desc slide-in-left">
-                    <h1>4 СЕЗОН</h1>
+                    <div class="head"><h1>4 СЕЗОН</h1>
                     <div class="rating">
                         <div class="rating-popup hidden">
                             <div class="popup-stars">
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><h3>9</h3></div><p>150 оценок</p>
-                    </div>
+                    </div></div>
                     <div class="info-block">
                         <div class="left-column"><p><b>Статус сериала:</b></p><p><b>Сезон:</b></p></div>
                         <div class="right-column"><p class="yellow">Анонс</p><p>Весна 2026</p></div>
@@ -42,20 +42,20 @@
                     </div>
                     <div class="info-block">
                         <div class="left-column"><p><b>Кол-во серий:</b></p><p><b>Последнее обновление:</b></p></div>
-                        <div class="right-column"><p>13</p><p>1 марта 2026</p></div>
+                        <div class="right-column"><p>16</p><p>1 марта 2026</p></div>
                     </div>
-                    <p><b>Выпущено:</b> 0 из 13 серий</p>
+                    <p><b>Выпущено:</b> 0 из 16 серий</p>
                     <div class="progress-bar"></div>
-                    <button>ДОБАВИТЬ В</button>
+                    <button class="dropdown-btn" aria-expanded="false">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30"><use href="#dropdown"></use></svg></button>
                     <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button>СТРАНИЦА СЕЗОНА</button></div>
                 </div>
             </div>
             <div class="cont scale-in">
                 <div class="image-wrapper">
-                    <img fetchpriority="high" decoding="async" src="/images/anime/anime-banner season-3.avif">
+                    <img fetchpriority="high" decoding="async" src="/images/anime/anime-banner season-3.webp">
                 </div>
                 <div class="desc slide-in-left">
-                    <h1>3 СЕЗОН</h1>
+                    <div class="head"><h1>3 СЕЗОН</h1>
                     <div class="rating">
                         <div class="rating-popup hidden">
                             <div class="popup-stars">
@@ -72,6 +72,7 @@
                             </div>
                         </div>
                         <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><h3>9</h3></div><p>150 оценок</p>
+                    </div>
                     </div>
                     <div class="info-block">
                         <div class="left-column"><p><b>Статус сериала:</b></p><p><b>Сезон:</b></p></div>
@@ -93,10 +94,10 @@
             </div>
             <div class="cont scale-in">
                 <div class="image-wrapper">
-                    <img loading="lazy"decoding="async" src="/images/anime/anime-banner season-2.avif">
+                    <img loading="lazy"decoding="async" src="/images/anime/anime-banner season-2.webp">
                 </div>
                 <div class="desc slide-in-left">
-                    <h1>2 СЕЗОН</h1>
+                    <div class="head"><h1>2 СЕЗОН</h1>
                     <div class="rating">
                         <div class="rating-popup hidden">
                             <div class="popup-stars">
@@ -113,6 +114,7 @@
                             </div>
                         </div>
                         <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><h3>9</h3></div><p>150 оценок</p>
+                    </div>
                     </div>
                     <div class="info-block">
                         <div class="left-column"><p><b>Статус сериала:</b></p><p><b>Сезон:</b></p></div>
@@ -134,10 +136,10 @@
             </div>
             <div class="cont scale-in">
                 <div class="image-wrapper">
-                    <img loading="lazy"decoding="async" src="/images/anime/anime-banner season-1.avif">
+                    <img loading="lazy"decoding="async" src="/images/anime/anime-banner season-1.webp">
                 </div>
                 <div class="desc slide-in-left">
-                    <h1>1 СЕЗОН</h1>
+                    <div class="head"><h1>1 СЕЗОН</h1>
                     <div class="rating">
                         <div class="rating-popup hidden">
                             <div class="popup-stars">
@@ -154,6 +156,7 @@
                             </div>
                         </div>
                         <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><h3>9</h3></div><p>150 оценок</p>
+                    </div>
                     </div>
                     <div class="info-block">
                         <div class="left-column"><p><b>Статус сериала:</b></p><p><b>Сезон:</b></p></div>
@@ -173,13 +176,15 @@
                     <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button>СТРАНИЦА СЕЗОНА</button></div>
                 </div>
             </div>
+<ul class="dropdown-list hidden">
+    <li><p>Вариант 1</p></li>
+    <li><p>Вариант 2</p></li>
+    <li><p>Вариант 3</p></li>
+</ul>
 </main>
 </body>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-
-
-
     function initPopup(rating) {
         const popupWindow = rating.querySelector('.rating-popup')
         const ratingBtnForPopup = rating.querySelector('.rating-btn-for-popup')
@@ -219,17 +224,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 highlightStars(selectedRating);
             });
             star.addEventListener('click', () => {
-                selectedRating = +star.dataset.rating;
-                highlightStars(selectedRating);
-                console.log('Выбрана оценка:', selectedRating);
-                // сервер
-                ratingBtnForPopup.classList.add('active_long');
-            });
+                const clickedRating = +star.dataset.rating;
+                if (clickedRating === selectedRating) {
+                    selectedRating = 0;
+                    highlightStars(0);
+                    ratingBtnForPopup.classList.remove('active_long');
+                    console.log('Оценка сброшена');
+                } else {
+                    selectedRating = clickedRating;
+                    highlightStars(selectedRating);
+                    ratingBtnForPopup.classList.add('active_long');
+                }
+                    });
         });
     }
 
     document.querySelectorAll('.rating').forEach(rating => {
         initPopup(rating);
+    });
+
+    const button = document.querySelector('.dropdown-btn');
+    const dropdown = document.querySelector('.dropdown-list');
+
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const rect = button.getBoundingClientRect();
+        dropdown.style.top = rect.bottom + window.scrollY + 'px';
+        dropdown.style.left = rect.left + window.scrollX + 'px';
+        dropdown.style.width = `${button.offsetWidth}px`; 
+        dropdown.classList.toggle('hidden');
+        button.classList.toggle('active');
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !expanded);
+        });
+
+        // Закрытие при клике вне
+        document.addEventListener('click', () => {
+            dropdown.classList.add('hidden');
+            button.setAttribute('aria-expanded', false);
+            button.classList.remove('active');
     });
 })
 </script>

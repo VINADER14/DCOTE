@@ -1813,8 +1813,8 @@ a.current-page span::after {
     transition: 0.3s ease;
 }
 
-.fullscreen-modal.hidden {
-    display: none;
+.hidden {
+    display: none !important;
 }
 
 #modalImage {
@@ -1969,20 +1969,25 @@ a.current-page span::after {
     text-align: left;
 }
 
+
+
+
+
+
+
 .page-anime .cont{
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 85%;
     border-radius: clamp(1px, 0.65vw, 10px);
     overflow: hidden;
     align-self: center;
 }
 
 .page-anime .cont .image-wrapper{
-    width: 45%;
+    width: 41%;
     object-fit: cover;
     overflow: hidden;
-    flex-shrink: 0;
     z-index: 5;
 }
 
@@ -1991,23 +1996,30 @@ a.current-page span::after {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    aspect-ratio: 1 / 1.385;
 }
 
 .page-anime .cont .desc{
-    width: 55%;
+    width: 59%;
     background: linear-gradient(270deg, #0b172b, #df0e5441);
     padding: clamp(15px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:clamp(15px, 1.3vw, 20px);
+    gap:clamp(1px, 1.3vw, 20px);
+}
+
+.page-anime .cont .desc .head{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1px, 0.65vw, 10px);
 }
 
 .page-anime .cont .desc .info-block{
     border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
     border-radius: clamp(1px, 0.65vw, 10px);
     display: flex;
-    width: 75%;
+    width: 65%;
 }
 
 .page-anime .cont .desc .info-block .left-column{
@@ -2051,7 +2063,7 @@ a.current-page span::after {
     justify-content: center;
     height: clamp(1px, 1.3vw, 20px);
     border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
-    width: 75%;
+    width: 65%;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -2083,6 +2095,7 @@ a.current-page span::after {
 
 .page-anime .cont .desc .rating{
     position: relative;
+    text-align: center;
 }
 
 .page-anime .cont .desc .rating-btn-for-popup.active,.page-anime .cont .desc .rating-btn.active,.page-anime .cont .desc .rating-btn-for-popup.active_long{
@@ -2101,13 +2114,11 @@ a.current-page span::after {
     border-radius: clamp(1px, 0.65vw, 10px);
 }
 
-.page-anime .cont .desc .rating .hidden{
-    display: none;
-}
 
 .page-anime .cont .desc .rating .star-and-number{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .page-anime .cont .desc .rating .star-icon{
@@ -2120,4 +2131,47 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     gap: clamp(1px, 0.325vw, 5px);;
+}
+
+.page-anime .dropdown-icon{
+    width: clamp(1px, 1.3vw, 20px);
+    height: clamp(1px, 1.3vw, 20px);
+    display: block;
+}
+
+.page-anime .dropdown-btn{
+    display: flex;
+    gap: clamp(1px, 0.195vw, 3px);
+    align-items: center;
+    position: relative;
+}
+
+.dropdown-list {
+    position: absolute;
+    transform: translateY(clamp(5px, 0.65vw, 10px));
+    left: 0;
+    margin: 0;
+    background: linear-gradient(360deg, #0b172b, #331635);
+    border-radius: clamp(1px, 0.65vw, 10px);
+    z-index: 1000;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.dropdown-list li:hover{
+    background-color: rgb(143, 17, 68);
+}
+
+.dropdown-list li{
+    padding-inline: clamp(15px, 1.3vw, 20px);
+    padding-block: clamp(5px, 0.65vw, 10px);
+    transition: 0.3s;
+}
+
+.page-anime .dropdown-btn.active{
+    background-color: rgb(143, 17, 68);
+    border-color: rgb(143, 17, 68);
 }
