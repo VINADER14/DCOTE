@@ -4,12 +4,12 @@
             <a class="current-page" href="/about-project"><span>О ПРОЕКТЕ</span></a>
         </div>
     <main class="page-about_project">
-        <h1 class="main-title">КОМАНДА ПРОЕКТА</h1>
-        <div class="text-wrapper">
+        <h1 class="main-title scale-in">КОМАНДА ПРОЕКТА</h1>
+        <div class="text-wrapper scale-in">
             <div class="img-wrapper">   
-                <img src="/images/about-project/game-banner hiyori2.webp" alt="Хиери Шиина">
+                <img fetchpriority="high" decoding="async" src="/images/about-project/game-banner hiyori2.webp" alt="Хиери Шиина">
             </div>
-            <div class="text">
+            <div class="text slide-in-left">
                 <div class="title"><h1>Andrey Andreev</h1>
                 <p>веб-дизайнер, контент-куратор</p></div>
                 <div class="desc"><h3>Деятельность:</h3>
@@ -19,11 +19,11 @@
                 <p class="quote">Цитата: «Я дизайнер и я хочу, чтобы всё было идеально симметрично и красиво».</p>
             </div>
         </div>
-        <div class="text-wrapper reverse">
+        <div class="text-wrapper scale-in reverse">
             <div class="img-wrapper">   
-                <img src="/images/about-project/game-banner horikita5.webp" alt="Хорикита Сузуне">
+                <img fetchpriority="high" decoding="async" src="/images/about-project/game-banner horikita5.webp" alt="Хорикита Сузуне">
             </div>
-            <div class="text">
+            <div class="text slide-in-right">
                 <div class="title"><h1>MrEgor4ik</h1>
                 <p>full-stack разработчик</p></div>
                 <div class="desc"><h3>Деятельность:</h3>
@@ -34,6 +34,65 @@
                 - Владение и администрирование домена проекта.
                 </p></div>
                 <p class="quote">Цитата: «Вообще я хотел заниматься только бекендом, но судьба распорядилась иначе, теперь я мастер на все руки. Дизайнер кстати ахуел».</p>
+            </div>
+        </div>
+        <div class="text-wrapper scale-in">
+            <div class="img-wrapper">   
+                <img loading="lazy"decoding="async" src="/images/about-project/game-banner katsuragi2.webp" alt="Кацураги Кохэй">
+            </div>
+            <div class="text slide-in-left">
+                <div class="title"><h1>Эйнштейн</h1>
+                <p>контент-менеджер</p></div>
+                <div class="desc"><h3>Деятельность:</h3>
+                <p>- Поиск материалов и источников для заполнения информации и контента;<br><br>
+                    - Ручное написание альфа-версий текстового контента;<br><br>
+                    - Участие в проработке UI/UX аспектах.</p></div>
+                <p class="quote">Цитата: «Этот контент был создан специально для тебя».</p>
+            </div>
+        </div>
+        <div class="text-wrapper scale-in reverse">
+            <div class="img-wrapper">   
+                <img loading="lazy"decoding="async" src="/images/about-project/game-banner karuizawa2.webp" alt="Каруидзава Кей">
+            </div>
+            <div class="text slide-in-right">
+                <div class="title"><h1>TemZz</h1>
+                <p>маркетолог, SMM-специалист</p></div>
+                <div class="desc"><h3>Деятельность:</h3>
+                <p>
+                    - Формирование и организация команды для разработки проекта;<br><br>
+                    - Работа с продвижением сайта через активные медиа-ресурсы;<br><br>
+                    - Обсуждение и принятие ключевых аспектов тех или иных отраслей сайта.
+                </p></div>
+                <p class="quote">Цитата: «Наконец наступил тот миг, когда я могу сделать каминг аут».</p>
+            </div>
+        </div>
+        <div class="text-wrapper scale-in">
+            <div class="img-wrapper">   
+                <img loading="lazy"decoding="async" src="/images/about-project/game-banner ryuen1.webp" alt="Рьюен Какеру">
+            </div>
+            <div class="text slide-in-left">
+                <div class="title"><h1>Popcorn</h1>
+                <p>концепт-автор</p></div>
+                <div class="desc"><h3>Деятельность:</h3>
+                <p>- Создание альфа версии визуальной части сайта. Формирование концепта идеи и её вектора;<br><br>
+                    - Поиск материалов и источников для заполнения
+                    информации и контента.</p></div>
+                <p class="quote">Цитата: «-».</p>
+            </div>
+        </div>
+        <div class="text-wrapper scale-in reverse">
+            <div class="img-wrapper">   
+                <img loading="lazy"decoding="async" src="/images/about-project/game-banner kanzaki3.webp" alt="Канзаки Рюджи">
+            </div>
+            <div class="text slide-in-right">
+                <div class="title"><h1>Vinader</h1>
+                <p>веб-разработчик</p></div>
+                <div class="desc"><h3>Деятельность:</h3>
+                <p>
+                - Акцент на работе с фронтэнд частью сайта;<br><br>
+                - Обсуждение и принятие ключевых аспектов тех или иных отраслей сайта.
+                </p></div>
+                <p class="quote">Цитата: «-».</p>
             </div>
         </div>
     </main>

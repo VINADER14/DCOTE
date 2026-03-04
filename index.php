@@ -68,6 +68,12 @@ if ($path === '' || $path === 'dcote_main') {
     include __DIR__ . '/app/views/pages/about-project.php';
     include __DIR__ . '/app/views/footer.php';
 
+} elseif ($path === 'anime') {
+    $pageTitle = 'Аниме | DCOTE';
+    include __DIR__ . '/app/views/header.php';
+    include __DIR__ . '/app/views/pages/anime.php';
+    include __DIR__ . '/app/views/footer.php';
+
 } else {
     http_response_code(404);
     $pageTitle = '';
