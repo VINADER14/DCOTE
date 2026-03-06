@@ -2074,6 +2074,12 @@ a.current-page span::after {
 .page-anime .cont .desc .progress-bar::after {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 18.75%;
+    height: 100%;
+    background-color: rgba(229, 11, 84, 0.5);
+    border-radius: clamp(1px, 0.65vw, 10px);
 }
 
 .page-anime .cont .desc .rating-btn-for-popup,.page-anime .cont .desc .rating-btn {
@@ -2169,6 +2175,9 @@ a.current-page span::after {
     padding-inline: clamp(15px, 1.3vw, 20px);
     padding-block: clamp(5px, 0.65vw, 10px);
     transition: 0.3s;
+    cursor:default;
+    display: flex;
+    justify-content: center;
 }
 
 .page-anime .dropdown-btn.active{

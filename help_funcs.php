@@ -1,5 +1,4 @@
 <?php
-require 'config.php';
 
 
 function execute_query($query, $params=null, $fetch=false, $save=false) {

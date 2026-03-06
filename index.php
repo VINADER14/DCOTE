@@ -3,6 +3,9 @@
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $path = trim($path, '/');
 define('ROOT', __DIR__);
+require ROOT . '/app/config/config.php';
+require ROOT . '/help_funcs.php';
+
 
 if ($path === '' || $path === 'dcote_main') {
     $pageTitle = 'Главная | DCOTE';
