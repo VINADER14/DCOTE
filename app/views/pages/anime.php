@@ -1,5 +1,5 @@
 <?php
-$seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch:'all');
+$seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch:'all'); 
 ?>
 <svg style="display: none;">
 <symbol id="star" viewBox="0 0 24 24">
@@ -12,8 +12,11 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
             <a class="current-page" href="/anime"><span>АНИМЕ</span></a>
         </div>
         <main class="page-anime">
-            <?php foreach ($seasons_list as $season): ?>
-            <div class="cont scale-in">
+<?php foreach ($seasons_list as $season): ?>
+    <?php $total = (int)$season['number_of_episodes'];
+    $released = (int)$season['number_of_realese_episodes'];
+    $percent = ($total > 0) ? min(100, round(($released / $total) * 100, 2)) : 0;?>
+            <div class="cont scale-in" data-season=" <?=(int)$season['season_number'] ?>">
                 <div class="image-wrapper">
                     <img src="<?=e($season['img_src'])?>">
                 </div>
@@ -49,100 +52,117 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
                         <div class="right-column"><p><?=e($season['number_of_episodes'])?></p><p><?=e($season['last_update'])?></p></div>
                     </div>
                     <p><b>Выпущено:</b> <?=e($season['number_of_realese_episodes'])?> из <?=e($season['number_of_episodes'])?> серий</p>
-                    <div class="progress-bar"></div>
+                    <div class="progress-bar" style="--progress-width: <?= $percent ?>%"></div>
                     <button class="dropdown-btn" aria-expanded="false">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30"><use href="#dropdown"></use></svg></button>
                     <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button>СТРАНИЦА СЕЗОНА</button></div>
                 </div>
             </div>
-        <?php endforeach; ?>
+<?php endforeach; ?>
 <ul class="dropdown-list hidden">
-    <li><p>Вариант 1</p></li>
-    <li><p>Вариант 2</p></li>
-    <li><p>Вариант 3</p></li>
+    <li><p>Смотрю</p></li>
+    <li><p>Брошеное</p></li>
+    <li><p>Любимое</p></li>
 </ul>
 </main>
 </body>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    function initPopup(rating) {
-        const popupWindow = rating.querySelector('.rating-popup')
-        const ratingBtnForPopup = rating.querySelector('.rating-btn-for-popup')
-        const starsContainer = rating.querySelector('.popup-stars');
+    const ratingPopups = document.querySelectorAll('.rating');
+    ratingPopups.forEach(rating => {
+        const popupWindow = rating.querySelector('.rating-popup');
+        const ratingBtnForPopup = rating.querySelector('.rating-btn-for-popup');
         const stars = rating.querySelectorAll('.rating-btn');
-        let selectedRating = 0
+        let selectedRating = 0;
 
-        ratingBtnForPopup.addEventListener('click', () => {
+        ratingBtnForPopup.addEventListener('click', (e) => {
+            e.stopPropagation();
             popupWindow.classList.toggle('hidden');
             ratingBtnForPopup.classList.toggle('active');
         });
 
-        document.addEventListener('click', (event) => {
-            if (!popupWindow.classList.contains('hidden')) {
-                const isClickInsidePopup = popupWindow.contains(event.target);
-                const isClickOnTrigger = event.target.closest('.rating-btn-for-popup');
-                if (!isClickInsidePopup && !isClickOnTrigger) {
-                    popupWindow.classList.add('hidden');
-                    ratingBtnForPopup.classList.remove('active');
-                }
-            }
-        });
-
         function highlightStars(upTo) {
             stars.forEach(star => {
-                const rating = +star.dataset.rating;
-                star.classList.toggle('active', rating <= upTo);
+                const starRating = +star.dataset.rating;
+                star.classList.toggle('active', starRating <= upTo);
             });
         }
 
         stars.forEach(star => {
-            star.addEventListener('mouseenter', () => {
-                const rating = +star.dataset.rating;
-                highlightStars(rating);
-            });
-            star.addEventListener('mouseleave', () => {
-                highlightStars(selectedRating);
-            });
+            star.addEventListener('mouseenter', () => highlightStars(+star.dataset.rating));
+            star.addEventListener('mouseleave', () => highlightStars(selectedRating));
             star.addEventListener('click', () => {
                 const clickedRating = +star.dataset.rating;
                 if (clickedRating === selectedRating) {
                     selectedRating = 0;
                     highlightStars(0);
                     ratingBtnForPopup.classList.remove('active_long');
-                    console.log('Оценка сброшена');
                 } else {
                     selectedRating = clickedRating;
                     highlightStars(selectedRating);
                     ratingBtnForPopup.classList.add('active_long');
                 }
-                    });
+            });
+        });
+    });
+
+
+    document.addEventListener('click', (e) => {
+        ratingPopups.forEach(rating => {
+            const popup = rating.querySelector('.rating-popup');
+            const btn = rating.querySelector('.rating-btn-for-popup');
+            if (!popup.classList.contains('hidden')) {
+                const isInside = popup.contains(e.target);
+                const isOnTrigger = e.target.closest('.rating-btn-for-popup');
+                if (!isInside && !isOnTrigger) {
+                    popup.classList.add('hidden');
+                    btn.classList.remove('active');
+                }
+            }
+        });
+    });
+
+
+
+    const globalDropdown = document.querySelector('.dropdown-list');
+    let currentDdButton = null;
+    
+    if (globalDropdown) {
+        document.querySelectorAll('.dropdown-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                if (currentDdButton && currentDdButton !== button) {
+                    globalDropdown.classList.add('hidden');
+                    currentDdButton.classList.remove('active');
+                    currentDdButton.setAttribute('aria-expanded', 'false');
+                }
+                const rect = button.getBoundingClientRect();
+                globalDropdown.style.top = rect.bottom + window.scrollY + 'px';
+                globalDropdown.style.left = rect.left + window.scrollX + 'px';
+                globalDropdown.style.width = `${button.offsetWidth}px`;
+                
+                const isHidden = globalDropdown.classList.toggle('hidden');
+                button.classList.toggle('active');
+                button.setAttribute('aria-expanded', !isHidden);
+                currentDdButton = isHidden ? null : button;
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            const clickedBtn = e.target.closest('.dropdown-btn');
+            
+            if (!clickedBtn && !globalDropdown.contains(e.target) && !globalDropdown.classList.contains('hidden')) {
+                globalDropdown.classList.add('hidden');
+                
+                document.querySelectorAll('.dropdown-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+                
+                currentDdButton = null;
+            }
         });
     }
-
-    document.querySelectorAll('.rating').forEach(rating => {
-        initPopup(rating);
-    });
-
-    const button = document.querySelector('.dropdown-btn');
-    const dropdown = document.querySelector('.dropdown-list');
-
-    button.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const rect = button.getBoundingClientRect();
-        dropdown.style.top = rect.bottom + window.scrollY + 'px';
-        dropdown.style.left = rect.left + window.scrollX + 'px';
-        dropdown.style.width = `${button.offsetWidth}px`; 
-        dropdown.classList.toggle('hidden');
-        button.classList.toggle('active');
-        const expanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', !expanded);
-        });
-
-        // Закрытие при клике вне
-        document.addEventListener('click', () => {
-            dropdown.classList.add('hidden');
-            button.setAttribute('aria-expanded', false);
-            button.classList.remove('active');
-    });
 })
 </script>
 </html>

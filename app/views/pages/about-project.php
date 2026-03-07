@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="text-wrapper scale-in reverse">
-            <div class="img-wrapper">   
+            <div class="img-wrapper">
                 <img fetchpriority="high" decoding="async" src="/images/about-project/game-banner horikita5.webp" alt="Хорикита Сузуне">
             </div>
             <div class="text slide-in-right">

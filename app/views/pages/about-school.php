@@ -434,7 +434,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
         }
     }
-
     function initSlider(sliderWrapper){
         const slider = sliderWrapper.querySelector('.slider')
         const prevBtn = sliderWrapper.querySelector('.prev .slider-btn');

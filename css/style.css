@@ -2076,7 +2076,7 @@ a.current-page span::after {
     position: absolute;
     top: 0;
     left: 0;
-    width: 18.75%;
+    width: var(--progress-width, 0%); 
     height: 100%;
     background-color: rgba(229, 11, 84, 0.5);
     border-radius: clamp(1px, 0.65vw, 10px);
@@ -2143,6 +2143,8 @@ a.current-page span::after {
     width: clamp(1px, 1.3vw, 20px);
     height: clamp(1px, 1.3vw, 20px);
     display: block;
+    transition: 0.3s;
+
 }
 
 .page-anime .dropdown-btn{
@@ -2183,4 +2185,9 @@ a.current-page span::after {
 .page-anime .dropdown-btn.active{
     background-color: rgb(143, 17, 68);
     border-color: rgb(143, 17, 68);
+}
+
+
+.dropdown-btn.active .dropdown-icon{
+    transform: rotate(-180deg);
 }
