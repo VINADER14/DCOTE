@@ -32,7 +32,7 @@
                     </div>
                     <div class="check">
                         <input type="checkbox" class="checkbox-input">
-                        <label for="indigo" class="checkbox-label"><p>Я прочитал(а) и принимаю <a href="https://dcote">правила сайта</a> и обязуюсь их соблюдать.</p></label>
+                        <label for="indigo" class="checkbox-label"><p>Я прочитал(а) и принимаю <a href="/rules">правила сайта</a> и обязуюсь их соблюдать.</p></label>
                     </div>
                     <div class="input-group">
                         <button type="submit" class="submit-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>

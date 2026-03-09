@@ -12,13 +12,13 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
             <a class="current-page" href="/anime"><span>АНИМЕ</span></a>
         </div>
         <main class="page-anime">
-<?php foreach ($seasons_list as $season): ?>
+<?php foreach ($seasons_list as $index => $season): ?>
     <?php $total = (int)$season['number_of_episodes'];
     $released = (int)$season['number_of_realese_episodes'];
     $percent = ($total > 0) ? min(100, round(($released / $total) * 100, 2)) : 0;?>
             <div class="cont scale-in" data-season=" <?=(int)$season['season_number'] ?>">
                 <div class="image-wrapper">
-                    <img src="<?=e($season['img_src'])?>">
+                    <img src="<?=e($season['img_src'])?>"<?= $index < 2 ? 'fetchpriority="high"' : 'loading="lazy"' ?> decoding="async">
                 </div>
                 <div class="desc slide-in-left">
                     <div class="head"><h1><?=e($season['id'])?> СЕЗОН</h1>

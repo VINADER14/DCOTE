@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico?v=2">
-    <link rel="stylesheet" href="/css/style.css?v=42">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png?v=6">
+    <link rel="stylesheet" href="/css/style.css?v=43">
     <meta name="description" content="<?= htmlspecialchars($desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!') ?>">
 </head>
 <body>
