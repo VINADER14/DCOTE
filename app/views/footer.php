@@ -9,7 +9,7 @@
         </div>
         <div class="footer-right">
             <a href="/dcote_main" class="logo-link">
-            <img src="images/dcote_logo.png" alt="DCOTE" class="logo scale-in"> </a>
+            <img src="/images/dcote_logo.png" alt="DCOTE" class="logo scale-in"> </a>
         </div>
     </footer>
 <script>

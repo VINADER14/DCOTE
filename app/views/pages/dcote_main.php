@@ -132,7 +132,7 @@
                                 <th style="width:8%;"></th>
                                 <th class="nickname-head" style="width:35%;"><p>Пользователь</p></th>
                                 <th class="status-head" style="width:35%;"><p>Статус</p></th>
-                                <th class="rating-head" style="width:14%;"><p>Рейтинг</p></th>
+                                <th class="rating-on-main-head" style="width:14%;"><p>Рейтинг</p></th>
                             </tr>
                         </thead>
                         <tbody> 
@@ -141,49 +141,49 @@
                                 <td><img src="images/index/2.webp" alt=""></td>
                                 <td class="nickname"><p>MrEgor4ik</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>6969</p></td>
+                                <td class="rating-on-main"><p>6969</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#2</p></td>
                                 <td><img src="images/index/1.webp" alt=""></td>
                                 <td class="nickname"><p>Andrey Andreev</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>6767</p></td>
+                                <td class="rating-on-main"><p>6767</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/3.webp" alt=""></td>
                                 <td class="nickname"><p>Эйнштейн</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>5252</p></td>
+                                <td class="rating-on-main"><p>5252</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/4.webp" alt=""></td>
                                 <td class="nickname"><p>TemZz</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>4242</p></td>
+                                <td class="rating-on-main"><p>4242</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/5.webp" alt=""></td>
                                 <td class="nickname"><p>Popco1n</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>1488</p></td>
+                                <td class="rating-on-main"><p>1488</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/6.webp" alt=""></td>
                                 <td class="nickname"><p>Vinader</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>666</p></td>
+                                <td class="rating-on-main"><p>666</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/7.webp" alt=""></td>
                                 <td class="nickname"><p>Чайник</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
-                                <td class="rating"><p>100</p></td>
+                                <td class="rating-on-main"><p>100</p></td>
                             </tr>
                         </tbody>
                     </table>

@@ -25,16 +25,9 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
                     <div class="rating">
                         <div class="rating-popup hidden">
                             <div class="popup-stars">
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="1" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>1</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="2" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>2</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="3" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>3</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="4" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>4</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="5" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>5</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="6" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>6</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="7" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>7</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="8" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>8</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="9" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>9</p></div>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="10" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p>10</p></div>
+<?php for ($i = 1; $i <= 10; $i++): ?>
+                                <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p><?= $i ?></p></div>
+<?php endfor; ?>
                             </div>
                         </div>
                         <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><h3>9</h3></div><p>150 оценок</p>

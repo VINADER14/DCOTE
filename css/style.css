@@ -1026,7 +1026,7 @@ a.current-page span::after {
     text-align: center;
 }
 
-.page-dcote_main .top-users .rating,
+.page-dcote_main .top-users .rating-on-main,
 .top-users .rating-head {
     text-align: right;
 }
@@ -2087,34 +2087,68 @@ a.current-page span::after {
     background-color: rgba(229, 11, 84, 0.5);
     border-radius: clamp(1px, 0.65vw, 10px);
 }
-
-.page-anime .cont .desc .rating-btn-for-popup,.page-anime .cont .desc .rating-btn {
-    border:none;
+/* ========================================
+   РЕЙТИНГ - БАЗОВЫЕ СТИЛИ КНОПОК
+   ======================================== */
+.rating-btn-for-popup,
+.rating-btn {
+    border: none;
     padding: 5px;
 }
 
-.page-anime .cont .desc .rating-btn-for-popup:hover,.page-anime .cont .desc .rating-btn:hover{
-    background: none;
-}
-
-.page-anime .cont .desc .rating-btn-for-popup:hover .star-icon,.page-anime .cont .desc .rating-btn:hover .star-icon{
-    color: rgb(143, 17, 68);
-}
-
-.page-anime .cont .desc .rating-btn-for-popup .star-icon,.page-anime .cont .desc .rating-btn .star-icon{
+/* ========================================
+   РЕЙТИНГ - ИКОНКИ ЗВЕЗД
+   ======================================== */
+.rating-btn-for-popup .star-icon,
+.rating-btn .star-icon {
+    width: clamp(1px, 2.275vw, 35px);
+    height: clamp(1px, 2.275vw, 35px);
     transition: 0.3s;
 }
 
-.page-anime .cont .desc .rating{
+/* ========================================
+   РЕЙТИНГ - HOVER ЭФФЕКТЫ
+   ======================================== */
+.rating-btn-for-popup:hover,
+.rating-btn:hover {
+    background: none;
+}
+
+.rating-btn-for-popup:hover .star-icon,
+.rating-btn:hover .star-icon {
+    color: rgb(143, 17, 68);
+}
+
+/* ========================================
+   РЕЙТИНГ - АКТИВНЫЕ СОСТОЯНИЯ
+   ======================================== */
+.rating-btn-for-popup.active,
+.rating-btn.active,
+.rating-btn-for-popup.active_long {
+    color: rgb(229, 11, 85);
+}
+
+/* ========================================
+   РЕЙТИНГ - КОНТЕЙНЕР
+   ======================================== */
+.rating {
     position: relative;
     text-align: center;
 }
 
-.page-anime .cont .desc .rating-btn-for-popup.active,.page-anime .cont .desc .rating-btn.active,.page-anime .cont .desc .rating-btn-for-popup.active_long{
-    color: rgb(229, 11, 85);
+/* ========================================
+   РЕЙТИНГ - ОТОБРАЖЕНИЕ (ЗВЕЗДА + ЧИСЛО)
+   ======================================== */
+.rating .star-and-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.page-anime .cont .desc .rating .popup-stars{
+/* ========================================
+   РЕЙТИНГ - ВСПЛЫВАЮЩЕЕ ОКНО
+   ======================================== */
+.rating .popup-stars {
     position: absolute;
     z-index: 2000;
     display: flex;
@@ -2126,24 +2160,18 @@ a.current-page span::after {
     border-radius: clamp(1px, 0.65vw, 10px);
 }
 
-
-.page-anime .cont .desc .rating .star-and-number{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-anime .cont .desc .rating .star-icon{
-    width: clamp(1px, 2.275vw, 35px);
-    height: clamp(1px, 2.275vw, 35px);
-}
-
-.page-anime .cont .desc .rating .popup-stars .popup-stars-column{
+/* ========================================
+   РЕЙТИНГ - КОЛОНКИ ВСПЛЫВАЮЩЕГО ОКНА
+   ======================================== */
+.rating .popup-stars .popup-stars-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 0.325vw, 5px);;
+    gap: clamp(1px, 0.325vw, 5px);
 }
+
+
+
 
 .page-anime .dropdown-icon{
     width: clamp(1px, 1.3vw, 20px);
@@ -2196,4 +2224,114 @@ a.current-page span::after {
 
 .dropdown-btn.active .dropdown-icon{
     transform: rotate(-180deg);
+}
+
+
+
+
+
+.page-anime-season .cont{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: clamp(1px, 0.65vw, 10px);
+    overflow: hidden;
+}
+
+.page-anime-season .cont .image-wrapper{
+    width: 30%;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.page-anime-season .cont .image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1.385;
+}
+
+.page-anime-season .cont .desc{
+    width: 70%;
+    background: linear-gradient(270deg, #0b172b, #df0e5441);
+    padding: clamp(15px, 1.3vw, 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:clamp(1px, 1.3vw, 20px);
+}
+
+.page-anime-season .cont .desc .low-buttons{
+    display: flex;
+    flex-direction: row;
+    gap:clamp(1px, 1.3vw, 20px);
+    align-items: center;
+    margin-top: auto;
+}
+
+.page-anime-season .cont2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: clamp(1px, 0.65vw, 10px);
+    overflow: hidden;
+    background: linear-gradient(0deg, #0b172b, #df0e5441);
+    padding: clamp(15px, 1.3vw, 20px);
+    align-items: center;
+    gap:clamp(1px, 1.3vw, 20px);
+}
+
+
+.page-anime-season .cont2 .grid-area{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap:clamp(1px, 1.3vw, 20px);
+    flex-wrap: wrap;
+}
+
+
+
+.page-anime-season .cont2 .episode-cont{
+    flex: 0 0 calc(20% - clamp(1px, 1.3vw, 20px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1px, 0.65vw, 10px);
+    width: 100%; 
+    text-align: center;
+}
+
+.page-anime-season .cont2 .episode-cont .card-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1px, 0.65vw, 10px);
+    width: 100%; 
+    text-align: center;
+    text-decoration: none;
+}
+
+.page-anime-season .cont2 .episode-cont .card-link:hover .card-title{
+    color:  rgb(229, 11, 85);
+}
+
+.page-anime-season .cont2 .episode-cont .card-link .card-title{
+    transition: 0.3s;
+}
+
+.page-anime-season .cont2 .episode-cont .image-wrapper{
+    border-radius: clamp(1px, 0.65vw, 10px);
+    overflow: hidden;
+    overflow: hidden;
+    z-index: 5;
+    width: 100%;
+}
+.page-anime-season .cont2 .episode-cont .image-wrapper img{
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    display: block;
+    width: 100%;
 }
