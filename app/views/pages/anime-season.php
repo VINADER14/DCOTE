@@ -28,7 +28,7 @@ $episodes=execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? O
     <p>/</p>
     <a href="/anime"><span>АНИМЕ</span></a>
     <p>/</p>
-    <a class="current-page" href="/anime"><span>3 СЕЗОН</span></a>
+    <a class="current-page" href="/anime/<?= $season ?>"><span><?= $season ?> СЕЗОН</span></a>
 </div>
 <main class="page-anime-season">
     <div class="cont scale-in">
@@ -45,10 +45,10 @@ $episodes=execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? O
         <div class="episodes-head">
             <h1>СПИСОК СЕРИЙ</h1>
             <button type="button" class="sort-toggle" aria-label="Сортировать по возрастанию/убыванию">
-                <svg class="sort-descending" width="20" height="20">
+                <svg class="sort-descending" width="20" height="20"style="display: none;">
                     <use href="#sort-descending-filled"></use>
                 </svg>
-                <svg class="sort-ascending" width="20" height="20" style="display: none;">
+                <svg class="sort-ascending" width="20" height="20" >
                     <use href="#sort-ascending-filled"></use>
                 </svg>
             </button>
@@ -60,10 +60,10 @@ $episodes=execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? O
                 <svg class="eye-filled" width="30" height="30">
                     <use href="#eye-filled"></use>
                 </svg>
-                <a class="card-link" href="<?= e($episode['episode_link']) ?? '/lol' ?>">
-                    <div class="image-wrapper"><img src="<?= e($episode['episode_cover_src']) ?>"></div>
+                <a class="card-link" href="/anime/<?=$season?>/<?= e($episode['episode_number']) ?>">
+                    <div class="image-wrapper"><img src="<?= e($episode['episode_link']) ?>/poster/sm.webp"></div>
                     <div class="card-title">
-                        <h3><?= e($episode['episode_number']) ?> СЕРИЯ</h3>
+                        <h3><?= e($episode['episode_number']) ?> серия</h3>
                         <p><?= e($episode['episode_name']) ?></p>
                     </div>
                 </a>

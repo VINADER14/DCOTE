@@ -14,7 +14,7 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
         <main class="page-anime">
 <?php foreach ($seasons_list as $index => $season): ?>
     <?php $total = (int)$season['number_of_episodes'];
-    $released = (int)$season['number_of_realese_episodes'];
+    $released = (int)$season['number_of_release_episodes'];
     $percent = ($total > 0) ? min(100, round(($released / $total) * 100, 2)) : 0;?>
             <div class="cont scale-in" data-season=" <?=(int)$season['season_number'] ?>">
                 <div class="image-wrapper">
@@ -42,7 +42,7 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
                         <div class="left-column"><p><b>Кол-во серий:</b></p><p><b>Последнее обновление:</b></p></div>
                         <div class="right-column"><p><?=e($season['number_of_episodes'])?></p><p><?=e($season['last_update'])?></p></div>
                     </div>
-                    <p><b>Выпущено:</b> <?=e($season['number_of_realese_episodes'])?> из <?=e($season['number_of_episodes'])?> серий</p>
+                    <p><b>Выпущено:</b> <?=e($season['number_of_release_episodes'])?> из <?=e($season['number_of_episodes'])?> серий</p>
                     <div class="progress-bar" style="--progress-width: <?= $percent ?>%"></div>
                     <button class="dropdown-btn" aria-expanded="false">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30"><use href="#dropdown"></use></svg></button>
                     <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button onclick="window.location.href='/anime/<?=(int)$season['season_number'] ?>'">СТРАНИЦА СЕЗОНА</button></div>

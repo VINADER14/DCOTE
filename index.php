@@ -86,7 +86,7 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
         $episode = $segments[2];
 
         if (ctype_digit($season) && ctype_digit($episode)) {
-            $pageTitle = "Аниме | Сезон $season Серия $episode | DCOTE";
+            $pageTitle = "Аниме | $season сезон $episode серия | DCOTE";
             $contentPage = '/app/views/pages/anime-episode.php';
         } else {
             $httpCode = 404;

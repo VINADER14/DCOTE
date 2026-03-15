@@ -2418,6 +2418,7 @@ a.current-page span::after {
     overflow: hidden;
     z-index: 5;
     width: 25%;
+    flex-shrink: 0;
 }
 
 .page-anime-season .cont2 .episode-cont .image-wrapper img {
@@ -2429,15 +2430,18 @@ a.current-page span::after {
 
 .page-anime-season .cont2 .episode-cont .stars-and-comms {
     display: flex;
-    width: 20%;
+    width: 15%;
     align-items: center;
     margin-left: auto;
 }
 
-.page-anime-season .cont2 .episode-cont .stars-and-comms .first-btn,
+.page-anime-season .cont2 .episode-cont .stars-and-comms .first-btn{
+    display: flex;
+    width: 40%;
+}
 .page-anime-season .cont2 .episode-cont .stars-and-comms .second-btn {
     display: flex;
-    width: 50%;
+    width: 60%;
 }
 
 .page-anime-season .cont2 .episode-cont .second-btn {
@@ -2556,4 +2560,29 @@ a.current-page span::after {
         opacity: 0;
         transform: translateX(-50%) translateY(+20%);
     }
+}
+
+
+
+.page-anime-episode .subs-and-dubs,.page-anime-episode .episode-controls{
+    display: flex;
+    gap: clamp(1px, 1.3vw, 20px);
+    width: 100%;
+    justify-content: center;
+}
+
+.page-anime-episode .subs-and-dubs .active{
+    background-color: rgb(143, 17, 68);
+    border-color: rgb(143, 17, 68);
+    cursor: not-allowed;
+}
+
+.page-anime-episode button:disabled {
+    border-color: rgb(126, 126, 126);
+    cursor: not-allowed;
+}
+
+.page-anime-episode button:disabled:hover{
+    border-color: rgb(97, 97, 97);
+    background: rgb(97, 97, 97);
 }
