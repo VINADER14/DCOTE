@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $path = trim($uri, '/');
@@ -9,6 +10,8 @@ $segments = $path === '' ? [] : explode('/', $path);
 define('ROOT', __DIR__);
 require ROOT . '/app/config/config.php';
 require ROOT . '/help_funcs.php';
+
+
 
 
 $pageTitle = 'DCOTE';
@@ -29,10 +32,12 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
 } elseif ($segments[0] === 'reg') {
     $pageTitle = 'Регистрация | DCOTE';
     $contentPage = '/app/views/pages/reg.php';
+    $errors = include ROOT . '/app/views/process_registration.php';
 
 } elseif ($segments[0] === 'login') {
     $pageTitle = 'Авторизация | DCOTE';
     $contentPage = '/app/views/pages/login.php';
+    $errors = include ROOT . '/app/views/process_login.php';
 
 } elseif ($segments[0] === 'news_main') {
     $pageTitle = 'Новости | DCOTE';
@@ -69,7 +74,7 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
     } elseif ($count === 2) {
         $season = $segments[1];
 
-        if (ctype_digit($season)) {
+        if (ctype_digit($season)&&!((int)$season < 1) && !((int)$season > 4)) {
             $pageTitle = "Аниме | Сезон $season | DCOTE";
             $contentPage = '/app/views/pages/anime-season.php';
         } else {

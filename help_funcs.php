@@ -46,5 +46,52 @@ function date_for_news($date) {
     return "$day $month $year г.";
 }
 
+function verifyTurnstile($response) {
+    if (empty($response)) {
+        return false;
+    }
+    
+    $secret = "0x4AAAAAACpYY_3EddPJDynODPzdWTgnk60";
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $verify = file_get_contents('https://challenges.cloudflare.com/turnstile/v0/siteverify', false, stream_context_create([
+        'http' => [
+            'method' => 'POST',
+            'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
+            'content' => http_build_query([
+                'secret' => $secret,
+                'response' => $response,
+                'remoteip' => $ip,
+                'timeout' => 10 
+            ])
+        ]
+    ]));
+    if ($verify === false) {
+        return true; 
+    }
+
+
+
+    $captcha_success = json_decode($verify);
+    return $captcha_success->success ?? false;
+}
+
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+function formatHtmlSafe($text) {
+    static $purifier = null;
+    
+    if ($purifier === null) {
+        $config = HTMLPurifier_Config::createDefault();
+        
+        $config->set('HTML.Allowed', 'p,br,b,strong,i,em,u,ul,ol,li,h1,h2,h3,h4,a[href],img[src|alt],blockquote,code,pre,hr,table,thead,tbody,tr,th,td');
+        
+        $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true]);
+        
+        $purifier = new HTMLPurifier($config);
+    }
+    
+    return $purifier->purify($text);
+}
 
 ?>

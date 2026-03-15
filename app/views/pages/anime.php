@@ -23,12 +23,10 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
                 <div class="desc slide-in-left">
                     <div class="head"><h1><?=e($season['id'])?> СЕЗОН</h1>
                     <div class="rating">
-                        <div class="rating-popup hidden">
-                            <div class="popup-stars">
+                        <div class="popup-stars hidden">
 <?php for ($i = 1; $i <= 10; $i++): ?>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p><?= $i ?></p></div>
+                            <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><p><?= $i ?></p></div>
 <?php endfor; ?>
-                            </div>
                         </div>
                         <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30"><use href="#star"></use></svg></button><h3>9</h3></div><p>150 оценок</p>
                     </div></div>
@@ -47,7 +45,7 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
                     <p><b>Выпущено:</b> <?=e($season['number_of_realese_episodes'])?> из <?=e($season['number_of_episodes'])?> серий</p>
                     <div class="progress-bar" style="--progress-width: <?= $percent ?>%"></div>
                     <button class="dropdown-btn" aria-expanded="false">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30"><use href="#dropdown"></use></svg></button>
-                    <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button>СТРАНИЦА СЕЗОНА</button></div>
+                    <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button onclick="window.location.href='/anime/<?=(int)$season['season_number'] ?>'">СТРАНИЦА СЕЗОНА</button></div>
                 </div>
             </div>
 <?php endforeach; ?>
@@ -62,7 +60,7 @@ $seasons_list=execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetc
 document.addEventListener('DOMContentLoaded', () => {
     const ratingPopups = document.querySelectorAll('.rating');
     ratingPopups.forEach(rating => {
-        const popupWindow = rating.querySelector('.rating-popup');
+        const popupWindow = rating.querySelector('.popup-stars');
         const ratingBtnForPopup = rating.querySelector('.rating-btn-for-popup');
         const stars = rating.querySelectorAll('.rating-btn');
         let selectedRating = 0;
@@ -101,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', (e) => {
         ratingPopups.forEach(rating => {
-            const popup = rating.querySelector('.rating-popup');
+            const popup = rating.querySelector('.popup-stars');
             const btn = rating.querySelector('.rating-btn-for-popup');
             if (!popup.classList.contains('hidden')) {
                 const isInside = popup.contains(e.target);

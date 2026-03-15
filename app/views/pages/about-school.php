@@ -5,10 +5,6 @@
 <symbol id="arrow-left" viewBox="0 0 24 24">
     <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6"/>
 </symbol>
-<symbol id="close-cross" viewBox="0 0 24 24">
-    <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M18 6l-12 12"/>
-    <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M6 6l12 12"/>
-</symbol>
 <symbol id="download-icon" viewBox="0 0 24 24">
     <path stroke="currentColor" stroke-width="2.50" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/>
     <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M7 11l5 5l5 -5"/>
@@ -286,7 +282,7 @@
     </main>
     <div id="fullscreenModal" class="fullscreen-modal hidden">
         <div class="slider-button-wrapper modal-download"><div><button class="slider-btn" aria-label="Скачать"><svg class="download-icon" width="24" height="24"><use href="#download-icon"></use></svg></button></div></div>
-        <div class="slider-button-wrapper modal-close"><div><button class="slider-btn" aria-label="Закрыть"><svg class="close-icon" width="24" height="24"><use href="#close-cross"></use></svg></button></div></div>
+        <div class="slider-button-wrapper modal-close"><div><button class="slider-btn" aria-label="Закрыть"><svg class="close-icon" width="24" height="24" stroke-width="2.5"><use href="#close-cross"></use></svg></button></div></div>
         <div class="slider-button-wrapper modal-nav prev"><div><button class="slider-btn" aria-label="Назад"><svg class="slider-icon" width="30" height="30"><use href="#arrow-left"></use></svg></button></div></div>
         <div class="slider-button-wrapper modal-nav next"><div><button class="slider-btn" aria-label="Вперёд"><svg class="slider-icon" width="30" height="30"><use href="#arrow-right"></use></svg></button></div></div>
         <img id="modalImage" src="" alt="Полноэкранный просмотр">
