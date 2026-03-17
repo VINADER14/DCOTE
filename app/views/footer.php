@@ -1,26 +1,25 @@
     <footer class="footer-nav">
         <div class="footer-left">
-            <a href="https://x.com/aandreev06" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#x-logo"></use></svg></a>
-            <a href="/dcote_main" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#ds-logo"></use></svg></a>
-            <a href="https://t.me/DCOTEFILES" class="logo-link scale-in"><svg class="social-nets-logos" width="50" height="50"><use href="#tg-logo"></use></svg></a>
+            <a href="https://x.com/aandreev06" class="logo-link "><svg class="social-nets-logos" width="50" height="50"><use href="#x-logo"></use></svg></a>
+            <a href="/" class="logo-link "><svg class="social-nets-logos" width="50" height="50"><use href="#ds-logo"></use></svg></a>
+            <a href="https://t.me/DCOTEFILES" class="logo-link "><svg class="social-nets-logos" width="50" height="50"><use href="#tg-logo"></use></svg></a>
         </div>
-        <div class="footer-center scale-in">
+        <div class="footer-center">
             <p>Мы не претендуем на авторство и/или какие-либо иные права на какой-либо контент с авторским правом, представленный на сайте.</p>
         </div>
         <div class="footer-right">
-            <a href="/dcote_main" class="logo-link">
-            <img src="/images/dcote_logo.png" alt="DCOTE" class="logo scale-in"> </a>
+            <a href="/"><svg class="main-logo"><use href="#dcote-svg"></use></svg></a>
         </div>
     </footer>
     <div id="notification-container" class="hidden">
         <h1>ОШИБКА</h1>
-        <p>Какойзто текст ошибки</p>
+        <p></p>
         <div class="shape-close"><svg class="close-icon" stroke-width="3" width="24" height="24"><use href="#close-cross"></use></svg></div>
     </div>
 <script>
 const hamburger = document.getElementById('hamburgerBtn');
 const sideMenu = document.getElementById('sideMenu');
-const closeBtn = document.getElementById('closeMenu');
+const closeBtn = document.querySelector('.closeMenu');
 const overlay = document.getElementById('overlay');
 
 hamburger.addEventListener('click', () => {
@@ -38,23 +37,6 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
-if (!('IntersectionObserver' in window)) {
-document
-    .querySelectorAll('.scale-in, .slide-in-left, .slide-in-right, .slide-in-top')
-    .forEach(el => el.classList.add('show'));
-} else {
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-    }
-    });
-}, { threshold: 0.1 });
-document
-    .querySelectorAll('.scale-in, .slide-in-left, .slide-in-right, .slide-in-top')
-    .forEach(el => observer.observe(el));
-}
 
 function showNotification(message, type = 'error', duration = 5000) {
     const container = document.getElementById('notification-container');

@@ -24,47 +24,37 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
     $pageTitle = 'Главная | DCOTE';
     $desc = 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!';
     $contentPage = '/app/views/pages/dcote_main.php';
-
 } elseif ($segments[0] === 'ranobe_main') {
     $pageTitle = 'Ранобе | DCOTE';
     $contentPage = '/app/views/pages/ranobe_main.php';
-
 } elseif ($segments[0] === 'reg') {
     $pageTitle = 'Регистрация | DCOTE';
     $contentPage = '/app/views/pages/reg.php';
     $errors = include ROOT . '/app/views/process_registration.php';
-
 } elseif ($segments[0] === 'login') {
     $pageTitle = 'Авторизация | DCOTE';
     $contentPage = '/app/views/pages/login.php';
     $errors = include ROOT . '/app/views/process_login.php';
-
 } elseif ($segments[0] === 'news_main') {
     $pageTitle = 'Новости | DCOTE';
     $desc = 'Новостные публикации, связанные со всеми информационными отраслями произведения. Всё об аниме, манге, ранобэ и прочем.';
     $contentPage = '/app/views/pages/news_main.php';
-
 } elseif ($segments[0] === 'illustrations') {
     $pageTitle = 'Иллюстрации | DCOTE';
     $contentPage = '/app/views/pages/illustrations.php';
-
 } elseif ($segments[0] === 'about-school') {
     $pageTitle = 'Кодо Икусей | DCOTE';
     $desc = 'Подробная информация о столичной старшей школе продвинутого воспитания. Правила, униформа, карта, база данных и не только!';
     $contentPage = '/app/views/pages/about-school.php';
-
 } elseif ($segments[0] === 'characters') {
     $pageTitle = 'Персонажи | DCOTE';
     $contentPage = '/app/views/pages/characters.php';
-
 } elseif ($segments[0] === 'rules') {
     $pageTitle = 'Правила сайта | DCOTE';
     $contentPage = '/app/views/pages/rules.php';
-
 } elseif ($segments[0] === 'about-project') {
     $pageTitle = 'О проекте | DCOTE';
     $contentPage = '/app/views/pages/about-project.php';
-
 } elseif ($segments[0] === 'anime') {
 
     $count = count($segments);
@@ -74,7 +64,7 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
     } elseif ($count === 2) {
         $season = $segments[1];
 
-        if (ctype_digit($season)&&!((int)$season < 1) && !((int)$season > 4)) {
+        if (ctype_digit($season) && !((int)$season < 1) && !((int)$season > 4)) {
             $pageTitle = "Аниме | Сезон $season | DCOTE";
             $contentPage = '/app/views/pages/anime-season.php';
         } else {
@@ -96,7 +86,6 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
         $httpCode = 404;
         $contentPage = '/app/views/pages/page-404.php';
     }
-
 } else {
     $httpCode = 404;
     $pageTitle = 'Страница не найдена | DCOTE';

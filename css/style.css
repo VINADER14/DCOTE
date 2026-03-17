@@ -42,6 +42,15 @@ label {
     --fs-login: clamp(5px, 1.30vw, 20px);
     --fs-footer: clamp(5px, 0.78vw, 12px);
     --fs-nav-links: clamp(5px, 1.17vw, 18px);
+    --fs-border-radius: clamp(1px, 0.65vw, 10px);
+}
+
+@media (max-width:450px) {
+    :root {
+        --fs-border-radius: 10px;
+        --fs-nav-links: 18px;
+
+    }
 }
 
 h1 {
@@ -80,12 +89,13 @@ p {
 }
 
 
+
 button {
     color: white;
     text-decoration: none;
     transition: 0.3s;
     border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     padding-block: clamp(1px, 0.39vw, 6px);
     padding-inline: clamp(1px, 0.975vw, 15px);
     font-size: var(--fs-nav-links);
@@ -101,6 +111,33 @@ button {
 button:hover {
     background-color: rgb(143, 17, 68);
     border-color: rgb(143, 17, 68);
+}
+
+@media (max-width:450px) {
+    p {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+    button{
+        padding-block: 6px;
+        padding-inline: 15px;
+        background-color: rgb(143, 17, 68);
+        border-color: rgb(143, 17, 68);
+    }
+    button:hover{
+        scale: 0.95;
+    }
 }
 
 body,
@@ -137,7 +174,12 @@ main {
 }
 
 
-
+@media (max-width:450px) {
+    main {
+        gap: 10px;
+        padding: 10px;
+    }
+}
 
 /* ==== Навбар НАЧАЛО ==== */
 
@@ -149,9 +191,7 @@ main {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, rgb(78, 28, 57) 0%, rgb(78, 28, 57) 7%, rgb(28, 22, 46) 50%, rgb(78, 28, 57) 93%, rgb(78, 28, 57) 100%);
-    padding: 10px 20px;
-    box-sizing: border-box;
-    font-size: 20px;
+    padding:15px 30px;
     z-index: 1500;
     text-decoration: none;
 }
@@ -161,21 +201,16 @@ main {
 .navbar .left {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.navbar .logo-link,
-.footer-nav .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.navbar .left .main-logo,
+.footer-right .main-logo{
+    width:clamp(1px,12vw,184px);
+    height:clamp(1px,3vw,41px);
 }
 
-.navbar .logo,
-.footer-nav .logo {
-    height: clamp(1px, 4vw, 62px);
-    width: auto;
-    padding-block: 10px;
-}
+
 
 /* ==== Навбар центральная часть ==== */
 
@@ -183,11 +218,11 @@ main {
     flex: 1;
     text-align: center;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
+    display: flex;
 }
 
 .navbar a {
-    margin: 0 20px;
     color: white;
     text-decoration: none;
     font-family: 'Vag-Medium', sans-serif;
@@ -221,43 +256,18 @@ main {
 
 /* ==== Навбар правая часть ==== */
 
-.navbar .right {
-    min-width: 130px;
-}
 
-.navbar .right button {
-    margin: 0 20px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    font-family: 'Vag-Bold', sans-serif;
-    font-size: var(--fs-login);
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    background-color: #33333300;
-    align-items: center;
-}
-
-
-.navbar .right button:hover {
-    background-color: rgb(143, 17, 68);
-    border-color: rgb(143, 17, 68);
-}
 
 
 /* ==== НАВБАР МОБИЛКА ==== */
 
 /* ==== Гамбургер ==== */
 
-.navbar .hamburger svg {
+
+.navbar .hamburger .hamburger-icon{
     color: rgb(224, 11, 82);
-    transition: 0.2s;
-}
-
-
-.navbar .hamburger:hover svg {
-    color: rgb(143, 17, 68);
+    width: 38px;
+    height: 38px;
 }
 
 
@@ -265,7 +275,6 @@ main {
     display: none;
     background: none;
     border: none;
-    color: rgb(224, 11, 82);
     cursor: pointer;
 }
 
@@ -274,13 +283,16 @@ main {
 .side-menu {
     position: fixed;
     top: 0;
-    right: -70%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    right: -30%;
     width: 70%;
     height: 100%;
-    background: rgb(28, 22, 46);
+    background: linear-gradient(0deg, #0b1c36, #46153c);
     padding: 30px;
     box-sizing: border-box;
-    transition: right 0.3s ease;
+    transition: all 0.3s cubic-bezier(0, 0.9, 0.12, 0.98);
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -289,14 +301,13 @@ main {
 
 .side-menu.open {
     right: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 
-.navbar .login-btn-mobile {
-    background: none;
-    border: none;
-    display: none;
-}
+
 
 .navbar .right-mobile {
     display: flex;
@@ -304,16 +315,19 @@ main {
 
 /* ==== Адаптив ==== */
 
-@media (max-width: 1060px) {
-    .center {
+@media (max-width: 450px) {
+    .navbar .left .main-logo,
+    .footer-right .main-logo{
+    width:172px;
+    height:38px;
+}
+    .navbar .center,.navbar .right {
         display: none;
-
     }
 
     .navbar {
-        padding: 5px 20px;
+        padding: 5px 10px;
     }
-
     .navbar a {
         margin: 0px 0px;
         color: white;
@@ -324,76 +338,8 @@ main {
 
     .navbar .hamburger {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 36px;
-        height: 36px;
-        padding: 5px;
-        margin: 0;
-        border: none;
-        background: none;
         cursor: pointer;
     }
-
-    .navbar .right {
-        display: none;
-    }
-
-    .navbar .right-mobile .login-btn-mobile {
-        margin: 0 20px;
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-        font-family: 'Pan-Regular', sans-serif;
-        font-size: 14px;
-        border: 2px solid rgb(229, 11, 85);
-        border-radius: clamp(1px, 0.65vw, 10px);
-        padding-block: 6px;
-        padding-inline: 15px;
-        justify-content: center;
-        cursor: pointer;
-        background-color: #33333300;
-        align-items: center;
-        display: flex;
-    }
-
-    .navbar .right-mobile {
-        min-width: 130px;
-        align-items: center;
-
-    }
-
-    .navbar .right-mobile .login-btn-mobile:hover {
-        background-color: rgb(143, 17, 68);
-        border-color: rgb(143, 17, 68);
-    }
-
-    .navbar .logo,
-    .footer-nav .logo {
-        height: 25px !important;
-        width: auto;
-        padding-block: 10px;
-    }
-
-
-    .footer-nav .social-nets-logos {
-        height: 25px !important;
-        width: auto;
-    }
-
-    .footer-nav {
-        padding: 5px 20px !important;
-    }
-
-    .footer-center p {
-        padding: 0% 20% !important;
-    }
-
-    main {
-        padding: 20px;
-        gap: 20px;
-    }
-
 }
 
 
@@ -411,21 +357,9 @@ main {
     cursor: pointer;
 }
 
-.side-menu .close-btn svg {
-    color: white;
-    transition: 0.2s;
-}
 
-.side-menu .close-btn svg:hover {
-    color: rgb(224, 11, 82);
-    transform: rotate(90deg);
-}
 
-.side-link-first-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 .side-links {
     display: flex;
@@ -536,15 +470,14 @@ a.current-page span::after {
     align-items: center;
     display: flex;
     text-decoration: none;
-    padding: 10px 40px;
-    box-sizing: border-box;
+    padding:15px 30px;
     justify-content: space-between;
 }
 
 
 .footer-left {
     display: flex;
-    gap: 10%;
+    gap: clamp(10px, 1.3vw, 20px);
     flex: 1;
     align-items: center;
 }
@@ -560,14 +493,11 @@ a.current-page span::after {
 
 
 .social-nets-logos {
-    height: 2vw;
+    height:clamp(1px,3vw,41px);
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    border: none;
-    background: none;
     cursor: pointer;
 }
 
@@ -578,79 +508,11 @@ a.current-page span::after {
     justify-content: flex-end;
 }
 
-/* ===== Общие начальные состояния ===== */
-.scale-in,
-.slide-in-left,
-.slide-in-right,
-.slide-in-top {
-    opacity: 0;
-    will-change: transform, opacity;
-}
-
-/* ===== УВЕЛИЧЕНИЕ (картинка) ===== */
-.scale-in {
-    transform: scale(0.85);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.scale-in.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* ===== ПРИЛИВ СЛЕВА (текст) ===== */
-.slide-in-left {
-    transform: translateX(-40px);
-    transition:
-        opacity 0.9s ease 0.3s,
-        transform 0.9s ease 0.3s;
-}
-
-.slide-in-left.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* ===== ПРИЛИВ СПРАВА (обновления, опционально) ===== */
-.slide-in-right {
-    transform: translateX(40px);
-    transition:
-        opacity 0.9s ease 0.3s,
-        transform 0.9s ease 0.3s;
-}
-
-.slide-in-right.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* ===== ПРИЛИВ СВЕРХУ (обновления, опционально) ===== */
-.slide-in-top {
-    transform: translateY(-40px);
-    transition:
-        opacity 0.9s ease 0.3s,
-        transform 0.9s ease 0.3s;
-}
-
-.slide-in-top.show {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 
-@media (max-width: 855px) {
 
-    .scale-in,
-    .slide-in-left,
-    .slide-in-right,
-    .slide-in-top {
-        transition: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-    }
-}
+
+
 
 
 @media (prefers-reduced-motion: reduce) {
@@ -685,7 +547,7 @@ a.current-page span::after {
     display: flex;
     flex: 2;
     background: linear-gradient(90deg, #df0e5431 50%, #0b172b);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     position: relative;
     overflow: hidden;
 }
@@ -732,7 +594,7 @@ a.current-page span::after {
     width: 67%;
     display: flex;
     flex-direction: column;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     gap: clamp(1px, 0.65vw, 10px)
 }
 
@@ -749,11 +611,11 @@ a.current-page span::after {
 .content-line3 {
     display: flex;
     overflow: hidden;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 .page-dcote_main .content-line2 .about-school {
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     gap: clamp(1px, 0.65vw, 10px);
     background: linear-gradient(90deg, #df0e5441, #0b172b);
     width: 50%;
@@ -764,7 +626,7 @@ a.current-page span::after {
 .page-dcote_main .content-line2 .about-school .text {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-dcote_main .content-line2 .about-school .button {
@@ -787,7 +649,7 @@ a.current-page span::after {
 }
 
 .page-dcote_main .content-line3 .about-island {
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     background: linear-gradient(90deg, #0b172b, #df0e5441);
     width: 64%;
     gap: clamp(1px, 0.65vw, 10px);
@@ -820,12 +682,12 @@ a.current-page span::after {
     display: flex;
     flex: 1;
     background: linear-gradient(#df0e5441 50%, #0b172b);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     position: relative;
     overflow: hidden;
     flex-direction: column;
     align-items: center;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     gap: 0.65vw;
     color: white;
     justify-content: space-between;
@@ -918,14 +780,14 @@ a.current-page span::after {
 }
 
 .page-dcote_main .content-line4 .top-classes {
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
     gap: clamp(1px, 0.65vw, 10px);
 }
 
 .page-dcote_main .content-line4 .top-users {
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -951,7 +813,7 @@ a.current-page span::after {
     width: 50%;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     flex: 1;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 .page-dcote_main .top-classes .top-classes-buttons .classes-button-active {
@@ -974,7 +836,7 @@ a.current-page span::after {
 .page-dcote_main .top-table img {
     height: clamp(1px, 6.5vw, 100px);
     width: clamp(1px, 6.5vw, 100px);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     display: block;
     margin: 0 auto;
 }
@@ -996,14 +858,14 @@ a.current-page span::after {
     width: 50%;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     flex: 1;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 
 .page-dcote_main .top-users img {
     height: clamp(1px, 3.25vw, 50px);
     width: clamp(1px, 3.25vw, 50px);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     display: block;
     margin: 0 0;
 }
@@ -1045,7 +907,7 @@ a.current-page span::after {
 .page-dcote_main .content-line4 .top-classes-buttons {
     display: flex;
     justify-content: center;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-dcote_main .content-line4 .top-users th {
@@ -1065,7 +927,7 @@ a.current-page span::after {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-radius: clamp(1px, 0.78vw, 12px);
+    border-radius: var(--fs-border-radius);
     flex: 1;
     overflow: hidden;
     background: linear-gradient(#df0e5431 80%, #0b172b);
@@ -1104,7 +966,7 @@ a.current-page span::after {
     position: relative;
     font-family: 'Pan-Regular', sans-serif;
     gap: clamp(1px, 0.65vw, 10px);
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
 }
 
 
@@ -1117,7 +979,7 @@ a.current-page span::after {
 .page-dcote_main .banner-info .text {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     align-items: center;
 }
 
@@ -1140,7 +1002,7 @@ a.current-page span::after {
 .page-login .auth-container,
 .page-reg .auth-container {
     display: flex;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     align-self: center;
     height: 100%;
@@ -1161,8 +1023,8 @@ a.current-page span::after {
     height: 100%;
     z-index: 100;
     object-position: top;
-    border-top-left-radius: clamp(1px, 0.65vw, 10px);
-    border-bottom-left-radius: clamp(1px, 0.65vw, 10px);
+    border-top-left-radius: var(--fs-border-radius);
+    border-bottom-left-radius: var(--fs-border-radius);
 }
 
 .page-login .auth-form,
@@ -1172,7 +1034,7 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(90deg, #df0e5431 50%, #0b172b);
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     z-index: 10;
 }
 
@@ -1187,7 +1049,7 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-login .auth-form button,
@@ -1262,13 +1124,13 @@ a.current-page span::after {
 .page-reg .password-title .password-tooltip {
     width: max-content;
     background: linear-gradient(360deg, #0b172b, #331635);
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     position: absolute;
     left: 100%;
     top: 0;
     pointer-events: none;
     z-index: 15;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     transform: translateX(5%);
     opacity: 0;
@@ -1374,7 +1236,7 @@ a.current-page span::after {
 .page-404 .desc-404 {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     align-items: center;
 }
 
@@ -1409,7 +1271,7 @@ a.current-page span::after {
 
 .page-ranobe_main .volume-box {
     width: 25%;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     max-width: 1000px;
     flex: 1;
@@ -1429,8 +1291,8 @@ a.current-page span::after {
     height: 100%;
     display: block;
     object-fit: cover;
-    border-top-right-radius: clamp(1px, 0.65vw, 10px);
-    border-top-left-radius: clamp(1px, 0.65vw, 10px);
+    border-top-right-radius: var(--fs-border-radius);
+    border-top-left-radius: var(--fs-border-radius);
 
 }
 
@@ -1447,7 +1309,7 @@ a.current-page span::after {
 .page-ranobe_main .volume-desc {
     background: linear-gradient(180deg, #df0e5441, #0b172b);
     color: white;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1602,14 +1464,14 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     gap: clamp(1px, 0.65vw, 10px);
 }
 
 .page-news_main .banner-info .text {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     align-items: center;
 }
 
@@ -1702,8 +1564,8 @@ a.current-page span::after {
 /*страничка о школе начало*/
 .page-about_school .cont-1 {
     background: linear-gradient(360deg, #0b172b, #df0e5441);
-    border-radius: clamp(1px, 0.65vw, 10px);
-    padding: clamp(1px, 1.3vw, 20px);
+    border-radius: var(--fs-border-radius);
+    padding: clamp(10px, 1.3vw, 20px);
     gap: clamp(1px, 0.65vw, 10px);
     display: flex;
     flex-direction: column;
@@ -1722,7 +1584,7 @@ a.current-page span::after {
 
 
 .page-about_school .dormitory {
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     display: flex;
 }
@@ -1731,7 +1593,7 @@ a.current-page span::after {
     gap: clamp(1px, 0.65vw, 10px);
     display: flex;
     flex-direction: column;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     width: 80%;
     background: linear-gradient(360deg, #0b172b, #df0e5441);
 }
@@ -1745,26 +1607,26 @@ a.current-page span::after {
     height: 100%;
     display: block;
     object-fit: cover;
-    border-top-right-radius: clamp(1px, 0.65vw, 10px);
-    border-bottom-right-radius: clamp(1px, 0.65vw, 10px);
+    border-top-right-radius: var(--fs-border-radius);
+    border-bottom-right-radius: var(--fs-border-radius);
 }
 
 
 .page-about_school .cont-2,
 .page-about_school .cont-3 {
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     background: linear-gradient(360deg, #0b172b, #df0e5441);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 
 
 .page-about_school .cont-2 .classroom {
     display: flex;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-about_school .cont-2 .classroom .text {
@@ -1792,7 +1654,7 @@ a.current-page span::after {
     height: auto;
     object-fit: cover;
     object-position: center;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
 }
 
@@ -1813,7 +1675,7 @@ a.current-page span::after {
 
 .slider-wrapper {
     display: flex;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .slider {
@@ -1821,7 +1683,7 @@ a.current-page span::after {
     height: clamp(1px, 22.1vw, 340px);
     overflow: hidden;
     margin: 0;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     background: white;
 }
 
@@ -1958,8 +1820,8 @@ a.current-page span::after {
 
 .page-rules .cont-1 {
     background: linear-gradient(360deg, #0b172b, #df0e5441);
-    border-radius: clamp(1px, 0.65vw, 10px);
-    padding: clamp(1px, 1.3vw, 20px);
+    border-radius: var(--fs-border-radius);
+    padding: clamp(10px, 1.3vw, 20px);
     gap: clamp(1px, 1.95vw, 30px);
     display: flex;
     flex-direction: column;
@@ -1983,9 +1845,9 @@ a.current-page span::after {
 
 .page-about_project .text {
     width: 80%;
-    padding: clamp(1px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     background: linear-gradient(270deg, #0b172b, #df0e5441);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     margin-left: -15%;
     /* ← половина ширины картинки */
     padding-left: calc(15% + clamp(1px, 1.3vw, 20px));
@@ -1994,7 +1856,7 @@ a.current-page span::after {
     height: clamp(1px, 29.25vw, 450px);
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-about_project .text .desc {
@@ -2029,8 +1891,8 @@ a.current-page span::after {
 
 .page-about_project .text-wrapper.reverse .text {
     width: 80%;
-    padding: clamp(15px, 1.3vw, 20px);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    padding: clamp(10px, 1.3vw, 20px);
+    border-radius: var(--fs-border-radius);
     background: linear-gradient(90deg, #0b172b, #df0e5441);
     margin-right: -15%;
     padding-right: calc(15% + clamp(1px, 1.3vw, 20px));
@@ -2062,7 +1924,7 @@ a.current-page span::after {
     display: flex;
     flex-direction: row;
     width: 85%;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     align-self: center;
 }
@@ -2085,11 +1947,11 @@ a.current-page span::after {
 .page-anime .cont .desc {
     width: 59%;
     background: linear-gradient(270deg, #0b172b, #df0e5441);
-    padding: clamp(15px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-anime .cont .desc .head {
@@ -2100,7 +1962,7 @@ a.current-page span::after {
 
 .page-anime .cont .desc .info-block {
     border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     display: flex;
     width: 67%;
 }
@@ -2150,7 +2012,7 @@ a.current-page span::after {
     display: flex;
     justify-content: center;
     align-self: center;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 
@@ -2162,7 +2024,7 @@ a.current-page span::after {
     width: var(--progress-width, 0%);
     height: 100%;
     background-color: rgba(229, 11, 84, 0.5);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 /* ========================================
@@ -2234,8 +2096,8 @@ a.current-page span::after {
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(360deg, #0b172b, #331635);
-    padding: clamp(15px, 1.3vw, 20px);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    padding: clamp(10px, 1.3vw, 20px);
+    border-radius: var(--fs-border-radius);
 }
 
 /* ========================================
@@ -2272,7 +2134,7 @@ a.current-page span::after {
     left: 0;
     margin: 0;
     background: linear-gradient(360deg, #0b172b, #331635);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     z-index: 1000;
     list-style: none;
     display: flex;
@@ -2286,7 +2148,7 @@ a.current-page span::after {
 }
 
 .dropdown-list li {
-    padding-inline: clamp(15px, 1.3vw, 20px);
+    padding-inline: clamp(10px, 1.3vw, 20px);
     padding-block: clamp(5px, 0.65vw, 10px);
     transition: 0.3s;
     cursor: default;
@@ -2312,7 +2174,7 @@ a.current-page span::after {
     display: flex;
     flex-direction: row;
     width: 100%;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
 }
 
@@ -2334,21 +2196,21 @@ a.current-page span::after {
 .page-anime-season .cont .desc {
     width: 70%;
     background: linear-gradient(270deg, #0b172b, #df0e5441);
-    padding: clamp(15px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
-.page-anime-season .cont .desc p{
+.page-anime-season .cont .desc p {
     text-align: left;
 }
 
 .page-anime-season .cont .desc .low-buttons {
     display: flex;
     flex-direction: row;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     align-items: center;
     margin-top: auto;
 }
@@ -2357,12 +2219,12 @@ a.current-page span::after {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     background: linear-gradient(0deg, #0b172b, #df0e5441);
-    padding: clamp(15px, 1.3vw, 20px);
+    padding: clamp(10px, 1.3vw, 20px);
     align-items: center;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 
@@ -2370,7 +2232,7 @@ a.current-page span::after {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 
@@ -2380,7 +2242,7 @@ a.current-page span::after {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
 }
 
 .page-anime-season .cont2 .episode-cont .eye-filled {
@@ -2401,10 +2263,10 @@ a.current-page span::after {
     width: 70%;
     display: flex;
     align-items: center;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     text-decoration: none;
     transition: 0.3s;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
 }
 
 
@@ -2414,7 +2276,7 @@ a.current-page span::after {
 }
 
 .page-anime-season .cont2 .episode-cont .image-wrapper {
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     z-index: 5;
     width: 25%;
@@ -2435,10 +2297,11 @@ a.current-page span::after {
     margin-left: auto;
 }
 
-.page-anime-season .cont2 .episode-cont .stars-and-comms .first-btn{
+.page-anime-season .cont2 .episode-cont .stars-and-comms .first-btn {
     display: flex;
     width: 40%;
 }
+
 .page-anime-season .cont2 .episode-cont .stars-and-comms .second-btn {
     display: flex;
     width: 60%;
@@ -2496,8 +2359,8 @@ a.current-page span::after {
     position: fixed;
     bottom: 10%;
     left: 50%;
-    min-width: 30vw;
-    min-height: 10vw;
+    min-width: clamp(1px, 30vw, 462px);
+    min-height: clamp(1px, 10vw, 163px);
     transform: translateX(-50%);
     z-index: 9999;
     display: flex;
@@ -2506,8 +2369,8 @@ a.current-page span::after {
     text-align: center;
     gap: clamp(1px, 0.65vw, 10px);
     pointer-events: none;
-    padding: clamp(1px, 1.3vw, 20px);
-    border-radius: clamp(1px, 0.65vw, 10px);
+    padding: clamp(10px, 1.3vw, 20px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     box-shadow: 0px 0px 10px 5px rgba(229, 11, 85, 0.5);
     background: linear-gradient(0deg, #0b1c36, #46153c);
@@ -2521,7 +2384,7 @@ a.current-page span::after {
     color: rgb(229, 11, 85);
     cursor: pointer;
     pointer-events: auto;
-    border-radius: clamp(1px, 0.65vw, 10px);
+    border-radius: var(--fs-border-radius);
     overflow: hidden;
     border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
     display: flex;
@@ -2564,14 +2427,15 @@ a.current-page span::after {
 
 
 
-.page-anime-episode .subs-and-dubs,.page-anime-episode .episode-controls{
+.page-anime-episode .subs-and-dubs,
+.page-anime-episode .episode-controls {
     display: flex;
-    gap: clamp(1px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px);
     width: 100%;
     justify-content: center;
 }
 
-.page-anime-episode .subs-and-dubs .active{
+.page-anime-episode .subs-and-dubs .active {
     background-color: rgb(143, 17, 68);
     border-color: rgb(143, 17, 68);
     cursor: not-allowed;
@@ -2582,7 +2446,7 @@ a.current-page span::after {
     cursor: not-allowed;
 }
 
-.page-anime-episode button:disabled:hover{
+.page-anime-episode button:disabled:hover {
     border-color: rgb(97, 97, 97);
     background: rgb(97, 97, 97);
 }

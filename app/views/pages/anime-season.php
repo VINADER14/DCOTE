@@ -21,10 +21,10 @@
 </svg>
 <?php
 $about_season = execute_query('SELECT img_src,season_description FROM anime_seasons WHERE season_number=?', [$season], true);
-$episodes=execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? ORDER BY episode_number DESC ',[$season], fetch:'all'); 
+$episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? ORDER BY episode_number DESC ', [$season], fetch: 'all');
 ?>
 <div class="navigation-links">
-    <a href="/dcote_main"><span>ГЛАВНАЯ</span></a>
+    <a href="/"><span>ГЛАВНАЯ</span></a>
     <p>/</p>
     <a href="/anime"><span>АНИМЕ</span></a>
     <p>/</p>
@@ -37,7 +37,7 @@ $episodes=execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? O
         </div>
         <div class="desc slide-in-left">
             <h1><?= $season ?> СЕЗОН АНИМЕ-АДАПТАЦИИ</h1>
-            <p><?= !empty(formatHtmlSafe($about_season['season_description'])) ? formatHtmlSafe($about_season['season_description']) :'Описание сезона' ?></p>
+            <p><?= !empty(formatHtmlSafe($about_season['season_description'])) ? formatHtmlSafe($about_season['season_description']) : 'Описание сезона' ?></p>
             <div class="low-buttons"><button>НАЧАТЬ ПРОСМОТР</button><button>СМОТРЕТЬ ТРЕЙЛЕР</button></div>
         </div>
     </div>
@@ -45,56 +45,56 @@ $episodes=execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? O
         <div class="episodes-head">
             <h1>СПИСОК СЕРИЙ</h1>
             <button type="button" class="sort-toggle" aria-label="Сортировать по возрастанию/убыванию">
-                <svg class="sort-descending" width="20" height="20"style="display: none;">
+                <svg class="sort-descending" width="20" height="20" style="display: none;">
                     <use href="#sort-descending-filled"></use>
                 </svg>
-                <svg class="sort-ascending" width="20" height="20" >
+                <svg class="sort-ascending" width="20" height="20">
                     <use href="#sort-ascending-filled"></use>
                 </svg>
             </button>
         </div>
         <div class="grid-area">
-<?php if (!empty($episodes)): ?>
-<?php foreach ($episodes as $index => $episode): ?>
-            <div class="episode-cont">
-                <svg class="eye-filled" width="30" height="30">
-                    <use href="#eye-filled"></use>
-                </svg>
-                <a class="card-link" href="/anime/<?=$season?>/<?= e($episode['episode_number']) ?>">
-                    <div class="image-wrapper"><img src="<?= e($episode['episode_link']) ?>/poster/sm.webp"></div>
-                    <div class="card-title">
-                        <h3><?= e($episode['episode_number']) ?> серия</h3>
-                        <p><?= e($episode['episode_name']) ?></p>
-                    </div>
-                </a>
-                <div class="stars-and-comms">
-                    <div class="first-btn">
-                        <div class="rating">
-                            <div class="popup-stars hidden">
-                                <?php for ($i = 1; $i <= 10; $i++): ?>
-                                    <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30">
+            <?php if (!empty($episodes)): ?>
+                <?php foreach ($episodes as $index => $episode): ?>
+                    <div class="episode-cont">
+                        <svg class="eye-filled" width="30" height="30">
+                            <use href="#eye-filled"></use>
+                        </svg>
+                        <a class="card-link" href="/anime/<?= $season ?>/<?= e($episode['episode_number']) ?>">
+                            <div class="image-wrapper"><img src="<?= e($episode['episode_link']) ?>/poster/sm.webp"></div>
+                            <div class="card-title">
+                                <h3><?= e($episode['episode_number']) ?> серия</h3>
+                                <p><?= e($episode['episode_name']) ?></p>
+                            </div>
+                        </a>
+                        <div class="stars-and-comms">
+                            <div class="first-btn">
+                                <div class="rating">
+                                    <div class="popup-stars hidden">
+                                        <?php for ($i = 1; $i <= 10; $i++): ?>
+                                            <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30">
+                                                        <use href="#star"></use>
+                                                    </svg></button>
+                                                <p><?= $i ?></p>
+                                            </div>
+                                        <?php endfor; ?>
+                                    </div>
+                                    <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30">
                                                 <use href="#star"></use>
                                             </svg></button>
-                                        <p><?= $i ?></p>
+                                        <h3>9</h3>
                                     </div>
-                                <?php endfor; ?>
+                                </div>
                             </div>
-                            <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30">
-                                        <use href="#star"></use>
+                            <div class="second-btn"><button class="message-btn"><svg class="message-icon" width="30" height="30">
+                                        <use href="#message-filled"></use>
                                     </svg></button>
                                 <h3>9</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="second-btn"><button class="message-btn"><svg class="message-icon" width="30" height="30">
-                                <use href="#message-filled"></use>
-                            </svg></button>
-                        <h3>9</h3>
-                    </div>
-                </div>
-            </div>
-<?php endforeach; ?>
-<?php endif;?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </main>
