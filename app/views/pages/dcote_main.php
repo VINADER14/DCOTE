@@ -1,31 +1,80 @@
-    <main class="page-dcote_main">
+<svg style="display: none;">
+<symbol id="arrow-right" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9 6l6 6l-6 6" />
+    </symbol>
+    <symbol id="arrow-left" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6" />
+    </symbol>
+</svg>
+<main class="page-dcote_main">
+        <div class="hero">
+            <img class="hero-image" src="/images/index/hero-блок.webp" fetchpriority="high" decoding="async" alt="Арису лежит в кроватке"/>
+            <div class="hero-content">
+                <div class="title"><h1>Веб-сообщество <span style="color: rgb(224, 11, 82);">D</span>COTE</h1>
+                <h3>Обитель фанатского комьюнити произведения «Добро пожаловать в класс превосходства».</h3></div>
+                <p>Горячие новости из медиа-пространства произведения, чтение оригинальной новеллы,
+                    бесплатный просмотр аниме-адаптации и чтение глав манги. Полноценный сборник
+                    иллюстраций от художника Томосе Сюнсаку, арты от художников-фанатов
+                    и превосходные арт-генерации от ИИ. Подробные досье и описания персонажей.
+                    Всё это и не только вы найдёте на страницах данного веб-сообщества!</p>
+                    <div class="hero-buttons">
+                        <button onclick="window.location.href='/news_main'">ЧИТАТЬ НОВОСТИ</button>
+                        <button class="project-btn" onclick="window.location.href='/about-project'">О ПРОЕКТЕ</button>
+                        <button class="tg-btn" onclick="window.location.href='https://t.me/DCOTEFILES'">ТЕЛЕГРАМ-КАНАЛ</button>
+                    </div>
+            </div>
+        </div>
+        <div class="grid-images">
+            <a href="/ranobe"><div class="wrapper">
+                <img src="/images/index/категории-ранобе.webp">
+                <div class="content">
+                    <h3><b>РАНОБЭ</b></h3>
+                    <p>Чтение оригинальной новеллы в полном формате и хорошем качестве перевода</p>
+                </div>
+            </div></a>
+            <a href="/ranobe"><div class="wrapper">
+                <img src="/images/index/категории-аниме.webp">
+                <div class="content">
+                    <h3><b>АНИМЕ</b></h3>
+                    <p>Бесплатный просмотр аниме-адаптации всех сезонов в хорошем качестве</p>
+                </div>
+            </div></a>
+            <a href="/ranobe"><div class="wrapper">
+                <img src="/images/index/категории-манга.webp">
+                <div class="content">
+                    <h3><b>МАНГА</b></h3>
+                    <p>Чтение глав манга-адаптации в хорошем качестве изображений и перевода</p>
+                </div>
+            </div></a>
+            <a href="/ranobe"><div class="wrapper">
+                <img src="/images/index/категории-иллюстрации.webp">
+                <div class="content">
+                    <h3><b>ИЛЛЮСТРАЦИИ</b></h3>
+                    <p>Сборник иллюстраций от художника Томосе Сюнсаку, арты от художников-фанатов и превосходные арт-генерации от ИИ</p>
+                </div>
+            </div></a>
+            <a href="/ranobe"><div class="wrapper">
+                <img src="/images/index/категории-персонажи.webp">
+                <div class="content">
+                    <h3><b>ПЕРСОНАЖИ</b></h3>
+                    <p>Подробные досье и описания всех персонажей произведения</p>
+                </div>
+            </div></a>
+        </div>
         <div class="content-line1">
-            <div class="description scale-in">
-                <div class="image_base scale-in"> 
-                    <img src="images/index/base_dcote1.webp" fetchpriority="high" decoding="async" alt="Аяно, Арису, Сузуне, Кей, Рьюен, ш@лава рядом"/>
-                </div>
-                <div class="description-text slide-in-left">
-                    <div class="title">
-                        <h1>ОПИСАНИЕ ПРОИЗВЕДЕНИЯ</h1>
-                    </div>
-                    <div class="text">
-                        <p>
-                            Добро пожаловать в класс превосходства — это напряжённая школьная драма с элементами психологического триллера,
-                            действие которой разворачивается в престижной государственной школе Кодо Икусэй, известной идеальными условиями
-                            и почти гарантированным будущим успехом для выпускников. Однако за внешним совершенством скрывается жестокая
-                            система ранжирования, где учащиеся получают всё — от привилегий до денежных баллов — строго по заслугам
-                            и результатам конкуренции.
-                            <br><br>
-                            Главный герой, таинственный и замкнутый Аянокоджи Киётака, по воле обстоятельств оказывается в худшем классе
-                            D, куда отправляют «дефективных» учеников школы. Несмотря на намерение оставаться в тени, он постепенно
-                            оказывается втянут в сложную игру интриг, стратегий и скрытых конфликтов между учениками школы.
-                        </p>
-                    </div>
-                </div>
+            <div class="popular">
+                <h1>ПОПУЛЯРНОЕ</h1>
+            </div>
+            <div class="pager">
+                <button class="pager-btn inactive" aria-label="Назад">
+                    <svg class="slider-icon" width="30" height="30">
+                        <use href="#arrow-left"></use>
+                    </svg>
+                </button>
             </div>
             <div class="updates scale-in">
                 <div class="updates-title">
-                    <h1>АКТУАЛЬНОЕ</h1>
+                    <h1>ЛЕНТА ОБНОВЛЕНИЙ</h1>
                 </div>
                 <div class="updates-news">
                     <ul>
