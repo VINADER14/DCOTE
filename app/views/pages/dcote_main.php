@@ -1,9 +1,9 @@
 <svg style="display: none;">
 <symbol id="arrow-right" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9 6l6 6l-6 6" />
+        <path stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9 6l6 6l-6 6" />
     </symbol>
     <symbol id="arrow-left" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6" />
+        <path stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6" />
     </symbol>
 </svg>
 <main class="page-dcote_main">
@@ -64,13 +64,31 @@
         <div class="content-line1">
             <div class="popular">
                 <h1>ПОПУЛЯРНОЕ</h1>
-            </div>
             <div class="pager">
                 <button class="pager-btn inactive" aria-label="Назад">
                     <svg class="slider-icon" width="30" height="30">
                         <use href="#arrow-left"></use>
                     </svg>
                 </button>
+                <div class="content">
+                        <img src="/images/index/аниме-4-сезон.webp">
+                        <div class="text">
+                            <h3><b>АНИМЕ</b> 4 СЕЗОН</h3>
+                            <p>Токийская столичная старшая школа продвинутого воспитания —
+                                словно школа мечты: практически 100% дальнейшее поступление
+                                в вузы и трудоустройство после выпуска, а каждый месяц
+                                выплачиваются баллы, эквивалентные 100.000 йен наличными.
+                                Однако на деле это место, где привилегии получают лишь немногие
+                                ученики с выдающимися результатами...</p>
+                            <button onclick="window.location.href='/news_main'">ПОДРОБНЕЕ О СЕЗОНЕ</button>
+                        </div>
+                </div>
+                <button class="pager-btn inactive" aria-label="Назад">
+                    <svg class="slider-icon" width="30" height="30">
+                        <use href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
             </div>
             <div class="updates scale-in">
                 <div class="updates-title">
@@ -81,7 +99,7 @@
                     </ul>
                 </div>
                 <div class="updates-link-wrapper">
-                    <a class ="updates-link" href="/news_main">Больше новостей</a>
+                    <button onclick="window.location.href='/news_main'">ВСЕ ОБНОВЛЕНИЯ</button>
                 </div>
             </div>
         </div>
