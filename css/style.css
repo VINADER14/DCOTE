@@ -94,23 +94,25 @@ button {
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    border: clamp(0.01px, 0.195vw, 3px) solid rgb(229, 11, 85);
+    border: none;
     border-radius: var(--fs-border-radius);
-    padding-block: clamp(1px, 0.39vw, 6px);
-    padding-inline: clamp(1px, 0.975vw, 15px);
+    padding-block: clamp(1px, 0.715vw, 11px);
+    padding-inline: clamp(1px, 1.17vw, 18px);
     font-size: var(--fs-nav-links);
     display: flex;
     justify-content: center;
     cursor: pointer;
-    background-color: #33333300;
     align-items: center;
     font-family: 'Vag-Bold';
+    box-shadow: 0 0px clamp(10px, 1.3vw, 20px) 0px rgba(224, 11, 82, 0.5);
+    background-color: rgba(224, 11, 82, 0.5);
+    transform-origin: center center;
+    will-change: transform;
 }
 
 
 button:hover {
-    background-color: rgb(143, 17, 68);
-    border-color: rgb(143, 17, 68);
+    scale: 0.95;
 }
 
 @media (max-width:450px) {
@@ -129,13 +131,15 @@ button:hover {
     h3 {
         font-size: 21px;
     }
-    button{
+
+    button {
         padding-block: 6px;
         padding-inline: 15px;
         background-color: rgb(143, 17, 68);
         border-color: rgb(143, 17, 68);
     }
-    button:hover{
+
+    button:hover {
         scale: 0.95;
     }
 }
@@ -191,7 +195,7 @@ main {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(90deg, rgb(78, 28, 57) 0%, rgb(78, 28, 57) 7%, rgb(28, 22, 46) 50%, rgb(78, 28, 57) 93%, rgb(78, 28, 57) 100%);
-    padding:15px 30px;
+    padding: 15px 30px;
     z-index: 1500;
     text-decoration: none;
 }
@@ -205,9 +209,9 @@ main {
 }
 
 .navbar .left .main-logo,
-.footer-right .main-logo{
-    width:clamp(1px,12vw,184px);
-    height:clamp(1px,3vw,41px);
+.footer-right .main-logo {
+    width: clamp(1px, 12vw, 184px);
+    height: clamp(1px, 3vw, 41px);
 }
 
 
@@ -264,7 +268,7 @@ main {
 /* ==== Гамбургер ==== */
 
 
-.navbar .hamburger .hamburger-icon{
+.navbar .hamburger .hamburger-icon {
     color: rgb(224, 11, 82);
     width: 38px;
     height: 38px;
@@ -316,18 +320,22 @@ main {
 /* ==== Адаптив ==== */
 
 @media (max-width: 450px) {
+
     .navbar .left .main-logo,
-    .footer-right .main-logo{
-    width:172px;
-    height:38px;
-}
-    .navbar .center,.navbar .right {
+    .footer-right .main-logo {
+        width: 172px;
+        height: 38px;
+    }
+
+    .navbar .center,
+    .navbar .right {
         display: none;
     }
 
     .navbar {
         padding: 5px 10px;
     }
+
     .navbar a {
         margin: 0px 0px;
         color: white;
@@ -470,7 +478,7 @@ a.current-page span::after {
     align-items: center;
     display: flex;
     text-decoration: none;
-    padding:15px 30px;
+    padding: 15px 30px;
     justify-content: space-between;
 }
 
@@ -493,7 +501,7 @@ a.current-page span::after {
 
 
 .social-nets-logos {
-    height:clamp(1px,3vw,41px);
+    height: clamp(1px, 3vw, 41px);
     width: auto;
     display: flex;
     justify-content: center;
@@ -536,6 +544,119 @@ a.current-page span::after {
 
 /* Главная страница начало */
 
+.page-dcote_main .hero {
+    position: relative;
+    border-radius: var(--fs-border-radius);
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.page-dcote_main .hero .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-dcote_main .hero .hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: clamp(10px, 1.3vw, 20px);
+    padding-block: clamp(10px, 1.3vw, 20px);
+    z-index: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 43%;
+    gap: clamp(10px, 1.3vw, 20px);
+    justify-content: center;
+    height: 100%;
+}
+
+.page-dcote_main .hero .hero-content .title {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px, 0.65vw, 10px);
+}
+
+.page-dcote_main .hero .hero-content .hero-buttons {
+    display: flex;
+    gap: clamp(10px, 1.3vw, 20px);
+}
+
+.page-dcote_main .hero .hero-content .hero-buttons .tg-btn {
+    box-shadow: 0 0px 20px 0px rgba(26, 106, 255, 0.5);
+    background-color: rgba(26, 106, 255, 0.5);
+}
+
+.page-dcote_main .hero .hero-content .hero-buttons .project-btn {
+    box-shadow: 0 0px 20px 0px rgba(138, 74, 210, 0.5);
+    background-color: rgb(138, 74, 210, 0.5);
+}
+
+.page-dcote_main .grid-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+.page-dcote_main .grid-images .wrapper {
+    position: relative;
+    border-radius: var(--fs-border-radius);
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.page-dcote_main .grid-images a {
+    text-decoration: none;
+    transition: 0.3s;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.page-dcote_main .grid-images .wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-dcote_main .grid-images .wrapper .content {
+    position: absolute;
+    background: rgba(11, 23, 43, 0.8);
+    padding: clamp(10px, 1.3vw, 20px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px, 0.65vw, 10px);
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.page-dcote_main .grid-images:hover a .content {
+    background: rgba(11, 23, 43, 0.9);
+}
+
+.page-dcote_main .grid-images a:hover .content {
+    background: rgba(15, 25, 43, 0.6);
+}
+
+.page-dcote_main .grid-images a:hover {
+    scale: 1.05;
+}
+
+.page-dcote_main .grid-images .wrapper .content h3 {
+    margin-top: 50%;
+}
+
+
 .page-dcote_main .content-line1 {
     display: flex;
     gap: 30px;
@@ -543,23 +664,68 @@ a.current-page span::after {
     flex-wrap: wrap;
 }
 
-.page-dcote_main .description {
+.page-dcote_main .popular {
     display: flex;
-    flex: 2;
-    background: linear-gradient(90deg, #df0e5431 50%, #0b172b);
+    flex: 2 2 510px;
+    flex-direction: column;
+    background: linear-gradient(180deg, #df0e5431 50%, #0b172b);
     border-radius: var(--fs-border-radius);
     position: relative;
     overflow: hidden;
+    padding: clamp(10px, 1.3vw, 20px);
+    gap: clamp(10px, 1.3vw, 20px)
 }
 
-@media (max-width: 1060px) {
-    .page-dcote_main .content-line1 {
-        gap: 20px;
-    }
+.page-dcote_main .popular .pager button {
+    padding: clamp(5px, 0.65vw, 10px);
 }
 
-.page-dcote_main .description {
-    flex: 2 2 510px !important;
+.page-dcote_main .popular h1 {
+    text-align: center;
+}
+
+.page-dcote_main .popular .pager {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(10px, 1.3vw, 20px);
+
+}
+
+.page-dcote_main .popular .pager .content {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    justify-content: center;
+    gap: clamp(10px, 1.3vw, 20px);
+    padding-inline: clamp(15px, 1.95vw, 30px);
+}
+
+
+.page-dcote_main .popular .pager .content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 1 / 1.385;
+    border-radius: var(--fs-border-radius);
+    width: 35%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+
+.page-dcote_main .popular .pager .content .text{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5px, 0.65vw, 10px);
+    align-items: flex-start;
+}
+
+.page-dcote_main .popular .pager .content .text button{
+    margin-top: auto;
+    padding-block: clamp(1px, 0.715vw, 11px);
+    padding-inline: clamp(1px, 1.17vw, 18px);
 }
 
 .page-dcote_main .updates {
@@ -1691,6 +1857,7 @@ a.current-page span::after {
     display: flex;
     transition: transform 0.4s ease-in-out;
 
+
 }
 
 
@@ -1702,6 +1869,9 @@ a.current-page span::after {
     flex-shrink: 0;
     transition: transform 0.3s ease;
     transform: scale(1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 .slides img:hover {
