@@ -95,8 +95,8 @@
                     <h1>ЛЕНТА ОБНОВЛЕНИЙ</h1>
                 </div>
                 <div class="updates-news">
-                    <ul>
-                    </ul>
+                        <h3>НОВОЕ</h3>
+                        <div class="one-news-wrapper"><p>Опубликована озвучка к 4 серии 4 сезона аниме-адаптацииииииииииииииии</p></div>
                 </div>
                 <div class="updates-link-wrapper">
                     <button onclick="window.location.href='/news_main'">ВСЕ ОБНОВЛЕНИЯ</button>
@@ -145,66 +145,65 @@
         <div class="content-line4">
             <div class="top-classes scale-in">
                 <div class="title"><h1>РЕЙТИНГ КЛАССОВ</h1></div>
-                <div class="top-classes-buttons">
-                    <button class="classes-button-active">Без спойлеров</button>
-                    <button class="classes-button-inactive">Со спойлерами</button>
+                <div class="spoilers">
+                    <p><b>Спойлеры:</b></p>
+                    <label class="toggle-switch-compact">
+                        <input type="checkbox" class="toggle-input">
+                        <span class="toggle-slider"></span>
+                    </label>
                 </div>
-                <div class="top-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width:15%;"></th>
-                                <th style="width:50%;"></th>
-                                <th style="width:15%;"></th>
-                                <th style="width:20%;"></th>
-                            </tr>
-                        </thead>
-                        <tbody> 
-                            <tr>
-                                <td><img src="images/index/arisu-class.avif" alt=""></td>
-                                <td class="class-lider"><h3>Класс Сакаянаги</h3></td>
-                                <td class="class-letter"><h3>A</h3></td>
-                                <td class="class-points"><h3>1119 к.о.</h3></td>
-                            </tr>
-                            <tr>
-                                <td><img src="images/index/ichinose-class.avif" alt=""></td>
-                                <td class="class-lider"><h3>Класс Ичиносе</h3></td>
-                                <td class="class-letter"><h3>B</h3></td>
-                                <td class="class-points"><h3>542 к.о.</h3></td>
-                            </tr>
-                            <tr>
-                                <td><img src="images/index/ryuen-class.avif" alt=""></td>
-                                <td class="class-lider"><h3>Класс Рьюена</h3></td>
-                                <td class="class-letter"><h3>C</h3></td>
-                                <td class="class-points"><h3>540 к.о.</h3></td>
-                            </tr>
-                            <tr>
-                                <td><img src="images/index/suzune-class.avif" alt=""></td>
-                                <td class="class-lider"><h3>Класс Хорикиты</h3></td>
-                                <td class="class-letter"><h3>D</h3></td>
-                                <td class="class-points"><h3>275 к.о.</h3></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="rating">
+                    <div class="school-class">
+                        <img src="/images/index/arisu-class.avif">
+                        <div class="info">
+                            <div class="text"><h3>Класс A</h3>
+                            <p>Сакаянаги Арису</p></div>
+                            <div class="points-bg"><p>1119 классных очков</p></div>
+                        </div>
+                    </div>
+                    <div class="school-class">
+                        <img src="/images/index/arisu-class.avif">
+                        <div class="info">
+                            <div class="text"><h3>Класс A</h3>
+                            <p>Сакаянаги Арису</p></div>
+                            <div class="points-bg"><p>1119 классных очков</p></div>
+                        </div>
+                    </div>
+                    <div class="school-class">
+                        <img src="/images/index/arisu-class.avif">
+                        <div class="info">
+                            <div class="text"><h3>Класс A</h3>
+                            <p>Сакаянаги Арису</p></div>
+                            <div class="points-bg"><p>1119 классных очков</p></div>
+                        </div>
+                    </div>
+                    <div class="school-class">
+                        <img src="/images/index/arisu-class.avif">
+                        <div class="info">
+                            <div class="text"><h3>Класс A</h3>
+                            <p>Сакаянаги Арису</p></div>
+                            <div class="points-bg"><p>1119 классных очков</p></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="full-stat"><button>ПОЛНАЯ СТАТИСТИКА</button></div>
             </div>
             <div class="top-users scale-in">
                 <div class="title"><h1>РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ</h1></div>
                 <div class="users-table">
-                    <table>
+                    <table style="height: 100%;">
                         <thead>
                             <tr>
-                                <th class="rank-head" style="width:8%;"><p>Ранг</p></th>
-                                <th style="width:8%;"></th>
-                                <th class="nickname-head" style="width:35%;"><p>Пользователь</p></th>
+                                <th class="rank-head" style="width:10%;"><p>Ранг</p></th>
+                                <th class="" style="width:8%;"></th>
+                                <th class="nickname-head" style="width:32%;"><p>Пользователь</p></th>
                                 <th class="status-head" style="width:35%;"><p>Статус</p></th>
                                 <th class="rating-on-main-head" style="width:14%;"><p>Рейтинг</p></th>
                             </tr>
                         </thead>
-                        <tbody> 
+                        <tbody style="height: 100%;"> 
                             <tr>
-                                <td class="rank"><p>#1</p></td>
+                                <td class="rank"><svg class="chess-icon" style="color:#ffb147" ><use href="#chess-king"></use></svg><p><b>1</b></p></td>
                                 <td><img src="images/index/2.webp" alt=""></td>
                                 <td class="nickname"><p>MrEgor4ik</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
@@ -258,61 +257,44 @@
                 <div class="full-stat"><button>ВСЕ ПОЛЬЗОВАТЕЛИ</button></div>
             </div>
         </div>
-        <div class="buttons-containers">
-            <div class="base-dcote scale-in">
-                <div class="base-dcote-image">
-                    <div class="image-wrapper">
-                        <img src="images/index/tg1.webp" loading="lazy"decoding="async" alt="Картинка"/>
-                    </div>
-                </div>
-                <div class="banner-info slide-in-top">
-                    <div class="title">
-                        <h1>ОБСУЖДЕНИЕ НОВОСТЕЙ</h1>
-                    </div>
-                    <div class="text">
-                        <p>Беседа в мессенджере Telegram, где люди обсуждают актуальные новости и беседуют друг с другом</p>
-                        <div class="button">
-                            <button class="tg-btn" onclick="window.location.href='https://t.me/DCOTEFILES'">ПЕРЕЙТИ</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="base-dcote scale-in">
-                <div class="base-dcote-image">
-                    <div class="image-wrapper">
-                        <img src="images/index/tg2.webp" loading="lazy"decoding="async" alt="Картинка для базы"/>
-                    </div>
-                </div>
-                <div class="banner-info slide-in-top">
-                    <div class="title">
-                        <h1>ОБСУЖДЕНИЕ СПОЙЛЕРОВ</h1>
-                    </div>
-                    <div class="text">
-                        <p>Беседа в мессенджере Telegram, где люди обсуждают спойлеры и беседуют друг с другом</p>
-                        <div class="button">
-                            <button class="tg-btn" onclick="window.location.href='https://t.me/DCOTESPOILERS2'">ПЕРЕЙТИ</button>
-                        </div>
-                    </div>
+        <div class="some-info">
+            <div class="description">
+                <div class="image-wrapper"><img src="/images/index/na-divane.webp"></div>
+                <div class="text">
+                    <h1>ОПИСАНИЕ ПРОИЗВЕДЕНИЯ</h1>
+                    <p>
+Добро пожаловать в класс превосходства — это напряжённая школьная драма
+с элементами психологического триллера, действие которой разворачивается 
+в престижной государственной школе Кодо Икусэй, известной идеальными условиями 
+и почти гарантированным будущим успехом для выпускников. Однако за внешним 
+совершенством скрывается жестокая система ранжирования, где учащиеся получают 
+всё — от привилегий до денежных баллов — строго по заслугам и результатам конкуренции.
+<br><br>
+Главный герой, таинственный и замкнутый Аянокоджи Киётака, по воле обстоятельств 
+оказывается в худшем классе D, куда отправляют «дефективных» учеников школы. 
+Несмотря на намерение оставаться в тени, он постепенно оказывается втянут в 
+сложную игру интриг, стратегий и скрытых конфликтов между учениками школы.
+                    </p>
                 </div>
             </div>
-            <div class="base-dcote scale-in">
-                <div class="base-dcote-image">
-                    <div class="image-wrapper">
-                        <img src="images/index/tg3.webp" loading="lazy"decoding="async" alt="Картинка для базы"/>
-                    </div>
-                </div>
-                <div class="banner-info slide-in-top">
-                    <div class="title">
-                        <h1>ТЕОРИИ И РАЗБОРЫ</h1>
-                    </div>
-                    <div class="text">
-                        <p>Обсуждение тех или иных горячих тем, что не до конца разобраны и разборы, как в ключевых, так и второстепенных фрагментов произведения</p>
-                        <div class="button">
-                            <button class="tg-btn" onclick="window.location.href='https://t.me/DCOTETHEORIES'">ПЕРЕЙТИ</button>
-                        </div>
-                    </div>
+                <div class="description">
+                <div class="image-wrapper"><img src="/images/index/shkola.webp"></div>
+                <div class="text">
+                    <h1>СТОЛИЧНАЯ СТАРШАЯ ШКОЛА ПРОДВИНУТОГО ВОСПИТАНИЯ</h1>
+                    <p>
+Токийское государственное учебное учреждение, созданное японским правительством 
+для воспитания молодых выпускников, которые будут поддерживать различные 
+профессиональные отрасли страны, что подкрепляется особыми методами обучения. 
+За счёт своей репутации, школа может похвастаться своим сто процентным уровнем 
+занятости и поступления в колледж. Сам кампус располагается на отдельном, 
+искусственно сконструированном острове, площадь которого составляет около шестиста тысяч квадратных метров.
+                    </p>
+                    <div style="display: flex;width: 100%;justify-content: center;"><div onclick="window.location.href='/about-school'" class="full-stat"><button>БОЛЬШЕ ИНФОРМАЦИИ</button></div></div>
                 </div>
             </div>
+        </div>
+        <div class="tg-links">
+
         </div>
     </main>
 </body>

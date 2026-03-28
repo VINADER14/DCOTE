@@ -101,7 +101,6 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-
         document.querySelector('.sort-toggle')?.addEventListener('click', function() {
             const cont = document.querySelector('.grid-area');
             const sortAsc = this.querySelector('.sort-ascending');
@@ -172,5 +171,4 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
         });
     })
 </script>
-
 </html>
