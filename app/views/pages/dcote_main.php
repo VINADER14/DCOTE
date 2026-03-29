@@ -10,7 +10,7 @@
         <div class="hero">
             <img class="hero-image" src="/images/index/hero-блок.webp" fetchpriority="high" decoding="async" alt="Арису лежит в кроватке"/>
             <div class="hero-content">
-                <div class="title"><h1>Веб-сообщество <span style="color: rgb(224, 11, 82);">D</span>COTE</h1>
+                <div class="title"><h1>Фан-сообщество <span style="color: rgb(224, 11, 82);">D</span>COTE</h1>
                 <h3>Обитель фанатского комьюнити произведения «Добро пожаловать в класс превосходства».</h3></div>
                 <p>Горячие новости из медиа-пространства произведения, чтение оригинальной новеллы,
                     бесплатный просмотр аниме-адаптации и чтение глав манги. Полноценный сборник
@@ -18,9 +18,22 @@
                     и превосходные арт-генерации от ИИ. Подробные досье и описания персонажей.
                     Всё это и не только вы найдёте на страницах данного веб-сообщества!</p>
                     <div class="hero-buttons">
-                        <button onclick="window.location.href='/news_main'">ЧИТАТЬ НОВОСТИ</button>
-                        <button class="project-btn" onclick="window.location.href='/about-project'">О ПРОЕКТЕ</button>
-                        <button class="tg-btn" onclick="window.location.href='https://t.me/DCOTEFILES'">ТЕЛЕГРАМ-КАНАЛ</button>
+                        <a href="/news_main" class="link-like-button" rel="noopener noreferrer">ЧИТАТЬ НОВОСТИ</a>
+                        <a href="/about-project" class="link-like-button project-btn" rel="noopener noreferrer">О ПРОЕКТЕ</a>
+                        <a href="https://t.me/DCOTEFILES" target="_blank" class="link-like-button tg-btn" rel="noopener noreferrer">ТЕЛЕГРАМ-КАНАЛ</a>
+                    </div>
+            </div>
+        </div>
+        <div class="hero mobile">
+            <img class="hero-image" src="/images/index/hero-mobile.webp" fetchpriority="high" decoding="async" alt="Арису лежит в кроватке"/>
+            <div class="hero-content">
+                <div class="title-and-smth"><div class="title"><h1>Фан-сообщество <span style="color: rgb(224, 11, 82);">D</span>COTE</h1></div>
+                <p>Горячие новости, чтение ранобэ и/или манги и просмотр аниме. Сборник иллюстраций
+                     и подробные досье всех персонажей.
+                    Всё это и не только, вы найдёте на данном веб-сайте!</p></div>
+                    <div class="hero-buttons">
+                        <a href="/about-project" class="link-like-button project-btn" rel="noopener noreferrer">О ПРОЕКТЕ</a>
+                        <a href="https://t.me/DCOTEFILES" target="_blank" class="link-like-button tg-btn" rel="noopener noreferrer">ТЕЛЕГРАМ-КАНАЛ</a>
                     </div>
             </div>
         </div>
@@ -80,7 +93,8 @@
                                 выплачиваются баллы, эквивалентные 100.000 йен наличными.
                                 Однако на деле это место, где привилегии получают лишь немногие
                                 ученики с выдающимися результатами...</p>
-                            <button onclick="window.location.href='/news_main'">ПОДРОБНЕЕ О СЕЗОНЕ</button>
+                            <a href="/news_main" class="link-like-button" rel="noopener noreferrer">ПОДРОБНЕЕ О СЕЗОНЕ</a>
+                            <a href="/news_main" class="link-like-button mobile" rel="noopener noreferrer">ПОДРОБНЕЕ</a>
                         </div>
                 </div>
                 <button class="pager-btn inactive" aria-label="Назад">
@@ -99,47 +113,8 @@
                         <div class="one-news-wrapper"><p>Опубликована озвучка к 4 серии 4 сезона аниме-адаптацииииииииииииииии</p></div>
                 </div>
                 <div class="updates-link-wrapper">
-                    <button onclick="window.location.href='/news_main'">ВСЕ ОБНОВЛЕНИЯ</button>
+                    <a href="/news_main" class="link-like-button" rel="noopener noreferrer">ВСЕ ОБНОВЛЕНИЯ</a>
                 </div>
-            </div>
-        </div>
-        <div class="content-line2">
-            <div class="school-image-base scale-in">
-                <img src="images/index/school_landscape.webp" fetchpriority="high" decoding="async" alt="Кодо Икусей фото скачать"/>
-            </div>
-            <div class="about-school slide-in-left">
-                <div class="title-school">
-                    <h1>СТОЛИЧНАЯ СТАРШАЯ ШКОЛА ПРОДВИНУТОГО ВОСПИТАНИЯ</h1>
-                </div>
-                <div class="text">
-                    <p>Токийское государственное учебное учреждение, созданное японским правительством для воспитания молодых выпускников,
-                        которые будут поддерживать различные профессиональные отрасли страны, что подкрепляется особыми методами обучения.
-                        за счёт своей репутации, школа может похвастаться своим сто процентным уровнем занятости и поступления в колледж.
-                        Сам кампус располагается на отдельном, искусственно сконструированном острове, площадь которого составляет около
-                        шестиста тысяч квадратных метров.</p>
-                    <div class="button">
-                        <button class="tg-btn" onclick="window.location.href='/about-school'">БОЛЬШЕ ИНФОРМАЦИИ</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content-line3">
-            <div class="about-island slide-in-right">
-                <div class="title">
-                    <h1>ЭКЗАМЕНАЦИОННЫЙ ШКОЛЬНЫЙ ОСТРОВ</h1>
-                </div>
-                <div class="text">
-                    <p>Необитаемый остров, что юридически принадлежит школе и периодически используется руководством для проведения
-                        специальных экзаменов.<br><br>
-                        Проведение таких экзаменов по традиции выпадает на начало нового года и знаменует собой всю серьёзность
-                        выстроенной правительством школьной системой - выживание в диких условиях, работа в команде, противостояние группам оппонентов.
-                        <br><br>Сам остров делится на специальные сектора, что предназначены для реального использования на специфичных по
-                        правилам экзаменах.<br><br>Путешествия на остров происходят каждый год, что позволяет
-                        выработать у учеников некую адаптацию к подобным условиям.</p>
-                </div>
-            </div>
-            <div class="island-image-base scale-in">
-                <img src="images/index/island-map.webp" loading="lazy"decoding="async" alt="Крутой остров фото скачать"/>
             </div>
         </div>
         <div class="content-line4">
@@ -205,49 +180,49 @@
                             <tr>
                                 <td class="rank"><svg class="chess-icon" style="color:#ffb147" ><use href="#chess-king"></use></svg><p><b>1</b></p></td>
                                 <td><img src="images/index/2.webp" alt=""></td>
-                                <td class="nickname"><p>MrEgor4ik</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p>MrEgor4ik</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>6969</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#2</p></td>
                                 <td><img src="images/index/1.webp" alt=""></td>
-                                <td class="nickname"><p>Andrey Andreev</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p>Andrey Andreev</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>6767</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/3.webp" alt=""></td>
-                                <td class="nickname"><p>Эйнштейн</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p>Эйнштейн</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>5252</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/4.webp" alt=""></td>
-                                <td class="nickname"><p>TemZz</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p>TemZz</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>4242</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/5.webp" alt=""></td>
-                                <td class="nickname"><p>Popco1n</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p>Popco1n</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>1488</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/6.webp" alt=""></td>
-                                <td class="nickname"><p>Vinader</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p>Vinader</p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>666</p></td>
                             </tr>
                             <tr>
                                 <td class="rank"><p>#1</p></td>
                                 <td><img src="images/index/7.webp" alt=""></td>
-                                <td class="nickname"><p>Чайник</p></td>
+                                <td class="nickname" data-status="Команда проекта"><p><b>Чайник</b></p></td>
                                 <td class="status"><p>Команда проекта</p></td>
                                 <td class="rating-on-main"><p>100</p></td>
                             </tr>
@@ -261,7 +236,7 @@
             <div class="description">
                 <div class="image-wrapper"><img src="/images/index/na-divane.webp"></div>
                 <div class="text">
-                    <h1>ОПИСАНИЕ ПРОИЗВЕДЕНИЯ</h1>
+                    <div class="title-and-smth"><h1>ОПИСАНИЕ ПРОИЗВЕДЕНИЯ</h1>
                     <p>
 Добро пожаловать в класс превосходства — это напряжённая школьная драма
 с элементами психологического триллера, действие которой разворачивается 
@@ -274,13 +249,13 @@
 оказывается в худшем классе D, куда отправляют «дефективных» учеников школы. 
 Несмотря на намерение оставаться в тени, он постепенно оказывается втянут в 
 сложную игру интриг, стратегий и скрытых конфликтов между учениками школы.
-                    </p>
+                    </p></div>
                 </div>
             </div>
                 <div class="description">
                 <div class="image-wrapper"><img src="/images/index/shkola.webp"></div>
                 <div class="text">
-                    <h1>СТОЛИЧНАЯ СТАРШАЯ ШКОЛА ПРОДВИНУТОГО ВОСПИТАНИЯ</h1>
+                    <div class="title-and-smth"><h1>СТОЛИЧНАЯ СТАРШАЯ ШКОЛА ПРОДВИНУТОГО ВОСПИТАНИЯ</h1>
                     <p>
 Токийское государственное учебное учреждение, созданное японским правительством 
 для воспитания молодых выпускников, которые будут поддерживать различные 
@@ -288,13 +263,61 @@
 За счёт своей репутации, школа может похвастаться своим сто процентным уровнем 
 занятости и поступления в колледж. Сам кампус располагается на отдельном, 
 искусственно сконструированном острове, площадь которого составляет около шестиста тысяч квадратных метров.
-                    </p>
-                    <div style="display: flex;width: 100%;justify-content: center;"><div onclick="window.location.href='/about-school'" class="full-stat"><button>БОЛЬШЕ ИНФОРМАЦИИ</button></div></div>
+                    </p></div>
+                    <div style="display: flex;width: 100%;justify-content: center;"><a href="/about-school" class="link-like-button" rel="noopener noreferrer">БОЛЬШЕ ИНФОРМАЦИИ</a></div>
                 </div>
             </div>
         </div>
+        <div class="content-line3">
+            <div class="about-island slide-in-right">
+                <div class="title" style="text-align: center;">
+                    <h1>ЭКЗАМЕНАЦИОННЫЙ ШКОЛЬНЫЙ НЕОБИТАЕМЫЙ ОСТРОВ</h1>
+                </div>
+                <div class="text">
+                    <p>Необитаемый остров, что юридически принадлежит школе и периодически используется руководством для проведения
+                        специальных экзаменов.<br><br>
+                        Проведение таких экзаменов по традиции выпадает на начало нового года и знаменует собой всю серьёзность
+                        выстроенной правительством школьной системой - выживание в диких условиях, работа в команде, противостояние группам оппонентов.
+                        <br><br>Сам остров делится на специальные сектора, что предназначены для реального использования на специфичных по
+                        правилам экзаменах.<br><br>Путешествия на остров происходят каждый год, что позволяет
+                        выработать у учеников некую адаптацию к подобным условиям.</p>
+                </div>
+            </div>
+            <div class="island-image-base scale-in">
+                <img src="images/index/остров.webp" loading="lazy"decoding="async" alt="Крутой остров фото скачать"/>
+            </div>
+        </div>
         <div class="tg-links">
-
+            <div class="banner">
+                <div class="image-wrapper">
+                    <img src="/images/index/обсуждение-новостей.webp">
+                </div>
+                <div class="text">
+                    <div class="title-and-smth"><h1>ОБСУЖДЕНИЕ НОВОСТЕЙ</h1>
+                    <p>Беседа в мессенджере Telegram, где люди обсуждают актуальные новости и беседуют друг с другом</p></div>
+                    <div style="display: flex;width: 100%;justify-content: center;"><a href="https://t.me/DCOTE2" class="link-like-button" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ</a></div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="image-wrapper">
+                    <img src="/images/index/обсуждение-спойлеров.webp">
+                </div>
+                <div class="text">
+                    <div class="title-and-smth"><h1>ОБСУЖДЕНИЕ СПОЙЛЕРОВ</h1>
+                    <p>Беседа в мессенджере Telegram, где люди обсуждают спойлеры, беседуют друг с другом и комфортно проводят время</p></div>
+                    <div style="display: flex;width: 100%;justify-content: center;"><a href="https://t.me/DCOTESPOILERSCHAT" class="link-like-button" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ</a></div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="image-wrapper">
+                    <img src="/images/index/теории-и-разборы.webp">
+                </div>
+                <div class="text">
+                    <div class="title-and-smth"><h1>ТЕОРИИ И ВАЖНЫЕ РАЗБОРЫ</h1>
+                    <p>Обсуждение тех или иных горячих тем, что не до конца разобраны и разборы, как в ключевых, так и второстепенных фрагментов произведения</p></div>
+                    <div style="display: flex;width: 100%;justify-content: center;"><a href="https://t.me/DCOTETHEORIES" class="link-like-button" target="_blank" rel="noopener noreferrer">ПЕРЕЙТИ</a></div>
+                </div>
+            </div>
         </div>
     </main>
 </body>

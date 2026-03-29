@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png?v=6">
-    <link rel="stylesheet" href="/css/style.css?v=66">
+    <link rel="stylesheet" href="/css/style.css?v=67">
     <meta name="description" content="<?= htmlspecialchars($desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!') ?>">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
@@ -184,7 +184,7 @@
             <a href="/about-project"><span>О ПРОЕКТЕ</span></a>
         </div>
         <div class="right">
-            <button class="login-btn" onclick="window.location.href='<?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? '/account' : '/login' ?>'"><?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? 'АККАУНТ' : 'ВОЙТИ' ?></button>
+            <a href="<?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? '/account' : '/login' ?>" class="link-like-button login-btn" rel="noopener noreferrer"><?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? 'АККАУНТ' : 'ВОЙТИ' ?></a>
         </div>
         <div class="right-mobile">
             <button class="hamburger" id="hamburgerBtn"><svg class="hamburger-icon" width="30" height="30">

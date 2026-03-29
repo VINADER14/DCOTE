@@ -47,15 +47,12 @@ label {
     --fs-footer: clamp(5px, 0.78vw, 12px);
     --fs-nav-links: clamp(5px, 1.17vw, 18px);
     --fs-border-radius: clamp(1px, 0.65vw, 10px);
+    --fs-padding:clamp(5px, 1.3vw, 20px);
+    --fs-gap20:clamp(5px, 1.3vw, 20px);
+    --fs-gap10:clamp(1px, 0.65vw, 10px);
 }
 
-@media (max-width:450px) {
-    :root {
-        --fs-border-radius: 10px;
-        --fs-nav-links: 18px;
 
-    }
-}
 
 h1 {
     font-size: var(--fs-title1);
@@ -94,7 +91,7 @@ p {
 
 
 
-button {
+button,.link-like-button {
     color: white;
     text-decoration: none;
     transition: 0.3s;
@@ -112,39 +109,48 @@ button {
     background-color: rgba(224, 11, 82, 0.5);
     transform-origin: center center;
     will-change: transform;
+    width: max-content;
 }
 
 
-button:hover {
+button:hover,.link-like-button:hover {
     scale: 0.95;
 }
 
-@media (max-width:450px) {
+.title-and-smth{
+    gap: var(--fs-gap10);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
     p {
-        font-size: 18px;
+        font-size: clamp(13.5px, 4.267vw, 36px);
     }
 
     h1 {
-        font-size: 25px;
+        font-size: clamp(21px, 6.667vw, 56px);
     }
 
     h2 {
-        font-size: 23px;
+        font-size: clamp(19px, 5.867vw, 250px);
     }
 
     h3 {
-        font-size: 21px;
+        font-size: clamp(16px, 5.067vw, 39px);
     }
 
-    button {
-        padding-block: 6px;
-        padding-inline: 15px;
-        background-color: rgb(143, 17, 68);
-        border-color: rgb(143, 17, 68);
+    button,
+    .link-like-button {
+        padding-block: clamp(9px, 2.933vw, 23px);
+        padding-inline: clamp(15px, 4.8vw, 37px);
+        font-size: clamp(13.5px, 4.267vw, 36px);
     }
-
-    button:hover {
-        scale: 0.95;
+    :root{
+    --fs-border-radius: clamp(8px, 2.67vw, 22px);
+    --fs-padding:clamp(8px, 2.67vw, 22px);
+    --fs-gap20:clamp(1px, 5.34vw, 100px);
+    --fs-gap10:clamp(1px, 2.67vw, 10px);
     }
 }
 
@@ -173,19 +179,19 @@ body {
 main {
     max-width: 1540px;
     margin: 0 auto;
-    padding: 30px;
+    padding: clamp(10px, 1.95vw,30px);
     flex: 1;
-    gap: 30px;
+    gap: clamp(10px, 1.95vw,30px);
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
 
-@media (max-width:450px) {
+@media (max-width:768px) {
     main {
-        gap: 10px;
-        padding: 10px;
+        gap:clamp(1px,2.67vw,100px);
+        padding:clamp(1px,2.67vw,100px);
     }
 }
 
@@ -230,19 +236,19 @@ main {
     display: flex;
 }
 
-.navbar a {
+.navbar .center a {
     color: white;
     text-decoration: none;
     font-family: 'Vag-Medium', sans-serif;
     font-size: var(--fs-nav)
 }
 
-.navbar a span {
+.navbar .center a span {
     position: relative;
     display: inline-block;
 }
 
-.navbar a span::after {
+.navbar .center a span::after {
     content: "";
     position: absolute;
     left: 0;
@@ -253,11 +259,11 @@ main {
     transition: width 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar .center a:hover {
     color: rgb(224, 11, 82);
 }
 
-.navbar a:hover span::after {
+.navbar .center a:hover span::after {
     width: 100%;
     background: rgb(224, 11, 82);
 }
@@ -323,35 +329,12 @@ main {
 
 /* ==== Адаптив ==== */
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
 
-    .navbar .left .main-logo,
-    .footer-right .main-logo {
-        width: 172px;
-        height: 38px;
-    }
-
-    .navbar .center,
-    .navbar .right {
+    .navbar {
         display: none;
     }
 
-    .navbar {
-        padding: 5px 10px;
-    }
-
-    .navbar a {
-        margin: 0px 0px;
-        color: white;
-        text-decoration: none;
-        font-family: 'Pan-Regular', sans-serif;
-        font-size: 12px;
-    }
-
-    .navbar .hamburger {
-        display: flex;
-        cursor: pointer;
-    }
 }
 
 
@@ -489,7 +472,7 @@ a.current-page span::after {
 
 .footer-left {
     display: flex;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     flex: 1;
     align-items: center;
 }
@@ -556,6 +539,10 @@ a.current-page span::after {
     width: 100%;
 }
 
+.page-dcote_main .hero.mobile{
+    display: none;
+}
+
 .page-dcote_main .hero .hero-image {
     width: 100%;
     height: 100%;
@@ -574,20 +561,32 @@ a.current-page span::after {
     display: flex;
     flex-direction: column;
     width: 43%;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     justify-content: center;
     height: 100%;
 }
 
+.page-dcote_main .hero.mobile .hero-content{
+    padding: var(--fs-padding);
+    width: 100%;
+    bottom: 0;
+    top:unset;
+    left: unset;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+}
+
+
 .page-dcote_main .hero .hero-content .title {
     display: flex;
     flex-direction: column;
-    gap: clamp(5px, 0.65vw, 10px);
+    gap: var(--fs-gap10);
 }
 
 .page-dcote_main .hero .hero-content .hero-buttons {
     display: flex;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-dcote_main .hero .hero-content .hero-buttons .tg-btn {
@@ -603,8 +602,9 @@ a.current-page span::after {
 .page-dcote_main .grid-images {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: clamp(10px, 1.95vw,30px);
     align-items: center;
+    width: 100%;
 }
 
 .page-dcote_main .grid-images .wrapper {
@@ -632,11 +632,11 @@ a.current-page span::after {
 .page-dcote_main .grid-images .wrapper .content {
     position: absolute;
     background: rgba(11, 23, 43, 0.8);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: clamp(5px, 0.65vw, 10px);
+    gap: var(--fs-gap10);
     align-items: center;
     height: 100%;
     width: 100%;
@@ -661,28 +661,26 @@ a.current-page span::after {
 }
 
 
+
 .page-dcote_main .content-line1 {
     display: flex;
     gap: 30px;
     align-items: stretch;
-    flex-wrap: wrap;
 }
 
 .page-dcote_main .popular {
     display: flex;
-    flex: 2 2 510px;
+    flex: 2 2;
     flex-direction: column;
     background: linear-gradient(180deg, #df0e5431 50%, #0b172b);
     border-radius: var(--fs-border-radius);
     position: relative;
     overflow: hidden;
-    padding: clamp(10px, 1.3vw, 20px);
-    gap: clamp(10px, 1.3vw, 20px)
+    padding: var(--fs-padding);
+    gap: var(--fs-gap20);
 }
 
-.page-dcote_main .popular .pager button {
-    padding: clamp(5px, 0.65vw, 10px);
-}
+
 
 .page-dcote_main .popular h1 {
     text-align: center;
@@ -692,7 +690,8 @@ a.current-page span::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
+
 
 }
 
@@ -701,10 +700,13 @@ a.current-page span::after {
     align-content: center;
     width: 100%;
     justify-content: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     padding-inline: clamp(15px, 1.95vw, 30px);
 }
 
+.page-dcote_main .popular .pager .content .link-like-button.mobile{
+        display: none;
+    }
 
 .page-dcote_main .popular .pager .content img {
     width: 100%;
@@ -722,143 +724,31 @@ a.current-page span::after {
 .page-dcote_main .popular .pager .content .text{
     display: flex;
     flex-direction: column;
-    gap: clamp(5px, 0.65vw, 10px);
+    gap: var(--fs-gap10);
     align-items: flex-start;
 }
 
-.page-dcote_main .popular .pager .content .text button{
+.page-dcote_main .popular .pager .content .text a{
     margin-top: auto;
-    padding-block: clamp(1px, 0.715vw, 11px);
-    padding-inline: clamp(1px, 1.17vw, 18px);
 }
 
-.page-dcote_main .updates {
-    flex: 1 1 270px !important;
-}
-
-
-.page-dcote_main .image_base {
-    width: 33%;
-    aspect-ratio: 0.8;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    max-width: 397px;
-    z-index: 20;
-}
-
-.page-dcote_main .image_base img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
+.page-dcote_main .popular .pager .pager-btn{
+    padding: clamp(1px, 0.715vw, 11px);
 }
 
 
-
-
-.page-dcote_main .description-text {
-    width: 67%;
-    display: flex;
-    flex-direction: column;
-    padding: clamp(10px, 1.3vw, 20px);
-    gap: clamp(1px, 0.65vw, 10px)
-}
-
-.page-dcote_main .description-text h1 {
-    margin: 0px;
-    text-align: center;
-}
-
-.description-text .page-dcote_main p {
-    margin: 0px;
-}
-
-.page-dcote_main .content-line2,
-.content-line3 {
-    display: flex;
-    overflow: hidden;
-    border-radius: var(--fs-border-radius);
-}
-
-.page-dcote_main .content-line2 .about-school {
-    padding: clamp(10px, 1.3vw, 20px);
-    gap: clamp(1px, 0.65vw, 10px);
-    background: linear-gradient(90deg, #df0e5441, #0b172b);
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.page-dcote_main .content-line2 .about-school .text {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(10px, 1.3vw, 20px);
-}
-
-.page-dcote_main .content-line2 .about-school .button {
-    display: flex;
-    justify-content: center;
-    margin: 0px !important;
-}
-
-
-
-.page-dcote_main .content-line2 .about-school p,
-.content-line3 .about-island p {
-    margin: 0px;
-}
-
-.page-dcote_main .content-line2 .about-school h1,
-.content-line3 .about-island h1 {
-    margin: 0px;
-    text-align: center;
-}
-
-.page-dcote_main .content-line3 .about-island {
-    padding: clamp(10px, 1.3vw, 20px);
-    background: linear-gradient(90deg, #0b172b, #df0e5441);
-    width: 64%;
-    gap: clamp(1px, 0.65vw, 10px);
-    display: flex;
-    flex-direction: column;
-}
-
-.page-dcote_main .school-image-base {
-    width: 50%;
-    overflow: hidden;
-    z-index: 20;
-}
-
-.page-dcote_main .island-image-base {
-    width: 36%;
-    overflow: hidden;
-    z-index: 20;
-}
-
-.page-dcote_main .school-image-base img,
-.island-image-base img {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 2/1;
-    display: block;
-    object-fit: cover;
-}
 
 .page-dcote_main .updates {
     display: flex;
-    flex: 1;
+    flex: 1 1;
     background: linear-gradient(#df0e5441 50%, #0b172b);
     border-radius: var(--fs-border-radius);
     position: relative;
     overflow: hidden;
     flex-direction: column;
     align-items: center;
-    padding: clamp(10px, 1.3vw, 20px);
-    gap: 0.65vw;
+    padding: var(--fs-padding);
+    gap: var(--fs-gap20);
     color: white;
 
 }
@@ -886,14 +776,66 @@ a.current-page span::after {
     color: rgb(224, 11, 82);
 }
 
-.page-dcote_main .updates .updates-link {
-    transition: 0.3s;
-}
 
 .page-dcote_main .updates .updates-link-wrapper{
     margin-top: auto;
 }
 
+
+
+
+
+
+.page-dcote_main .content-line3 {
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--fs-border-radius);
+}
+
+.page-dcote_main .content-line3 .about-island {
+    padding: var(--fs-padding);
+    background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+    width: 62%;
+    gap: var(--fs-gap10);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.page-dcote_main .island-image-base {
+    width: 38%;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.page-dcote_main .island-image-base img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1.25;
+    display: block;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+/* ========================================
+   1. КОНТЕЙНЕР — content-line4
+   ======================================== */
+.page-dcote_main .content-line4 {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+/* ========================================
+   2. TOGGLE SWITCH (переключатель)
+   ======================================== */
 .toggle-switch-compact {
     position: relative;
     display: inline-block;
@@ -936,90 +878,55 @@ a.current-page span::after {
     transform: translateX(100%);
 }
 
-@media (max-width: 855px) {
-    .page-dcote_main .content-line1 .description {
-        flex-direction: column;
-    }
-
-    .page-dcote_main .content-line1 .description .image_base {
-        width: 100% !important;
-        max-width: none !important;
-    }
-
-    .page-dcote_main .content-line1 .description .description-text {
-        width: auto !important;
-        gap: 10px;
-    }
-
-    .page-dcote_main .content-line1 .updates {
-        min-height: 300px;
-
-    }
-
-    .page-dcote_main .content-line2,
-    .content-line3 {
-        flex-direction: column;
-    }
-
-    .page-dcote_main .content-line2 .school-image-base {
-        width: 100% !important;
-    }
-
-    .page-dcote_main .content-line2 .about-school {
-        width: auto !important;
-        gap: 10px;
-        background: linear-gradient(0deg, #0b172b, #df0e5441);
-    }
-
-    .page-dcote_main .content-line3 .island-image-base {
-        width: 100% !important;
-    }
-
-    .page-dcote_main .content-line3 .about-island {
-        width: auto !important;
-        gap: 10px;
-        background: linear-gradient(180deg, #0b172b, #df0e5441);
-    }
-}
-
+/* ========================================
+   3. TOP-CLASSES (левая колонка)
+   ======================================== */
 .page-dcote_main .content-line4 .top-classes {
-    padding: clamp(10px, 1.3vw, 20px);
+    width: 50%;
+    flex: 1;
+    padding: var(--fs-padding);
+    background: linear-gradient(#df0e5441 50%, #0b172b);
+    border-radius: var(--fs-border-radius);
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
-.page-dcote_main .content-line4 .top-classes .spoilers{
+.page-dcote_main .content-line4 .top-classes h1 {
+    text-align: center;
+}
+
+/* Спойлеры */
+.page-dcote_main .content-line4 .top-classes .spoilers {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap:clamp(1px,0.65vw,5px)
+    gap: clamp(1px, 0.65vw, 5px);
+    align-items: center;
 }
 
-
-
-
-
-
-.page-dcote_main .content-line4 .top-classes .rating{
-    gap: clamp(10px, 1.3vw, 20px);
+/* Рейтинг классов */
+.page-dcote_main .content-line4 .top-classes .rating {
     display: flex;
     flex-direction: column;
+    gap: var(--fs-gap20);
 }
 
-.page-dcote_main .content-line4 .top-classes .rating img{
-    width: clamp(50px, 6.5vw, 100px);
-    border-top-right-radius: var(--fs-border-radius);
-    border-top-left-radius: var(--fs-border-radius);
-    border-bottom-left-radius: var(--fs-border-radius);
-}
-
-.page-dcote_main .content-line4 .top-classes .rating .school-class{
+.page-dcote_main .content-line4 .top-classes .rating .school-class {
     display: flex;
     justify-content: flex-start;
 }
 
-.page-dcote_main .content-line4 .top-classes .rating .school-class .info{
+.page-dcote_main .content-line4 .top-classes .rating img {
+    width: clamp(50px, 6.5vw, 100px);
+    height: clamp(50px, 6.5vw, 100px);
+    border-top-right-radius: var(--fs-border-radius);
+    border-top-left-radius: var(--fs-border-radius);
+    border-bottom-left-radius: var(--fs-border-radius);
+    flex-shrink: 0;
+}
+
+.page-dcote_main .content-line4 .top-classes .rating .school-class .info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1027,12 +934,13 @@ a.current-page span::after {
     width: 100%;
 }
 
-.page-dcote_main .content-line4 .top-classes .rating .school-class .info .text{
-    padding-left: clamp(1px,0.65vw,5px);
+.page-dcote_main .content-line4 .top-classes .rating .school-class .info .text {
+    padding-left: clamp(1px, 0.65vw, 5px);
 }
 
-.page-dcote_main .content-line4 .top-classes .points-bg{
-    padding: clamp(1px,0.65vw,5px);
+/* Очки класса */
+.page-dcote_main .content-line4 .top-classes .points-bg {
+    padding: clamp(1px, 0.65vw, 5px);
     background: red;
     border-top-right-radius: var(--fs-border-radius);
     border-bottom-right-radius: var(--fs-border-radius);
@@ -1043,36 +951,11 @@ a.current-page span::after {
     margin-top: auto;
 }
 
-.page-dcote_main .content-line4 .top-users {
-    padding: clamp(10px, 1.3vw, 20px);
+/* Кнопки классов */
+.page-dcote_main .content-line4 .top-classes-buttons {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: clamp(10px, 1.3vw, 20px);
-}
-
-.page-dcote_main .content-line4 .top-users .users-table .chess-icon{
-    width: clamp(15px, 1.95vw, 30px);
-    height: clamp(15px, 1.95vw, 30px);
-}
-
-.page-dcote_main .content-line4 .top-classes h1,
-.content-line4 .top-users h1 {
-    text-align: center;
-}
-
-
-.page-dcote_main .content-line4 {
-    display: flex;
-    gap: 30px;
-    width: 100%;
-}
-
-.page-dcote_main .content-line4 .top-classes {
-    width: 50%;
-    background: linear-gradient(#df0e5441 50%, #0b172b);
-    flex: 1;
-    border-radius: var(--fs-border-radius);
+    justify-content: center;
+    gap: var(--fs-gap20);
 }
 
 .page-dcote_main .top-classes .top-classes-buttons .classes-button-active {
@@ -1080,125 +963,137 @@ a.current-page span::after {
     border-color: rgb(143, 17, 68);
 }
 
+/* ========================================
+   4. TOP-USERS (правая колонка)
+   ======================================== */
+.page-dcote_main .content-line4 .top-users {
+    width: 50%;
+    flex: 1;
+    padding: var(--fs-padding);
+    background: linear-gradient(#df0e5441 50%, #0b172b);
+    border-radius: var(--fs-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--fs-gap20);
+}
 
-.page-dcote_main .top-table,
-.users-table table {
+.page-dcote_main .content-line4 .top-users h1 {
+    text-align: center;
+}
+
+/* Таблица пользователей */
+.page-dcote_main .top-users .users-table table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-.page-dcote_main .top-table td {
-    padding-block: clamp(1px, 0.65vw, 10px);
-}
 
-.page-dcote_main .top-table img {
-    height: clamp(1px, 6.5vw, 100px);
-    width: clamp(1px, 6.5vw, 100px);
-    border-radius: var(--fs-border-radius);
-    display: block;
-    margin: 0 auto;
-}
-
-.page-dcote_main .top-table .class-lider {
-    padding-left: clamp(1px, 0.65vw, 10px);
-}
-
-.page-dcote_main .top-table .class-points {
-    text-align: right;
-}
-
-.page-dcote_main .content-line4 .full-stat {
-    display: flex;
-    justify-content: center;
-}
-
-.page-dcote_main .content-line4 .top-users {
-    width: 50%;
-    background: linear-gradient(#df0e5441 50%, #0b172b);
-    flex: 1;
-    border-radius: var(--fs-border-radius);
-}
-
-
-.page-dcote_main .top-users img {
-    height: clamp(1px, 3.25vw, 50px);
-    width: clamp(1px, 3.25vw, 50px);
-    border-radius: var(--fs-border-radius);
-    display: block;
-    margin: 0 0;
-}
-
-.page-dcote_main .top-users .nickname,
-.top-users .nickname-head {
-    padding-left: clamp(1px, 0.65vw, 10px);
-    text-align: left;
-}
 
 .page-dcote_main .users-table td {
     padding-block: clamp(1px, 0.65vw, 10px);
 }
 
-.page-dcote_main .users-table tr{
+.page-dcote_main .users-table tr {
     height: 100%;
 }
 
+/* Иконки шахмат */
+.page-dcote_main .content-line4 .top-users .users-table .chess-icon {
+    width: clamp(15px, 1.95vw, 30px);
+    height: clamp(15px, 1.95vw, 30px);
+}
+
+/* Аватарки */
+.page-dcote_main .top-users img {
+    height: clamp(1px, 3.25vw, 50px);
+    width: clamp(1px, 3.25vw, 50px);
+    border-radius: var(--fs-border-radius);
+    display: block;
+    margin: 0;
+}
+
+/* Колонки таблицы */
 .page-dcote_main .top-users .rank,
-.top-users .rank-head {
+.page-dcote_main .top-users .rank-head {
     text-align: left;
 }
-.page-dcote_main .top-users .rank{
+
+.page-dcote_main .top-users .rank {
     display: flex;
     align-items: center;
-    gap:clamp(1px,0.65vw,5px);
+    gap: clamp(1px, 0.65vw, 5px);
     width: 100%;
     height: 100%;
     justify-content: flex-start;
 }
 
+.page-dcote_main .top-users .nickname,
+.page-dcote_main .top-users .nickname-head {
+    padding-left: clamp(1px, 0.65vw, 10px);
+    text-align: left;
+}
+
 .page-dcote_main .top-users .status,
-.top-users .status-head {
+.page-dcote_main .top-users .status-head {
     text-align: center;
 }
 
 .page-dcote_main .top-users .rating-on-main,
 .page-dcote_main .top-users .rating-on-main-head,
-.top-users .rating-head {
+.page-dcote_main .top-users .rating-head {
     text-align: right;
 }
 
-.page-dcote_main .top-users .status p,
-.top-users .nickname p {
-    font-family: 'Vag-Bold';
-}
 
 .page-dcote_main .top-users .status p {
     color: rgb(220, 10, 80);
 }
 
-.page-dcote_main .content-line4 .top-classes-buttons {
+/* ========================================
+   5. ОБЩИЕ ЭЛЕМЕНТЫ
+   ======================================== */
+/* Кнопка полной статистики */
+.page-dcote_main .content-line4 .full-stat {
     display: flex;
     justify-content: center;
-    gap: clamp(10px, 1.3vw, 20px);
 }
 
-.page-dcote_main .content-line4 .top-users th {
-    font-weight: 400;
+/* Таблица (общие стили) */
+.page-dcote_main .users-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
+
+
+
+
+
+
 
 
 .page-dcote_main .some-info{
     display: flex;
     gap: clamp(10px, 1.95vw, 30px);
+    align-items: stretch;
 }
 
 .page-dcote_main .some-info .description{
+    display: flex;
+    flex-direction: column;
     border-radius: var(--fs-border-radius);
     overflow: hidden;
     flex:1;
 }
 
-
+.page-dcote_main .some-info .description .image-wrapper {
+    flex-shrink: 0;
+    aspect-ratio: 1.45;
+    overflow: hidden;
+}
 
 .page-dcote_main .some-info .description img{
     width: 100%;
@@ -1210,20 +1105,258 @@ a.current-page span::after {
 .page-dcote_main .some-info .description .text{
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, #df0e5431 50%, #0b172b);
-    gap: clamp(10px, 1.3vw, 20px);
-    padding: clamp(10px, 1.3vw, 20px);
+    background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+    gap: var(--fs-gap20);
+    padding: var(--fs-padding);
+    flex: 1;
 }
 
 .page-dcote_main .some-info .description .text h1{
     text-align: center;
 }
 
-.page-dcote_main .buttons-containers {
+.page-dcote_main .tg-links {
     display: flex;
-    flex-direction: row;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: clamp(10px, 1.95vw,30px);
+    align-items: stretch;
 }
+
+.page-dcote_main .tg-links .banner{
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--fs-border-radius);
+    overflow: hidden;
+    flex:1;
+}
+
+.page-dcote_main .tg-links .banner .image-wrapper{
+    flex-shrink: 0;
+    overflow: hidden;
+    aspect-ratio: 1.58;
+}
+
+.page-dcote_main .tg-links .banner .image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-dcote_main .tg-links .banner .text{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+    gap: var(--fs-gap20);
+    padding: var(--fs-padding);
+    flex: 1;
+    text-align: center;
+    justify-content: space-between;
+}
+
+
+
+@media (max-width: 768px) {
+    .page-dcote_main .tg-links {
+        flex-direction: column;
+        gap:clamp(1px,2.67vw,100px);
+
+    }
+    .page-dcote_main .content-line3{
+        flex-direction: column-reverse;
+    }
+    .page-dcote_main .content-line3 .about-island {
+        width: 100%;
+        background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+    }
+
+
+    .page-dcote_main .island-image-base {
+        width: 100%;
+
+    }
+    .page-dcote_main .some-info{
+        flex-direction: column;
+    }
+    
+    .page-dcote_main .content-line4{
+        flex-direction: column;
+        gap:clamp(1px,2.67vw,100px);
+    }
+    .toggle-switch-compact {
+        width: clamp(50px, 26.7vw, 150px);
+        height: clamp(10px, 8.01vw, 100px);
+    }
+    .page-dcote_main .content-line4 .top-classes .spoilers {
+        gap:clamp(1px,2.67vw,100px);
+    }
+    .page-dcote_main .content-line4 .top-classes .rating .school-class .info .text p{
+        font-size: clamp(10px, 3.204vw, 36px);
+    }
+    .page-dcote_main .content-line4 .top-classes .points-bg p{
+        font-size: clamp(10px, 3.204vw, 36px);
+    }
+    .page-dcote_main .content-line4 .top-classes .points-bg{
+        padding: clamp(1px, 1.335vw, 100px);
+    }
+    .page-dcote_main .content-line4 .top-classes .rating .school-class .info .text {
+        padding-left: clamp(1px, 1.335vw, 100px);
+    }   
+    .page-dcote_main .content-line4 .top-classes .rating img {
+        width: clamp(50px, 19.491vw, 150px);
+        height: clamp(50px, 19.491vw, 150px);
+    }
+    .page-dcote_main .top-users .status-head {
+        display: none;
+    }
+    
+    /* Скрыть ячейки со статусом в строках */
+    .page-dcote_main .top-users .status {
+        display: none;
+    }
+    .page-dcote_main .top-users img {
+        height: clamp(1px, 13.35vw, 150px);
+        width: clamp(1px, 13.35vw, 150px);
+    }
+
+    .page-dcote_main .top-users .nickname::after {
+        content: attr(data-status);
+        font-size: clamp(10px, 3.204vw, 36px);
+        font-family: 'Vag-Regular';
+        line-height: 1.4em;
+        color: rgb(220, 10, 80);
+    }
+    .page-dcote_main .content-line4 .top-users .users-table .chess-icon {
+        width: clamp(1px, 6.675vw, 100px);
+        height: clamp(1px, 6.675vw, 100px);
+    }
+    .page-dcote_main .users-table td {
+        padding-block: clamp(1px, 1.335vw, 100px);
+    }
+    .page-dcote_main .content-line4 .top-classes,
+    .page-dcote_main .content-line4 .top-users{
+        width: 100%;
+    }
+
+    .page-dcote_main .content-line1{
+        gap:clamp(1px,2.67vw,100px);
+    }
+
+    .page-dcote_main .popular .pager .content{
+        flex-direction: column;
+        gap:clamp(1px,2.67vw,100px);
+        align-items: center;
+        padding: 0;
+    }
+
+    .content-line1{
+        flex-direction: column;
+    }
+
+    .page-dcote_main .popular .pager .content p{
+        display: none;
+        
+    }
+    .page-dcote_main .popular .pager .content .text{
+        align-items: center;
+        gap:clamp(1px,2.67vw,100px);
+    }
+    .page-dcote_main .popular .pager .content img{
+        width: 70%;
+    }
+    .slider-icon{
+        width: clamp(1px, 10.68vw, 100px) !important;
+        height: clamp(1px, 10.68vw, 100px) !important;
+    }
+
+    .page-dcote_main .popular .pager .content .link-like-button{
+        display: none;
+    }
+    .page-dcote_main .popular .pager .content .link-like-button.mobile{
+        display: block;
+
+    }
+
+    .page-dcote_main .popular,
+    .page-dcote_main .updates {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .page-dcote_main .updates{
+        height: clamp(1px,96.12vw,1000px);
+    }
+
+    .page-dcote_main .grid-images {
+        display: flex;
+        overflow-x: auto;
+        gap:clamp(1px,2.67vw,100px);
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        width: 100%;
+        box-sizing: border-box;
+        padding-bottom: clamp(1px,1.335vw,100px);
+        position: relative;
+        height: 100%;
+    }
+
+
+    .page-dcote_main .grid-images::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .page-dcote_main .grid-images::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+    }
+
+    .page-dcote_main .grid-images::-webkit-scrollbar-thumb {
+        background: rgba(229, 11, 85, 0.5);
+        border-radius: 2px;
+    }
+
+    .page-dcote_main .grid-images a {
+        flex: 0 0 70%;
+        width: 70%;
+        max-width: 70%;
+        min-width: 70%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+
+    .page-dcote_main .grid-images .wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .page-dcote_main .grid-images .wrapper .content h3 {
+        margin-top: 50%;
+    }
+
+    .page-dcote_main .grid-images:hover a .content {
+        background: rgba(11, 23, 43, 0.8);
+    }
+
+    .page-dcote_main .grid-images a:hover .content {
+        background: rgba(11, 23, 43, 0.8);
+    }
+
+    .page-dcote_main .grid-images a:hover {
+        scale: 0.95;
+    }
+
+    .page-dcote_main .hero{
+        display: none;
+    }
+    
+    .page-dcote_main .hero.mobile{
+        display: block;
+    }
+}
+
 
 
 
@@ -1271,7 +1404,7 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     background: linear-gradient(90deg, #df0e5431 50%, #0b172b);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     z-index: 10;
 }
 
@@ -1286,7 +1419,7 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-login .auth-form button,
@@ -1361,7 +1494,7 @@ a.current-page span::after {
 .page-reg .password-title .password-tooltip {
     width: max-content;
     background: linear-gradient(360deg, #0b172b, #331635);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     position: absolute;
     left: 100%;
     top: 0;
@@ -1473,7 +1606,7 @@ a.current-page span::after {
 .page-404 .desc-404 {
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     align-items: center;
 }
 
@@ -1546,7 +1679,7 @@ a.current-page span::after {
 .page-ranobe_main .volume-desc {
     background: linear-gradient(180deg, #df0e5441, #0b172b);
     color: white;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1612,7 +1745,7 @@ a.current-page span::after {
 
 
 
-@media (max-width: 855px) {
+@media (max-width: 768px) {
     .volumes {
         display: flex;
         flex-direction: column;
@@ -1701,14 +1834,14 @@ a.current-page span::after {
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     gap: clamp(1px, 0.65vw, 10px);
 }
 
 .page-news_main .banner-info .text {
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     align-items: center;
 }
 
@@ -1802,7 +1935,7 @@ a.current-page span::after {
 .page-about_school .cont-1 {
     background: linear-gradient(360deg, #0b172b, #df0e5441);
     border-radius: var(--fs-border-radius);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     gap: clamp(1px, 0.65vw, 10px);
     display: flex;
     flex-direction: column;
@@ -1830,7 +1963,7 @@ a.current-page span::after {
     gap: clamp(1px, 0.65vw, 10px);
     display: flex;
     flex-direction: column;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     width: 80%;
     background: linear-gradient(360deg, #0b172b, #df0e5441);
 }
@@ -1851,10 +1984,10 @@ a.current-page span::after {
 
 .page-about_school .cont-2,
 .page-about_school .cont-3 {
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     display: flex;
     flex-direction: column;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     background: linear-gradient(360deg, #0b172b, #df0e5441);
     border-radius: var(--fs-border-radius);
 }
@@ -1863,7 +1996,7 @@ a.current-page span::after {
 
 .page-about_school .cont-2 .classroom {
     display: flex;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-about_school .cont-2 .classroom .text {
@@ -1912,7 +2045,7 @@ a.current-page span::after {
 
 .slider-wrapper {
     display: flex;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .slider {
@@ -2062,7 +2195,7 @@ a.current-page span::after {
 .page-rules .cont-1 {
     background: linear-gradient(360deg, #0b172b, #df0e5441);
     border-radius: var(--fs-border-radius);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     gap: clamp(1px, 1.95vw, 30px);
     display: flex;
     flex-direction: column;
@@ -2086,7 +2219,7 @@ a.current-page span::after {
 
 .page-about_project .text {
     width: 80%;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     background: linear-gradient(270deg, #0b172b, #df0e5441);
     border-radius: var(--fs-border-radius);
     margin-left: -15%;
@@ -2097,7 +2230,7 @@ a.current-page span::after {
     height: clamp(1px, 29.25vw, 450px);
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-about_project .text .desc {
@@ -2132,7 +2265,7 @@ a.current-page span::after {
 
 .page-about_project .text-wrapper.reverse .text {
     width: 80%;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     border-radius: var(--fs-border-radius);
     background: linear-gradient(90deg, #0b172b, #df0e5441);
     margin-right: -15%;
@@ -2188,11 +2321,11 @@ a.current-page span::after {
 .page-anime .cont .desc {
     width: 59%;
     background: linear-gradient(270deg, #0b172b, #df0e5441);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-anime .cont .desc .head {
@@ -2337,7 +2470,7 @@ a.current-page span::after {
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(360deg, #0b172b, #331635);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     border-radius: var(--fs-border-radius);
 }
 
@@ -2437,11 +2570,11 @@ a.current-page span::after {
 .page-anime-season .cont .desc {
     width: 70%;
     background: linear-gradient(270deg, #0b172b, #df0e5441);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-anime-season .cont .desc p {
@@ -2451,7 +2584,7 @@ a.current-page span::after {
 .page-anime-season .cont .desc .low-buttons {
     display: flex;
     flex-direction: row;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     align-items: center;
     margin-top: auto;
 }
@@ -2463,9 +2596,9 @@ a.current-page span::after {
     border-radius: var(--fs-border-radius);
     overflow: hidden;
     background: linear-gradient(0deg, #0b172b, #df0e5441);
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     align-items: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 
@@ -2473,7 +2606,7 @@ a.current-page span::after {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 
@@ -2483,7 +2616,7 @@ a.current-page span::after {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
 }
 
 .page-anime-season .cont2 .episode-cont .eye-filled {
@@ -2504,7 +2637,7 @@ a.current-page span::after {
     width: 70%;
     display: flex;
     align-items: center;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     text-decoration: none;
     transition: 0.3s;
     border-radius: var(--fs-border-radius);
@@ -2610,7 +2743,7 @@ a.current-page span::after {
     text-align: center;
     gap: clamp(1px, 0.65vw, 10px);
     pointer-events: none;
-    padding: clamp(10px, 1.3vw, 20px);
+    padding: var(--fs-padding);
     border-radius: var(--fs-border-radius);
     overflow: hidden;
     box-shadow: 0px 0px 10px 5px rgba(229, 11, 85, 0.5);
@@ -2671,7 +2804,7 @@ a.current-page span::after {
 .page-anime-episode .subs-and-dubs,
 .page-anime-episode .episode-controls {
     display: flex;
-    gap: clamp(10px, 1.3vw, 20px);
+    gap: var(--fs-gap20);
     width: 100%;
     justify-content: center;
 }
