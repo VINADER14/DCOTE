@@ -1,19 +1,18 @@
 <?php
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'dcote_site';
-$charset = 'utf8mb4';
+$host = '127.0.0.1';
+$db   = 'dcote_site';
+$user = 'root';
+$pass = ''; 
 
 
-$db = mysqli_connect($host, $username, $password, $database);
+$db = mysqli_connect($host, $user, $pass, $db);
 
 if (!$db) {
     die("Ошибка подключения: " . mysqli_connect_error());
 }
 
 
-mysqli_set_charset($db, $charset);
+
 
 
 ?>

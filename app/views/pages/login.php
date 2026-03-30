@@ -51,7 +51,7 @@
                         <h3>Пароль</h3>
                     </label>
                     <div class="input-with-icon"><input type="password" id="password" name="password" data-required>
-                        <button type="button" class="password-toggle" aria-label="Показать пароль">
+                        <button type="button" class="password-toggle button-without-styles" aria-label="Показать пароль">
                             <svg class="eye-icon" width="20" height="20">
                                 <use href="#eye"></use>
                             </svg>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png?v=6">
-    <link rel="stylesheet" href="/css/style.css?v=67">
+    <link rel="stylesheet" href="<?= asset('/css/style.css') ?>">
     <meta name="description" content="<?= htmlspecialchars($desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!') ?>">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
@@ -169,36 +169,69 @@
         <path d="M12 2a4 4 0 0 1 4 4a5.03 5.03 0 0 1 -.438 2.001l.438 -.001a1 1 0 0 1 .117 1.993l-.117 .007h-1.263l1.24 5.79a1 1 0 0 1 -.747 1.184l-.113 .02l-.117 .006h-6a1 1 0 0 1 -.996 -1.093l.018 -.117l1.24 -5.79h-1.262a1 1 0 0 1 -.117 -1.993l.117 -.007h.438a5.154 5.154 0 0 1 -.412 -1.525l-.02 -.259l-.006 -.216a4 4 0 0 1 4 -4z" />
         <path d="M18 18h-12a1 1 0 0 0 -1 1a2 2 0 0 0 2 2h10a2 2 0 0 0 1.987 -1.768l.011 -.174a1 1 0 0 0 -.998 -1.058z" />
     </symbol>
+    <symbol id="dcote-logo-small" viewBox="0 0 690.26 410.81" fill="currentColor">
+        <path d="M970.78,311h-152c-11.58,0-19.95-4.79-25.13-14.36l-71.21-125.67c-5.59-9.57-5.59-19.15,0-28.72l71.21-125.07c5.18-9.57,13.56-14.36,25.13-14.36h152c11.57,0,19.94,4.79,25.13,14.36l71.21,125.07c5.58,9.57,5.58,19.15,0,28.72l-71.21,125.67c-5.19,9.58-13.57,14.36-25.13,14.36h0ZM808.01,156.61l42.49,75.4h88.57l42.49-75.4-42.49-74.8h-88.57l-42.49,74.8h0Z"/>
+        <path d="M1389.67,183.46h40.69c13.96,0,20.95,6.98,20.95,20.94v37.78c0,9.98-3.39,18.55-10.17,25.73l-25.13,27.53c-9.58,10.38-17.95,15.56-25.13,15.56h-169.35c-7.18,0-15.56-5.18-25.13-15.56l-25.13-27.53c-6.79-7.18-10.17-15.75-10.17-25.73v-120.88h-38.9c-13.97,0-20.95-6.98-20.95-20.94v-37.1c0-13.96,6.98-20.94,20.95-20.94h38.9v-19.96c0-13.96,6.98-20.94,20.95-20.94h45.48c13.96,0,20.95,6.98,20.95,20.94v54.07c0,3.99,1.99,5.98,5.98,5.98h7.78c3.19,0,5.58-1.2,7.18-3.59l19.75-23.34c7.57-8.77,15.95-13.17,25.13-13.17h110.11c13.96,0,20.94,6.98,20.94,20.94v37.1c0,13.97-6.98,20.94-20.94,20.94h-175.94v110.71h120.28v-27.6c0-13.96,6.98-20.94,20.95-20.94h-.03Z"/>
+        <path d="M1805.58,311h-193.89c-11.58,0-19.95-4.79-25.13-14.36l-71.21-125.67c-5.59-9.57-5.59-19.15,0-28.72l71.21-125.07c5.18-9.57,13.56-14.36,25.13-14.36h169.35c10.77,0,19.15,5.19,25.13,15.56l26.93,47.28c5.18,9.57,5.18,19.15,0,28.72l-34.71,62.83c-7.58,13.97-16.76,20.95-27.53,20.95h-50.87c-6.39,0-11.17-2.19-14.36-6.58-3.2-4.39-3.2-9.17,0-14.36l40.09-68.82-3.59-6.58h-98.74l-42.49,74.8,42.49,75.4h162.17c13.96,0,20.94,6.99,20.94,20.95v37.1c0,13.97-6.98,20.94-20.94,20.94h.02Z"/>
+        <path d="M655.41,232.01h-82.86l-42.49-75.4,42.49-74.8h79.87c13.96,0,20.94-6.98,20.94-20.94V23.76c0-13.96-6.98-20.94-20.94-20.94h-174.74c-11.58,0-19.95,4.79-25.13,14.36l-31.79,55.84,67.84,118.31c5.14,9.12,5.14,18.42,0,27.92l-40.07,70.29,4.02,7.1c5.18,9.58,13.56,14.36,25.13,14.36h177.73c13.96,0,20.94-6.98,20.94-20.94v-37.1c0-13.96-6.98-20.95-20.94-20.95Z"/>
+        <path class="accent" d="M302.73,407.7H66.86c-6.34,0-14.26-5.14-23.76-15.45l-24.95-27.33c-6.74-7.13-10.1-15.64-10.1-25.55V72.02c0-9.9,3.36-18.42,10.1-25.55l24.95-27.33c9.51-10.3,17.42-15.45,23.76-15.45h235.27c11.08,0,19.21,4.75,24.36,14.26l99.81,174.08c5.14,9.12,5.14,18.42,0,27.92l-99.22,174.08c-5.15,9.12-13.27,13.67-24.36,13.67h.01ZM99.54,86.87v237.65h169.33l66.54-118.23-66.54-119.42H99.54Z"/>
+    </symbol>
+    <symbol id="file-star" viewBox="0 0 24 24" fill="currentColor">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005zm-.2 9a.39 .39 0 0 0 -.351 .217l-1.086 2.193l-2.428 .352a.389 .389 0 0 0 -.217 .665l1.757 1.707l-.415 2.411a.392 .392 0 0 0 .568 .41l2.172 -1.138l2.172 1.138a.39 .39 0 0 0 .567 -.411l-.414 -2.41l1.757 -1.707a.39 .39 0 0 0 -.217 -.665l-2.428 -.352l-1.086 -2.193a.39 .39 0 0 0 -.351 -.217"/>
+        <path d="M19 7h-4l-.001 -4.001z"/>
+    </symbol>
+    <symbol id="mail" viewBox="0 0 24 24" fill="currentColor">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z"/>
+        <path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z"/>
+    </symbol>
+    <symbol id="user" viewBox="0 0 24 24" fill="currentColor">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z"/>
+        <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z"/>
+    </symbol>
+    <symbol id="stack-2" viewBox="0 0 24 24" fill="currentColor">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M20.894 15.553a1 1 0 0 1 -.447 1.341l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 .894 -1.788l7.553 3.774l7.554 -3.775a1 1 0 0 1 1.341 .447m0 -4a1 1 0 0 1 -.447 1.341l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 .894 -1.788l7.552 3.775l7.554 -3.775a1 1 0 0 1 1.341 .447m-8.887 -8.552q .056 0 .111 .007l.111 .02l.086 .024l.012 .006l.012 .002l.029 .014l.05 .019l.016 .009l.012 .005l8 4a1 1 0 0 1 0 1.788l-8 4a1 1 0 0 1 -.894 0l-8 -4a1 1 0 0 1 0 -1.788l8 -4l.011 -.005l.018 -.01l.078 -.032l.011 -.002l.013 -.006l.086 -.024l.11 -.02l.056 -.005z"/>
+    </symbol>
+    <symbol  id="list-details" viewBox="0 0 24 24" fill="currentColor">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M22 5a1 1 0 0 1 -1 1h-8a1 1 0 0 1 0 -2h8a1 1 0 0 1 1 1m-3 4a1 1 0 0 1 -1 1h-5a1 1 0 0 1 0 -2h5a1 1 0 0 1 1 1m3 6a1 1 0 0 1 -1 1h-8a1 1 0 0 1 0 -2h8a1 1 0 0 1 1 1m-3 4a1 1 0 0 1 -1 1h-5a1 1 0 0 1 0 -2h5a1 1 0 0 1 1 1m-11 -16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2l.001 -4.051l.004 -.051a1.996 1.996 0 0 1 1.995 -1.898zm0 10a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2l.001 -4.051l.004 -.051a1.996 1.996 0 0 1 1.995 -1.898z" />
+    </symbol>
+    <symbol id="arrow-right" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9 6l6 6l-6 6" />
+    </symbol>
+    <symbol id="arrow-left" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6" />
+    </symbol>
     </svg>
-    <nav class="navbar">
-        <div class="left">
-            <a href="/"><svg class="main-logo"><use href="#dcote-svg"></use></svg></a>
-        </div>
-        <div class="center">
-            <a href="/news_main"><span>НОВОСТИ</span></a>
-            <a href="/ranobe_main"><span>РАНОБЕ</span></a>
-            <a href="/anime"><span>АНИМЕ</span></a>
-            <a href="/manga"><span>МАНГА</span></a>
-            <a href="/illustrations"><span>ИЛЛЮСТРАЦИИ</span></a>
-            <a href="/characters"><span>ПЕРСОНАЖИ</span></a>
-            <a href="/about-project"><span>О ПРОЕКТЕ</span></a>
-        </div>
-        <div class="right">
-            <a href="<?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? '/account' : '/login' ?>" class="link-like-button login-btn" rel="noopener noreferrer"><?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? 'АККАУНТ' : 'ВОЙТИ' ?></a>
-        </div>
-        <div class="right-mobile">
-            <button class="hamburger" id="hamburgerBtn"><svg class="hamburger-icon" width="30" height="30">
-                    <use href="#hamburger"></use>
-                </svg></button>
-        </div>
+    <nav>
+        <div class="navbar">
+            <div class="left">
+                <a href="/"><svg class="main-logo"><use href="#dcote-svg"></use></svg></a>
+            </div>
+            <div class="center">
+                <a ><span>НОВОСТИ</span></a>
+                <a ><span>РАНОБЕ</span></a>
+                <a href="/anime"><span>АНИМЕ</span></a>
+                <a ><span>МАНГА</span></a>
+                <a ><span>ИЛЛЮСТРАЦИИ</span></a>
+                <a ><span>ПЕРСОНАЖИ</span></a>
+                <a href="/about-project"><span>О ПРОЕКТЕ</span></a>
+            </div>
+            <div class="right">
+                <a href="<?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? '/account' : '/login' ?>" class="link-like-button login-btn" rel="noopener noreferrer"><?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? 'АККАУНТ' : 'ВОЙТИ' ?></a>
+            </div>
+            </div>
         <div class="side-menu" id="sideMenu">
             <div class="side-links">
-                <button onclick='window.location.href="/news_main"'>НОВОСТИ</button>
-                <button onclick='window.location.href="/ranobe_main"'>РАНОБЕ</button>
+                <button disabled>НОВОСТИ</button>
+                <button disabled>РАНОБЕ</button>
                 <button onclick='window.location.href="/anime"'>АНИМЕ</button>
-                <button onclick='window.location.href="/manga"'>МАНГА</button>
-                <button onclick='window.location.href="/illustrations"'>ИЛЛЮСТРАЦИИ</button>
-                <button onclick='window.location.href="/characters"'>ПЕРСОНАЖИ</button>
+                <button disabled>МАНГА</button>
+                <button disabled>ИЛЛЮСТРАЦИИ</button>
+                <button disabled>ПЕРСОНАЖИ</button>
                 <button onclick='window.location.href="/about-project"'>О ПРОЕКТЕ</button>
                 <button class="closeMenu">ЗАКРЫТЬ</button>
             </div>

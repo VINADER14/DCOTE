@@ -1,11 +1,3 @@
-<svg style="display: none;">
-<symbol id="arrow-right" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9 6l6 6l-6 6" />
-    </symbol>
-    <symbol id="arrow-left" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M15 6l-6 6l6 6" />
-    </symbol>
-</svg>
 <main class="page-dcote_main">
         <div class="hero">
             <img class="hero-image" src="/images/index/hero-блок.webp" fetchpriority="high" decoding="async" alt="Арису лежит в кроватке"/>
@@ -18,7 +10,7 @@
                     и превосходные арт-генерации от ИИ. Подробные досье и описания персонажей.
                     Всё это и не только вы найдёте на страницах данного веб-сообщества!</p>
                     <div class="hero-buttons">
-                        <a href="/news_main" class="link-like-button" rel="noopener noreferrer">ЧИТАТЬ НОВОСТИ</a>
+                        <a  class="link-like-button" rel="noopener noreferrer">ЧИТАТЬ НОВОСТИ</a>
                         <a href="/about-project" class="link-like-button project-btn" rel="noopener noreferrer">О ПРОЕКТЕ</a>
                         <a href="https://t.me/DCOTEFILES" target="_blank" class="link-like-button tg-btn" rel="noopener noreferrer">ТЕЛЕГРАМ-КАНАЛ</a>
                     </div>
@@ -38,37 +30,37 @@
             </div>
         </div>
         <div class="grid-images">
-            <a href="/ranobe"><div class="wrapper">
-                <img src="/images/index/категории-ранобе.webp">
-                <div class="content">
-                    <h3><b>РАНОБЭ</b></h3>
-                    <p>Чтение оригинальной новеллы в полном формате и хорошем качестве перевода</p>
-                </div>
-            </div></a>
-            <a href="/ranobe"><div class="wrapper">
+            <a href="/anime"><div class="wrapper">
                 <img src="/images/index/категории-аниме.webp">
                 <div class="content">
                     <h3><b>АНИМЕ</b></h3>
                     <p>Бесплатный просмотр аниме-адаптации всех сезонов в хорошем качестве</p>
                 </div>
             </div></a>
-            <a href="/ranobe"><div class="wrapper">
+            <a ><div class="wrapper">
+                <img src="/images/index/категории-ранобе.webp">
+                <div class="content" style="background: rgba(11, 23, 43, 1)">
+                    <h3><b>РАНОБЭ</b></h3>
+                    <p>Чтение оригинальной новеллы в полном формате и хорошем качестве перевода</p>
+                </div>
+            </div></a>
+            <a ><div class="wrapper">
                 <img src="/images/index/категории-манга.webp">
-                <div class="content">
+                <div class="content" style="background: rgba(11, 23, 43, 1);">
                     <h3><b>МАНГА</b></h3>
                     <p>Чтение глав манга-адаптации в хорошем качестве изображений и перевода</p>
                 </div>
             </div></a>
-            <a href="/ranobe"><div class="wrapper">
+            <a ><div class="wrapper">
                 <img src="/images/index/категории-иллюстрации.webp">
-                <div class="content">
+                <div class="content" style="background: rgba(11, 23, 43, 1)">
                     <h3><b>ИЛЛЮСТРАЦИИ</b></h3>
                     <p>Сборник иллюстраций от художника Томосе Сюнсаку, арты от художников-фанатов и превосходные арт-генерации от ИИ</p>
                 </div>
             </div></a>
-            <a href="/ranobe"><div class="wrapper">
+            <a><div class="wrapper">
                 <img src="/images/index/категории-персонажи.webp">
-                <div class="content">
+                <div class="content" style="background: rgba(11, 23, 43, 1)">
                     <h3><b>ПЕРСОНАЖИ</b></h3>
                     <p>Подробные досье и описания всех персонажей произведения</p>
                 </div>
@@ -78,7 +70,7 @@
             <div class="popular">
                 <h1>ПОПУЛЯРНОЕ</h1>
             <div class="pager">
-                <button class="pager-btn inactive" aria-label="Назад">
+                <button class="pager-btn inactive" disabled aria-label="Назад">
                     <svg class="slider-icon" width="30" height="30">
                         <use href="#arrow-left"></use>
                     </svg>
@@ -93,11 +85,11 @@
                                 выплачиваются баллы, эквивалентные 100.000 йен наличными.
                                 Однако на деле это место, где привилегии получают лишь немногие
                                 ученики с выдающимися результатами...</p>
-                            <a href="/news_main" class="link-like-button" rel="noopener noreferrer">ПОДРОБНЕЕ О СЕЗОНЕ</a>
-                            <a href="/news_main" class="link-like-button mobile" rel="noopener noreferrer">ПОДРОБНЕЕ</a>
+                            <a href="/anime/4" class="link-like-button" rel="noopener noreferrer">ПОДРОБНЕЕ О СЕЗОНЕ</a>
+                            <a href="/anime/4" class="link-like-button mobile" rel="noopener noreferrer">ПОДРОБНЕЕ</a>
                         </div>
                 </div>
-                <button class="pager-btn inactive" aria-label="Назад">
+                <button class="pager-btn inactive" disabled aria-label="Назад">
                     <svg class="slider-icon" width="30" height="30">
                         <use href="#arrow-right"></use>
                     </svg>
@@ -113,7 +105,7 @@
                         <div class="one-news-wrapper"><p>Опубликована озвучка к 4 серии 4 сезона аниме-адаптацииииииииииииииии</p></div>
                 </div>
                 <div class="updates-link-wrapper">
-                    <a href="/news_main" class="link-like-button" rel="noopener noreferrer">ВСЕ ОБНОВЛЕНИЯ</a>
+                    <a  class="link-like-button disabled_a" rel="noopener noreferrer">ВСЕ ОБНОВЛЕНИЯ</a>
                 </div>
             </div>
         </div>
@@ -161,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="full-stat"><button>ПОЛНАЯ СТАТИСТИКА</button></div>
+                <div class="full-stat" ><button disabled>ПОЛНАЯ СТАТИСТИКА</button></div>
             </div>
             <div class="top-users scale-in">
                 <div class="title"><h1>РЕЙТИНГ ПОЛЬЗОВАТЕЛЕЙ</h1></div>
@@ -229,7 +221,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="full-stat"><button>ВСЕ ПОЛЬЗОВАТЕЛИ</button></div>
+                <div class="full-stat"><button disabled>ВСЕ ПОЛЬЗОВАТЕЛИ</button></div>
             </div>
         </div>
         <div class="some-info">
@@ -264,7 +256,7 @@
 занятости и поступления в колледж. Сам кампус располагается на отдельном, 
 искусственно сконструированном острове, площадь которого составляет около шестиста тысяч квадратных метров.
                     </p></div>
-                    <div style="display: flex;width: 100%;justify-content: center;"><a href="/about-school" class="link-like-button" rel="noopener noreferrer">БОЛЬШЕ ИНФОРМАЦИИ</a></div>
+                    <div style="display: flex;width: 100%;justify-content: center;"><a class="link-like-button disabled_a" rel="noopener noreferrer">БОЛЬШЕ ИНФОРМАЦИИ</a></div>
                 </div>
             </div>
         </div>

@@ -11,6 +11,27 @@
             <a href="/"><svg class="main-logo"><use href="#dcote-svg"></use></svg></a>
         </div>
     </footer>
+    <navbar class="mobile-bottom-nav">
+        <a href="/favorite" class="nav-item">
+            <svg class="nav-icon"><use href="#file-star"></use></svg>
+            <h2 class="nav-label">Избранное</h2>
+        </a>
+        <a href="/account" class="nav-item">
+            <svg class="nav-icon"><use href="#user"></use></svg>
+            <h2 class="nav-label">Аккаунт</h2>
+        </a>
+        <a href="/" class="nav-item">
+            <svg class="center-nav-icon"><use href="#dcote-logo-small"></use></svg>
+        </a>
+        <a href="/favorite" class="nav-item">
+            <svg class="nav-icon"><use href="#mail"></use></svg>
+            <h2 class="nav-label">Уведомления</h2>
+        </a>
+        <button class="nav-item button-without-styles" id="hamburgerBtn">
+            <svg class="nav-icon"><use href="#stack-2"></use></svg>
+            <h2 class="nav-label">Меню</h2>
+        </button>
+    </navbar>
     <div id="notification-container" class="hidden">
         <h1>ОШИБКА</h1>
         <p></p>
@@ -22,9 +43,11 @@ const sideMenu = document.getElementById('sideMenu');
 const closeBtn = document.querySelector('.closeMenu');
 const overlay = document.getElementById('overlay');
 
+
 hamburger.addEventListener('click', () => {
     sideMenu.classList.add('open');
     overlay.classList.add('active');
+    console.log('sdjhfgahjsgdf')
 });
 
 closeBtn.addEventListener('click', () => {
@@ -84,4 +107,18 @@ function hideNotification() {
         container.classList.remove('hide');
     }, { once: true });
 }
+
+
+function updateNavHeight() {
+    const nav = document.querySelector('.mobile-bottom-nav');
+    if (!nav) return;
+
+    const height = nav.offsetHeight + 
+        (parseInt(getComputedStyle(nav).paddingBottom) || 0);
+    
+    document.documentElement.style.setProperty('--nav-height', height + 'px');
+}
+
+window.addEventListener('load', updateNavHeight);
+window.addEventListener('resize', updateNavHeight);
 </script>

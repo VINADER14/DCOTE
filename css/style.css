@@ -704,11 +704,11 @@ a.current-page span::after {
 }
 
 .page-dcote_main .hero .hero-content .hero-buttons .tg-btn:hover {
-    box-shadow: 0 0px 20px 0px rgba(26, 106, 255, 0.5);
+    box-shadow: 0 0px 20px 0px rgba(26, 106, 255, 0.5) !important;
 }
 
-.page-dcote_main .hero .hero-content .hero-buttons .project-btn:nover {
-    box-shadow: 0 0px 20px 0px rgba(138, 74, 210, 0.5);
+.page-dcote_main .hero .hero-content .hero-buttons .project-btn:hover {
+    box-shadow: 0 0px 20px 0px rgba(138, 74, 210, 0.5) !important;
 }
 
 .page-dcote_main .grid-images {

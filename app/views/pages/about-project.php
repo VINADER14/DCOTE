@@ -5,25 +5,7 @@
 </div>
 <main class="page-about_project">
     <h1 class="main-title scale-in">КОМАНДА ПРОЕКТА</h1>
-    <div class="text-wrapper scale-in">
-        <div class="img-wrapper">
-            <img fetchpriority="high" decoding="async" src="/images/about-project/game-banner hiyori2.webp" alt="Хиери Шиина">
-        </div>
-        <div class="text slide-in-left">
-            <div class="title">
-                <h1>Andrey Andreev</h1>
-                <p>веб-дизайнер, контент-куратор</p>
-            </div>
-            <div class="desc">
-                <h3>Деятельность:</h3>
-                <p>- Ответственен за визуальную часть каждой страницы сайта;<br><br>
-                    - Поиск материалов и источников для заполнения информации и контента;<br><br>
-                    - Проработка дизайна интерфейса с динамическим отображением.</p>
-            </div>
-            <p class="quote">Цитата: «Я дизайнер и я хочу, чтобы всё было идеально симметрично и красиво».</p>
-        </div>
-    </div>
-    <div class="text-wrapper scale-in reverse">
+    <div class="text-wrapper scale-in ">
         <div class="img-wrapper">
             <img fetchpriority="high" decoding="async" src="/images/about-project/game-banner horikita5.webp" alt="Хорикита Сузуне">
         </div>
@@ -44,6 +26,25 @@
             <p class="quote">Цитата: «Вообще я хотел заниматься только бекендом, но судьба распорядилась иначе, теперь я мастер на все руки. Дизайнер кстати ахуел».</p>
         </div>
     </div>
+    <div class="text-wrapper scale-in reverse">
+        <div class="img-wrapper">
+            <img fetchpriority="high" decoding="async" src="/images/about-project/game-banner hiyori2.webp" alt="Хиери Шиина">
+        </div>
+        <div class="text slide-in-left">
+            <div class="title">
+                <h1>Andrey Andreev</h1>
+                <p>веб-дизайнер, контент-куратор</p>
+            </div>
+            <div class="desc">
+                <h3>Деятельность:</h3>
+                <p>- Ответственен за визуальную часть каждой страницы сайта;<br><br>
+                    - Поиск материалов и источников для заполнения информации и контента;<br><br>
+                    - Проработка дизайна интерфейса с динамическим отображением.</p>
+            </div>
+            <p class="quote">Цитата: «Я дизайнер и я хочу, чтобы всё было идеально симметрично и красиво».</p>
+        </div>
+    </div>
+
     <div class="text-wrapper scale-in">
         <div class="img-wrapper">
             <img loading="lazy" decoding="async" src="/images/about-project/game-banner katsuragi2.webp" alt="Кацураги Кохэй">

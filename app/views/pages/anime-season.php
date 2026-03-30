@@ -20,7 +20,7 @@
     </symbol>
 </svg>
 <?php
-$about_season = execute_query('SELECT img_src,season_description FROM anime_seasons WHERE season_number=?', [$season], true);
+$about_season = execute_query('SELECT img_src,season_description,trailer_link FROM anime_seasons WHERE season_number=?', [$season], true);
 $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? ORDER BY episode_number DESC ', [$season], fetch: 'all');
 ?>
 <div class="navigation-links">
@@ -38,13 +38,14 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
         <div class="desc slide-in-left">
             <h1><?= $season ?> СЕЗОН АНИМЕ-АДАПТАЦИИ</h1>
             <p><?= !empty(formatHtmlSafe($about_season['season_description'])) ? formatHtmlSafe($about_season['season_description']) : 'Описание сезона' ?></p>
-            <div class="low-buttons"><button>НАЧАТЬ ПРОСМОТР</button><button>СМОТРЕТЬ ТРЕЙЛЕР</button></div>
+            <div class="low-buttons "><a href="<?= ($about_season['trailer_link']) ?>" style="box-shadow:none;" class="link-like-button">СМОТРЕТЬ ТРЕЙЛЕР</a><a href="<?=$season?>/1" class="link-like-button">НАЧАТЬ ПРОСМОТР</a></div>
+            <div class="low-buttons mobile"><a href="<?= ($about_season['trailer_link']) ?>" style="box-shadow:none;" class="link-like-button">ТРЕЙЛЕР</a><a href="<?=$season?>/1" class="link-like-button">СМОТРЕТЬ С 1 СЕРИИ</a></div>
         </div>
     </div>
     <div class="cont2 scale-in">
         <div class="episodes-head">
             <h1>СПИСОК СЕРИЙ</h1>
-            <button type="button" class="sort-toggle" aria-label="Сортировать по возрастанию/убыванию">
+            <button type="button" class="sort-toggle button-without-styles" aria-label="Сортировать по возрастанию/убыванию">
                 <svg class="sort-descending" width="20" height="20" style="display: none;">
                     <use href="#sort-descending-filled"></use>
                 </svg>
@@ -61,7 +62,11 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
                             <use href="#eye-filled"></use>
                         </svg>
                         <a class="card-link" href="/anime/<?= $season ?>/<?= e($episode['episode_number']) ?>">
-                            <div class="image-wrapper"><img src="<?= e($episode['episode_link']) ?>/poster/sm.webp"></div>
+                            <div class="card-title mobile">
+                                <h3><?= e($episode['episode_number']) ?> серия</h3>
+                                <p><?= e($episode['episode_name']) ?></p>
+                            </div>
+                            <div class="image-wrapper"><img src="<?= e(!empty($episode['episode_link']) ? $episode['episode_link'] : $episode['episode_link_sub']) ?>/poster/sm.webp"></div>
                             <div class="card-title">
                                 <h3><?= e($episode['episode_number']) ?> серия</h3>
                                 <p><?= e($episode['episode_name']) ?></p>
@@ -72,21 +77,24 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
                                 <div class="rating">
                                     <div class="popup-stars hidden">
                                         <?php for ($i = 1; $i <= 10; $i++): ?>
-                                            <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30">
+                                            <div class="popup-stars-column"><button class="rating-btn button-without-styles" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30">
                                                         <use href="#star"></use>
                                                     </svg></button>
                                                 <p><?= $i ?></p>
                                             </div>
                                         <?php endfor; ?>
                                     </div>
-                                    <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30">
+                                    <div class="star-and-number"><button class="rating-btn-for-popup button-without-styles" aria-label="оценка"><svg class="star-icon" width="30" height="30">
                                                 <use href="#star"></use>
                                             </svg></button>
                                         <h3>9</h3>
                                     </div>
                                 </div>
                             </div>
-                            <div class="second-btn"><button class="message-btn"><svg class="message-icon" width="30" height="30">
+                            <svg class="eye-filled mobile" width="30" height="30">
+                                <use href="#eye-filled"></use>
+                            </svg>
+                            <div class="second-btn"><button class="message-btn button-without-styles"><svg class="message-icon" width="30" height="30">
                                         <use href="#message-filled"></use>
                                     </svg></button>
                                 <h3>9</h3>

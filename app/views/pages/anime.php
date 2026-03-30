@@ -1,5 +1,6 @@
 <?php
 $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch: 'all');
+
 ?>
 <svg style="display: none;">
     <symbol id="star" viewBox="0 0 24 24">
@@ -24,18 +25,7 @@ $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fe
                 <div class="head">
                     <h1><?= e($season['id']) ?> СЕЗОН</h1>
                     <div class="rating">
-                        <div class="popup-stars hidden">
-                            <?php for ($i = 1; $i <= 10; $i++): ?>
-                                <div class="popup-stars-column"><button class="rating-btn" data-rating="<?= $i ?>" aria-label="оценка"><svg class="star-icon" width="30" height="30">
-                                            <use href="#star"></use>
-                                        </svg></button>
-                                    <p><?= $i ?></p>
-                                </div>
-                            <?php endfor; ?>
-                        </div>
-                        <div class="star-and-number"><button class="rating-btn-for-popup" aria-label="оценка"><svg class="star-icon" width="30" height="30">
-                                    <use href="#star"></use>
-                                </svg></button>
+                        <div  class="star-and-number visual"><svg style="color:#ffb147" class="star-icon" width="30" height="30"><use href="#star"></use></svg>
                             <h3>9</h3>
                         </div>
                         <p>150 оценок</p>
@@ -73,10 +63,11 @@ $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fe
                 </div>
                 <p><b>Выпущено:</b> <?= e($season['number_of_release_episodes']) ?> из <?= e($season['number_of_episodes']) ?> серий</p>
                 <div class="progress-bar" style="--progress-width: <?= $percent ?>%"></div>
-                <button class="dropdown-btn" aria-expanded="false">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30">
+                <button class="dropdown-btn" aria-expanded="false" style="box-shadow:none;">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30">
                         <use href="#dropdown"></use>
                     </svg></button>
-                <div class="button-line"><button>НАЧАТЬ СМОТРЕТЬ</button><button onclick="window.location.href='/anime/<?= (int)$season['season_number'] ?>'">СТРАНИЦА СЕЗОНА</button></div>
+                <div class="button-line"><a class="link-like-button" style="box-shadow:none;" href='/anime/<?= (int)$season['season_number'] ?>'>СТРАНИЦА СЕЗОНА</a><a href="anime/<?=$season['season_number']?>/1" class="link-like-button">НАЧАТЬ СМОТРЕТЬ</a></div>
+                <div class="button-line mobile"><a class="link-like-button" style="box-shadow:none;" href='/anime/<?= (int)$season['season_number'] ?>'>ПОДРОБНЕЕ</a><a href="anime/<?=$season['season_number']?>/1" class="link-like-button">СМОТРЕТЬ С 1 СЕРИИ</a></div>
             </div>
         </div>
     <?php endforeach; ?>
@@ -95,60 +86,6 @@ $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fe
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const ratingPopups = document.querySelectorAll('.rating');
-        ratingPopups.forEach(rating => {
-            const popupWindow = rating.querySelector('.popup-stars');
-            const ratingBtnForPopup = rating.querySelector('.rating-btn-for-popup');
-            const stars = rating.querySelectorAll('.rating-btn');
-            let selectedRating = 0;
-
-            ratingBtnForPopup.addEventListener('click', (e) => {
-                e.stopPropagation();
-                popupWindow.classList.toggle('hidden');
-                ratingBtnForPopup.classList.toggle('active');
-            });
-
-            function highlightStars(upTo) {
-                stars.forEach(star => {
-                    const starRating = +star.dataset.rating;
-                    star.classList.toggle('active', starRating <= upTo);
-                });
-            }
-
-            stars.forEach(star => {
-                star.addEventListener('mouseenter', () => highlightStars(+star.dataset.rating));
-                star.addEventListener('mouseleave', () => highlightStars(selectedRating));
-                star.addEventListener('click', () => {
-                    const clickedRating = +star.dataset.rating;
-                    if (clickedRating === selectedRating) {
-                        selectedRating = 0;
-                        highlightStars(0);
-                        ratingBtnForPopup.classList.remove('active_long');
-                    } else {
-                        selectedRating = clickedRating;
-                        highlightStars(selectedRating);
-                        ratingBtnForPopup.classList.add('active_long');
-                    }
-                });
-            });
-        });
-
-
-        document.addEventListener('click', (e) => {
-            ratingPopups.forEach(rating => {
-                const popup = rating.querySelector('.popup-stars');
-                const btn = rating.querySelector('.rating-btn-for-popup');
-                if (!popup.classList.contains('hidden')) {
-                    const isInside = popup.contains(e.target);
-                    const isOnTrigger = e.target.closest('.rating-btn-for-popup');
-                    if (!isInside && !isOnTrigger) {
-                        popup.classList.add('hidden');
-                        btn.classList.remove('active');
-                    }
-                }
-            });
-        });
-
 
 
         const globalDropdown = document.querySelector('.dropdown-list');

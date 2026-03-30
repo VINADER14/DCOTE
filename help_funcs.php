@@ -1,5 +1,9 @@
 <?php
-
+function asset($file) {
+    $path = $_SERVER['DOCUMENT_ROOT'] . $file;
+    $version = file_exists($path) ? filemtime($path) : time();
+    return $file . '?v=' . $version;
+}
 
 function execute_query($query, $params=null, $fetch=false, $save=false) {
     global $db;
