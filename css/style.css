@@ -50,6 +50,7 @@ label {
     --fs-padding:clamp(5px, 1.3vw, 20px);
     --fs-gap20:clamp(5px, 1.3vw, 20px);
     --fs-gap10:clamp(1px, 0.65vw, 10px);
+    --nav-height: auto;
 }
 
 
@@ -115,6 +116,17 @@ button,.link-like-button {
 
 button:hover,.link-like-button:hover {
     scale: 0.95;
+    box-shadow: 0 0px clamp(10px, 1.3vw, 20px) 0px rgba(224, 11, 82, 0.5) !important;
+}
+
+button:disabled:hover,.link-like-button.disabled_a:hover{
+    box-shadow: none !important;
+}
+
+button:disabled,.link-like-button.disabled_a{
+    background: rgb(97, 97, 97);
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .title-and-smth{
@@ -151,6 +163,7 @@ button:hover,.link-like-button:hover {
     --fs-padding:clamp(8px, 2.67vw, 22px);
     --fs-gap20:clamp(1px, 5.34vw, 100px);
     --fs-gap10:clamp(1px, 2.67vw, 10px);
+    --fs-footer: clamp(1px, 2.136vw, 100px);
     }
 }
 
@@ -194,6 +207,18 @@ main {
         padding:clamp(1px,2.67vw,100px);
     }
 }
+
+
+
+.button-without-styles{
+    background-color:transparent;
+    box-shadow: none;
+}
+.button-without-styles:hover{
+    box-shadow: none !important;
+}
+
+
 
 /* ==== Навбар НАЧАЛО ==== */
 
@@ -275,22 +300,8 @@ main {
 
 /* ==== НАВБАР МОБИЛКА ==== */
 
-/* ==== Гамбургер ==== */
 
 
-.navbar .hamburger .hamburger-icon {
-    color: rgb(224, 11, 82);
-    width: 38px;
-    height: 38px;
-}
-
-
-.navbar .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
 /* ==== Менюшка сбоку ==== */
 
@@ -322,20 +333,8 @@ main {
 
 
 
-
-.navbar .right-mobile {
-    display: flex;
-}
-
 /* ==== Адаптив ==== */
 
-@media (max-width: 768px) {
-
-    .navbar {
-        display: none;
-    }
-
-}
 
 
 
@@ -379,7 +378,7 @@ main {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    z-index: 1800;
     opacity: 0;
     visibility: hidden;
     transition: 0.3s ease;
@@ -389,7 +388,6 @@ main {
 .overlay.active {
     opacity: 1;
     visibility: visible;
-    z-index: 100;
 }
 
 .navigation-links {
@@ -400,6 +398,7 @@ main {
     gap: 8px;
     justify-content: center;
     margin-top: 10px;
+    align-items: center;
 }
 
 .navigation-links p {
@@ -434,6 +433,29 @@ a.current-page span::after {
     width: 100%;
     height: 1px;
     background: rgb(229, 11, 85);
+}
+
+
+@media (max-width: 768px) {
+    a.current-page span::after {
+        display: none;
+    }
+    .current-page {
+        color: white !important;
+    }
+    .navigation-links {
+    display: flex;
+    font-size: clamp(1px,3.738vw,100px);
+    font-family: 'Vag-Medium';
+    padding-bottom: var(--fs-gap20);
+    }
+    .current-page{
+        background-color: rgba(224, 11, 82, 0.5);
+        padding-block: clamp(1px, 1.46vw, 23px);
+        padding-inline: clamp(1px, 2.4vw, 37px);
+        border-radius: clamp(1px, 1.335vw, 22px);
+        font-weight: bold;
+    }
 }
 
 
@@ -505,20 +527,102 @@ a.current-page span::after {
 
 
 
-
-
-
-
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
+@media (max-width: 768px) {
+    .navbar{
+        display: none;
     }
+
+    .social-nets-logos {
+        height: clamp(1px, 9.345vw, 200px);
+        width: auto;
+    }
+    .footer-center{
+        display: none;
+    }
+    .navbar .left .main-logo,
+    .footer-right .main-logo {
+        width: clamp(1px, 36.045vw, 400px);
+        height: clamp(1px, 9.345vw, 200px);
+    }
+
 }
+
+
+
+
 
 /* ФУТЕР КОНЕЦ */
 
+
+
+
+
+
+/* НАВ МОБИЛА НАЧАЛО */
+
+
+.mobile-bottom-nav{
+    margin: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(78, 28, 57) 0%, rgb(78, 28, 57) 7%, rgb(28, 22, 46) 50%, rgb(78, 28, 57) 93%, rgb(78, 28, 57) 100%);
+    align-items: center;
+    z-index: 1000;
+    padding-inline: clamp(1px,5.34vw,100px);
+    padding-block: clamp(1px,2.67vw,100px);
+    justify-content: space-between;
+    display: none;
+}
+
+.mobile-bottom-nav a,
+.mobile-bottom-nav button{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.mobile-bottom-nav h2{
+    font-size: clamp(1px,2.136vw,20px);
+}
+
+.mobile-bottom-nav .nav-icon{
+    color: white;
+    height: clamp(1px,8.01vw,100px);
+    width: clamp(1px,8.01vw,100px);
+
+}
+
+.mobile-bottom-nav .center-nav-icon{
+    color: white;
+    height: clamp(1px,9.879vw,100px);
+    width: auto;
+    aspect-ratio: 690.26 / 410.81;
+}
+
+#dcote-logo-small {
+    color: white;
+}
+
+#dcote-logo-small .accent {
+    fill: #df0e53;
+}
+
+
+@media (max-width: 768px) {
+    .mobile-bottom-nav{
+        display: flex;
+    }
+    .footer-nav{
+        padding-bottom: var(--nav-height, 100px);
+    }
+}
+/* НАВ МОБИЛА КОНЕЦ */
+ 
 
 
 
@@ -597,6 +701,14 @@ a.current-page span::after {
 .page-dcote_main .hero .hero-content .hero-buttons .project-btn {
     box-shadow: 0 0px 20px 0px rgba(138, 74, 210, 0.5);
     background-color: rgb(138, 74, 210, 0.5);
+}
+
+.page-dcote_main .hero .hero-content .hero-buttons .tg-btn:hover {
+    box-shadow: 0 0px 20px 0px rgba(26, 106, 255, 0.5);
+}
+
+.page-dcote_main .hero .hero-content .hero-buttons .project-btn:nover {
+    box-shadow: 0 0px 20px 0px rgba(138, 74, 210, 0.5);
 }
 
 .page-dcote_main .grid-images {
@@ -1316,10 +1428,10 @@ a.current-page span::after {
     }
 
     .page-dcote_main .grid-images a {
-        flex: 0 0 70%;
-        width: 70%;
-        max-width: 70%;
-        min-width: 70%;
+        flex: 0 0 60%;
+        width: 60%;
+        max-width: 60%;
+        min-width: 60%;
         flex-shrink: 0;
         scroll-snap-align: start;
     }
@@ -1333,7 +1445,7 @@ a.current-page span::after {
     }
 
     .page-dcote_main .grid-images .wrapper .content h3 {
-        margin-top: 50%;
+        margin-top: 40%;
     }
 
     .page-dcote_main .grid-images:hover a .content {
@@ -1462,17 +1574,7 @@ a.current-page span::after {
 }
 
 
-.page-reg .submit-btn:disabled,
-.page-login .submit-btn:disabled {
-    border-color: rgb(126, 126, 126);
-    cursor: not-allowed;
-}
 
-.page-reg .submit-btn:disabled:hover,
-.page-login .submit-btn:disabled:hover {
-    border-color: rgb(97, 97, 97);
-    background: rgb(97, 97, 97);
-}
 
 .page-reg .password-title {
     display: flex;
@@ -2233,11 +2335,13 @@ a.current-page span::after {
     gap: var(--fs-gap20);
 }
 
+
+
+
 .page-about_project .text .desc {
     display: flex;
     flex-direction: column;
-    gap: clamp(1px, 0.65vw, 10px);
-    ;
+    gap: var(--fs-gap10);
 }
 
 .page-about_project .text .title {
@@ -2247,10 +2351,8 @@ a.current-page span::after {
 .page-about_project .img-wrapper {
     width: 30%;
     height: clamp(250px, 39vw, 600px);
-
     position: relative;
     z-index: 2;
-    /* Выше фона */
 }
 
 .page-about_project .img-wrapper img {
@@ -2258,6 +2360,10 @@ a.current-page span::after {
     width: 100%;
     height: 100%;
 }
+
+
+
+
 
 .page-about_project .text-wrapper.reverse {
     flex-direction: row-reverse;
@@ -2273,6 +2379,36 @@ a.current-page span::after {
     position: relative;
     z-index: 1;
 }
+
+
+@media(max-width:768px){
+    
+    .page-about_project .text-wrapper,
+    .page-about_project .text-wrapper.reverse {
+        display: flex;
+        flex-direction: column;
+    }
+    .page-about_project .img-wrapper {
+        width: 100%;
+        height: clamp(100px, 80vw,1000px);
+        position: relative;
+        z-index: 2;
+    }
+    .page-about_project .text,
+    .page-about_project .text-wrapper.reverse .text {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+        border-radius: var(--fs-border-radius);
+        margin-top: -50%;
+        padding-top: calc(50% + var(--fs-padding));
+        padding-left: var(--fs-padding);
+        padding-right: var(--fs-padding);
+        margin-left: unset;
+        margin-right: unset;
+    }
+}
+
 
 .page-about_project .text-wrapper.reverse .text .desc {
     text-align: end;
@@ -2303,6 +2439,8 @@ a.current-page span::after {
     align-self: center;
 }
 
+
+
 .page-anime .cont .image-wrapper {
     width: 41%;
     object-fit: cover;
@@ -2316,6 +2454,7 @@ a.current-page span::after {
     object-fit: cover;
     object-position: center;
     aspect-ratio: 1 / 1.385;
+    display: block;
 }
 
 .page-anime .cont .desc {
@@ -2327,6 +2466,9 @@ a.current-page span::after {
     align-items: center;
     gap: var(--fs-gap20);
 }
+
+
+
 
 .page-anime .cont .desc .head {
     display: flex;
@@ -2340,6 +2482,10 @@ a.current-page span::after {
     display: flex;
     width: 67%;
 }
+
+
+
+
 
 .page-anime .cont .desc .info-block .left-column {
     display: flex;
@@ -2374,6 +2520,12 @@ a.current-page span::after {
     gap: clamp(15px, 1.3vw, 20px);
 }
 
+.page-anime .cont .desc .button-line.mobile {
+    display: none;
+}
+
+
+
 .page-anime .cont .desc .progress-bar {
     position: relative;
     width: 100%;
@@ -2401,6 +2553,39 @@ a.current-page span::after {
     border-radius: var(--fs-border-radius);
 }
 
+
+
+@media(max-width:768px){
+    .page-anime .cont{
+        flex-direction: column;
+        width: 100%;
+    }
+    .page-anime .cont .image-wrapper,
+    .page-anime .cont .desc{
+        width: 100%;
+        height: 100%;
+    }
+    .page-anime .cont .desc{
+        background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+    }
+    .page-anime .cont .desc .info-block {
+        display: none;
+    }
+    .page-anime .cont .desc .button-line{
+        display: none;
+    }
+    .page-anime .cont .desc .button-line.mobile {
+    display: flex;}
+    .page-anime .cont .desc .progress-bar {
+        height: clamp(1px, 5.34vw, 100px);
+        width: 100%;
+        border: clamp(0.01px, 0.8vw, 100px) solid rgb(229, 11, 85);
+    }
+    .page-anime .cont .desc .head {
+        gap: var(--fs-gap10)
+    }
+}
+
 /* ========================================
    РЕЙТИНГ - БАЗОВЫЕ СТИЛИ КНОПОК
    ======================================== */
@@ -2408,17 +2593,22 @@ a.current-page span::after {
 .rating-btn {
     border: none;
     padding: clamp(1px, 0.325vw, 5px);
+
 }
 
 /* ========================================
    РЕЙТИНГ - ИКОНКИ ЗВЕЗД
    ======================================== */
 .rating-btn-for-popup .star-icon,
-.rating-btn .star-icon {
-    width: clamp(1px, 2.275vw, 35px);
-    height: clamp(1px, 2.275vw, 35px);
+.rating-btn .star-icon,
+.page-anime .star-icon {
+    width: clamp(1px, 1.95vw, 30px);
+    height: clamp(1px, 1.95vw, 30px);
     transition: 0.3s;
 }
+
+
+
 
 /* ========================================
    РЕЙТИНГ - HOVER ЭФФЕКТЫ
@@ -2430,7 +2620,7 @@ a.current-page span::after {
 
 .rating-btn-for-popup:hover .star-icon,
 .rating-btn:hover .star-icon {
-    color: rgb(143, 17, 68);
+    color: rgb(229, 11, 85);
 }
 
 /* ========================================
@@ -2458,6 +2648,10 @@ a.current-page span::after {
     align-items: center;
     justify-content: center;
 }
+.rating .star-and-number.visual{
+    gap:clamp(1px, 0.325vw, 5px)
+}
+
 
 /* ========================================
    РЕЙТИНГ - ВСПЛЫВАЮЩЕЕ ОКНО
@@ -2500,6 +2694,31 @@ a.current-page span::after {
     gap: clamp(1px, 0.195vw, 3px);
     align-items: center;
     position: relative;
+}
+
+
+@media (max-width:768px){
+    .rating-btn-for-popup .star-icon,
+    .rating-btn .star-icon,
+    .page-anime .star-icon {
+        width: clamp(1px, 8vw, 100px);
+        height: clamp(1px, 8vw, 100px);
+        transition: 0.3s;
+    }
+    .rating .star-and-number.visual{
+        gap:clamp(1px, 1.335vw, 20px);
+    }
+    .rating .star-and-number.visual h3{
+        font-weight: bold;
+    }
+    .page-anime .dropdown-icon {
+        width: clamp(1px, 5.34vw, 100px);
+        height: clamp(1px, 5.34vw, 100px);
+    }
+
+    .page-anime .dropdown-btn {
+        gap: clamp(1px, 0.8vw, 15px);
+    }
 }
 
 .dropdown-list {
@@ -2565,6 +2784,7 @@ a.current-page span::after {
     object-fit: cover;
     object-position: center;
     aspect-ratio: 1 / 1.385;
+    display: block;
 }
 
 .page-anime-season .cont .desc {
@@ -2577,6 +2797,10 @@ a.current-page span::after {
     gap: var(--fs-gap20);
 }
 
+.page-anime-season .cont .desc h1{ 
+        text-align: center;
+    }
+
 .page-anime-season .cont .desc p {
     text-align: left;
 }
@@ -2588,6 +2812,13 @@ a.current-page span::after {
     align-items: center;
     margin-top: auto;
 }
+.page-anime-season .cont .desc .low-buttons.mobile {
+    display: none;
+}
+
+
+
+
 
 .page-anime-season .cont2 {
     display: flex;
@@ -2621,6 +2852,12 @@ a.current-page span::after {
 
 .page-anime-season .cont2 .episode-cont .eye-filled {
     color: grey;
+    width: clamp(1px, 1.95vw, 30px);
+    height: clamp(1px, 1.95vw, 30px);
+}
+
+.page-anime-season .cont2 .episode-cont .eye-filled.mobile {
+    display: none;
 }
 
 .page-anime-season .rating .popup-stars {
@@ -2655,6 +2892,10 @@ a.current-page span::after {
     z-index: 5;
     width: 25%;
     flex-shrink: 0;
+}
+
+.page-anime-season .cont2 .episode-cont .card-title.mobile {
+    display: none;
 }
 
 .page-anime-season .cont2 .episode-cont .image-wrapper img {
@@ -2724,6 +2965,100 @@ a.current-page span::after {
     height: clamp(1px, 3.5vw, 54px);
 }
 
+@media (max-width:768px){
+    .page-anime-season .cont {
+        flex-direction: column;
+    }
+
+    .page-anime-season .cont .image-wrapper {
+        width: 100%;
+    }
+    .page-anime-season .cont .desc {
+        width: 100%;
+        background: linear-gradient(180deg, rgba(223, 14, 83, 0.3) 0%, #0B172B 100%);
+    }
+    .page-anime-season .cont .desc .low-buttons.mobile {
+        display: flex;
+    }
+    .page-anime-season .cont .desc .low-buttons {
+        display: none;
+    }
+
+    .page-anime-season .cont2 .sort-toggle svg {
+        width: clamp(1px, 9.345vw, 100px);
+        height: clamp(1px, 9.345vw, 100px);
+    }
+    .page-anime-season .cont2 .episode-cont {
+        flex-direction: column;
+        gap: var(--fs-gap10);
+    }
+    .page-anime-season .cont2 .episode-cont .card-title {
+        display: none;
+    }
+    .page-anime-season .cont2 .episode-cont .card-link {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--fs-gap10);
+    }
+    .page-anime-season .cont2 .episode-cont .image-wrapper {
+        width: 100%;
+    }
+    .page-anime-season .cont2 .episode-cont .card-title.mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .page-anime-season .cont2 .episode-cont .eye-filled{
+        display: none;
+    }
+    .page-anime-season .cont2 .episode-cont .card-link:hover {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .page-anime-season .cont2 .episode-cont .card-link:hover img {
+        scale: 0.95;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .page-anime-season .cont2 .episode-cont .card-link img {
+        border-radius: var(--fs-border-radius);
+        transition: 0.3s;
+    }
+    .page-anime-season .cont2 .episode-cont .stars-and-comms {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .page-anime-season .cont2 .episode-cont .stars-and-comms .first-btn {
+        display: flex;
+        width: auto;
+    }
+
+    .page-anime-season .cont2 .episode-cont .stars-and-comms .second-btn {
+        display: flex;
+        width: auto;
+    }
+    .page-anime-season .cont2 .episode-cont .message-btn .message-icon {
+        width: clamp(1px, 8vw, 100px);
+        height: clamp(1px, 8vw, 100px);
+    }
+    .page-anime-season .cont2 .episode-cont .eye-filled.mobile {
+        display: block;
+            width: clamp(1px, 8vw, 100px);
+        height: clamp(1px, 8vw, 100px);
+    }
+    .page-anime-season .rating .popup-stars {
+        left: -10%;
+        top: 100%;
+        bottom: unset;
+        right: unset;
+        transform: unset;
+        transform: translateY(-150%);
+    }
+}
 
 
 
@@ -2809,18 +3144,29 @@ a.current-page span::after {
     justify-content: center;
 }
 
+.page-anime-episode .episode-controls.mobile{
+        display: none;
+}
+
+.page-anime-episode .subs-and-dubs button{
+    scale: 0.9;
+}
+
 .page-anime-episode .subs-and-dubs .active {
     background-color: rgb(143, 17, 68);
     border-color: rgb(143, 17, 68);
     cursor: not-allowed;
+    scale: 1.05;
 }
 
-.page-anime-episode button:disabled {
-    border-color: rgb(126, 126, 126);
-    cursor: not-allowed;
-}
-
-.page-anime-episode button:disabled:hover {
-    border-color: rgb(97, 97, 97);
-    background: rgb(97, 97, 97);
+@media (max-width:768px){
+    .page-anime-episode .episode-controls{
+        display: none;
+    }
+    .page-anime-episode .episode-controls.mobile{
+        display: flex;
+    }
+    .page-anime-episode .episode-controls.mobile button{
+        padding: clamp(1px,1.335vw,100px);
+    }
 }
