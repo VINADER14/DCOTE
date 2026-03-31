@@ -1,5 +1,5 @@
 <?php
-$seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch: 'all');
+$seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch:'all');
 
 ?>
 <svg style="display: none;">
