@@ -4,7 +4,7 @@ import project from "./package.json" with { type: "json" };
 const currentData = getCurrentData();
 const fileName = "CHANGELOG.md";
 
-console.log(`* ${currentData}\nCodealem v${project.version}`);
+console.log(`* ${currentData}\nDCOTE v${project.version}`);
 
 const changelogText = await getChangeLogText();
 const newChangelogText = getNewChangeLogText(changelogText);
