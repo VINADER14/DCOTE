@@ -1,4 +1,10 @@
 <?php
+
+$lifetime = 3 * 24 * 60 * 60;
+
+ini_set('session.gc_maxlifetime', $lifetime);
+ini_set('session.cookie_lifetime', $lifetime);
+
 session_start();
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
