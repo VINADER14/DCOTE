@@ -20,7 +20,7 @@
     </symbol>
 </svg>
 <?php
-$about_season = execute_query('SELECT img_src,season_description,trailer_link FROM anime_seasons WHERE season_number=?', [$season], true);
+$about_season = execute_query('SELECT img_src,season_description,trailer_link,episodes_imgs FROM anime_seasons WHERE season_number=?', [$season], true);
 $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? ORDER BY episode_number DESC ', [$season], fetch: 'all');
 ?>
 <div class="navigation-links">
@@ -38,8 +38,8 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
         <div class="desc slide-in-left">
             <h1><?= $season ?> СЕЗОН АНИМЕ-АДАПТАЦИИ</h1>
             <p><?= !empty(formatHtmlSafe($about_season['season_description'])) ? formatHtmlSafe($about_season['season_description']) : 'Описание сезона' ?></p>
-            <div class="low-buttons "><a href="<?= ($about_season['trailer_link']) ?>" style="box-shadow:none;" class="link-like-button">СМОТРЕТЬ ТРЕЙЛЕР</a><a href="<?=$season?>/1" class="link-like-button">НАЧАТЬ ПРОСМОТР</a></div>
-            <div class="low-buttons mobile"><a href="<?= ($about_season['trailer_link']) ?>" style="box-shadow:none;" class="link-like-button">ТРЕЙЛЕР</a><a href="<?=$season?>/1" class="link-like-button">СМОТРЕТЬ С 1 СЕРИИ</a></div>
+            <div class="low-buttons "><a href="<?= ($about_season['trailer_link']) ?>" style="box-shadow:none;" class="link-like-button">СМОТРЕТЬ ТРЕЙЛЕР</a><a href="<?= $season ?>/1" class="link-like-button">НАЧАТЬ ПРОСМОТР</a></div>
+            <div class="low-buttons mobile"><a href="<?= ($about_season['trailer_link']) ?>" style="box-shadow:none;" class="link-like-button">ТРЕЙЛЕР</a><a href="<?= $season ?>/1" class="link-like-button">СМОТРЕТЬ С 1 СЕРИИ</a></div>
         </div>
     </div>
     <div class="cont2 scale-in">
@@ -66,7 +66,7 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
                                 <h3><?= e($episode['episode_number']) ?> серия</h3>
                                 <p><?= e($episode['episode_name']) ?></p>
                             </div>
-                            <div class="image-wrapper"><img src="<?= e(!empty($episode['episode_link']) ? $episode['episode_link'] : $episode['episode_link_sub']) ?>/poster/sm.webp"></div>
+                            <div class="image-wrapper"><img src="<?= $about_season['episodes_imgs'] ?>"></div>
                             <div class="card-title">
                                 <h3><?= e($episode['episode_number']) ?> серия</h3>
                                 <p><?= e($episode['episode_name']) ?></p>
@@ -179,4 +179,5 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
         });
     })
 </script>
+
 </html>

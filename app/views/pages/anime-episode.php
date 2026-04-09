@@ -34,17 +34,7 @@ $active_src = $has_dub ? $episode_links['episode_link'] : $episode_links['episod
     <?php if (!$has_dub && !$has_sub): ?>
         <h1 style="text-align: center;">СЕРИИ ПОКА НЕТ</h1>
     <?php else: ?>
-        <div style="position: relative; padding-top: 56.25%; width: 100%; border-radius: clamp(1px, 0.65vw, 10px); overflow: hidden;">
-            <iframe 
-                data-dub="<?= e($episode_links['episode_link']) ?>" 
-                data-sub="<?= e($episode_links['episode_link_sub']) ?>" 
-                src="<?= e($active_src) ?>" 
-                allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" 
-                frameborder="0" 
-                allowfullscreen 
-                style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;">
-            </iframe>
-        </div>
+
     <?php endif ?>
 
     <div class="episode-controls">
