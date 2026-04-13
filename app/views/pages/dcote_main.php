@@ -2,7 +2,7 @@
 $classes_list_default = execute_query('SELECT * FROM classes_top WHERE spoilers= ? ORDER BY class_points DESC', ['0'], fetch: 'all');
 $max_points_default = $classes_list_default[0]['class_points'];
 $classes_list_spoilers = execute_query('SELECT * FROM classes_top WHERE spoilers= ? ORDER BY class_points DESC', ['1'], fetch: 'all');
-
+$max_points_spoilers = $classes_list_spoilers[0]['class_points'];
 ?>
 <main class="page-dcote_main">
     <div class="hero">
@@ -138,7 +138,7 @@ $classes_list_spoilers = execute_query('SELECT * FROM classes_top WHERE spoilers
             <div class="title">
                 <h1>РЕЙТИНГ КЛАССОВ</h1>
             </div>
-            <div class="spoilers">
+            <div class="spoilers-btn">
                 <p><b>Спойлеры:</b></p>
                 <label class="toggle-switch-compact">
                     <input type="checkbox" class="toggle-input">
@@ -148,6 +148,21 @@ $classes_list_spoilers = execute_query('SELECT * FROM classes_top WHERE spoilers
             <div class="rating">
 <?php foreach ($classes_list_default as $class): ?>
                     <?php $percent = ($max_points_default > 0) ? min(100, round(($class['class_points'] / $max_points_default) * 100, 2)) : 0; ?>
+                    <div class="school-class">
+                        <img src="<?= $class['leader_img'] ?>">
+                        <div class="info">
+                            <div class="text">
+                                <h3>Класс <?= $class['letter'] ?></h3>
+                                <p><?= $class['leader'] ?></p>
+                            </div>
+                            <div class="points-bg" style="--points-width: <?= $percent ?>%;background: <?= $class['color'] ?>;"><p><b><?= $class['class_points'] ?></b> классных очков</p></div>
+                        </div>
+                    </div>
+<?php endforeach; ?>
+            </div>
+            <div class="rating spoilers hidden">
+<?php foreach ($classes_list_spoilers as $class): ?>
+                    <?php $percent = ($max_points_spoilers > 0) ? min(100, round(($class['class_points'] / $max_points_spoilers) * 100, 2)) : 0; ?>
                     <div class="school-class">
                         <img src="<?= $class['leader_img'] ?>">
                         <div class="info">
@@ -411,5 +426,19 @@ $classes_list_spoilers = execute_query('SELECT * FROM classes_top WHERE spoilers
     </div>
 </main>
 </body>
+<script>
+    const checkbox = document.querySelector('.toggle-input');
+    const ratingDefault = document.querySelector('.rating:not(.spoilers)')
+    const ratingSpoilers = document.querySelector('.rating.spoilers')
+    checkbox.addEventListener('change', function(event) {
+    if (event.target.checked) {
+        ratingDefault.classList.add('hidden')
+        ratingSpoilers.classList.remove('hidden')
+    } else {
+        ratingSpoilers.classList.add('hidden')
+        ratingDefault.classList.remove('hidden')
+    }
+    });
 
+</script>
 </html>

@@ -20,7 +20,7 @@
     </symbol>
 </svg>
 <?php
-$about_season = execute_query('SELECT img_src,season_description,trailer_link,episodes_imgs FROM anime_seasons WHERE season_number=?', [$season], true);
+$about_season = execute_query('SELECT img_src,season_description,trailer_link FROM anime_seasons WHERE season_number=?', [$season], true);
 $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=? ORDER BY episode_number DESC ', [$season], fetch: 'all');
 ?>
 <div class="navigation-links">
@@ -33,7 +33,7 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
 <main class="page-anime-season">
     <div class="cont scale-in">
         <div class="image-wrapper">
-            <img src="<?= e($about_season['img_src']) ?>">
+            <img src="/images/anime/anime-banner-season-<?=$season ?>.webp">
         </div>
         <div class="desc slide-in-left">
             <h1><?= $season ?> СЕЗОН АНИМЕ-АДАПТАЦИИ</h1>
@@ -66,7 +66,7 @@ $episodes = execute_query('SELECT * FROM anime_episodes WHERE number_of_season=?
                                 <h3><?= e($episode['episode_number']) ?> серия</h3>
                                 <p><?= e($episode['episode_name']) ?></p>
                             </div>
-                            <div class="image-wrapper"><img src="<?= $about_season['episodes_imgs'] ?>"></div>
+                            <div class="image-wrapper"><img src="/images/anime/episodes-banner-season<?= $season ?>.webp"></div>
                             <div class="card-title">
                                 <h3><?= e($episode['episode_number']) ?> серия</h3>
                                 <p><?= e($episode['episode_name']) ?></p>

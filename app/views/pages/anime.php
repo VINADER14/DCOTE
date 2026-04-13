@@ -1,5 +1,6 @@
 <?php
-$seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch:'all');
+$seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fetch: 'all');
+$season_realesed = execute_query('SELECT number_of_season, COUNT(*) as episode_count FROM anime_episodes WHERE number_of_season IN (1,2,3,4) GROUP BY number_of_season ORDER BY number_of_season DESC;', fetch: 'all')
 
 ?>
 <svg style="display: none;">
@@ -15,7 +16,7 @@ $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fe
 <main class="page-anime">
     <?php foreach ($seasons_list as $index => $season): ?>
         <?php $total = (int)$season['number_of_episodes'];
-        $released = (int)$season['number_of_release_episodes'];
+        $released = (int)$season_realesed[$index]['episode_count'];
         $percent = ($total > 0) ? min(100, round(($released / $total) * 100, 2)) : 0; ?>
         <div class="cont scale-in" data-season=" <?= (int)$season['season_number'] ?>">
             <div class="image-wrapper">
@@ -25,7 +26,9 @@ $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fe
                 <div class="head">
                     <h1><?= e($season['id']) ?> СЕЗОН</h1>
                     <div class="rating">
-                        <div  class="star-and-number visual"><svg style="color:#ffb147" class="star-icon" width="30" height="30"><use href="#star"></use></svg>
+                        <div class="star-and-number visual"><svg style="color:#ffb147" class="star-icon" width="30" height="30">
+                                <use href="#star"></use>
+                            </svg>
                             <h3>9</h3>
                         </div>
                         <p>150 оценок</p>
@@ -61,13 +64,13 @@ $seasons_list = execute_query('SELECT * FROM anime_seasons ORDER BY id DESC', fe
                         <p><?= e($season['last_update']) ?></p>
                     </div>
                 </div>
-                <p><b>Выпущено:</b> <?= e($season['number_of_release_episodes']) ?> из <?= e($season['number_of_episodes']) ?> серий</p>
+                <p><b>Выпущено:</b> <?= $season_realesed[$index]['episode_count'] ?> из <?= e($season['number_of_episodes']) ?> серий</p>
                 <div class="progress-bar" style="--progress-width: <?= $percent ?>%"></div>
                 <button class="dropdown-btn" aria-expanded="false" style="box-shadow:none;">ДОБАВИТЬ В <svg class="dropdown-icon" width="30" height="30">
                         <use href="#dropdown"></use>
                     </svg></button>
-                <div class="button-line"><a class="link-like-button" style="box-shadow:none;" href='/anime/<?= (int)$season['season_number'] ?>'>СТРАНИЦА СЕЗОНА</a><a href="anime/<?=$season['season_number']?>/1" class="link-like-button">НАЧАТЬ СМОТРЕТЬ</a></div>
-                <div class="button-line mobile"><a class="link-like-button" style="box-shadow:none;" href='/anime/<?= (int)$season['season_number'] ?>'>ПОДРОБНЕЕ</a><a href="anime/<?=$season['season_number']?>/1" class="link-like-button">СМОТРЕТЬ С 1 СЕРИИ</a></div>
+                <div class="button-line"><a class="link-like-button" style="box-shadow:none;" href='/anime/<?= (int)$season['season_number'] ?>'>СТРАНИЦА СЕЗОНА</a><a href="anime/<?= $season['season_number'] ?>/1" class="link-like-button">НАЧАТЬ СМОТРЕТЬ</a></div>
+                <div class="button-line mobile"><a class="link-like-button" style="box-shadow:none;" href='/anime/<?= (int)$season['season_number'] ?>'>ПОДРОБНЕЕ</a><a href="anime/<?= $season['season_number'] ?>/1" class="link-like-button">СМОТРЕТЬ С 1 СЕРИИ</a></div>
             </div>
         </div>
     <?php endforeach; ?>

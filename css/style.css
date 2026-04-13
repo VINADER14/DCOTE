@@ -1022,7 +1022,7 @@ a.current-page span::after {
 }
 
 /* Спойлеры */
-.page-dcote_main .content-line4 .top-classes .spoilers {
+.page-dcote_main .content-line4 .top-classes .spoilers-btn {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -3237,6 +3237,11 @@ video-player.dcote-player-rounded video-skin video {
     scale: 1.05;
 }
 
+.page-anime-episode .iframe-wrapper{
+    width: 100%;
+    padding-inline: 10%;
+}
+
 @media (max-width:768px) {
     .page-anime-episode .episode-controls {
         display: none;
@@ -3248,5 +3253,8 @@ video-player.dcote-player-rounded video-skin video {
 
     .page-anime-episode .episode-controls.mobile button {
         padding: clamp(1px, 1.335vw, 100px);
+    }
+    .page-anime-episode .iframe-wrapper{
+        padding-inline: 0%;
     }
 }
