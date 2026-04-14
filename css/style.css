@@ -884,6 +884,7 @@ a.current-page span::after {
     justify-content: flex-start;
     text-align: center;
     width: 100%;
+    gap:var(--fs-gap20);
 }
 
 .page-dcote_main .updates .updates-news .one-news-wrapper p {
@@ -891,6 +892,16 @@ a.current-page span::after {
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 100%
+}
+.page-dcote_main .updates .updates-news .one-news-wrapper a {
+    text-decoration: none;
+}
+
+.page-dcote_main .updates .updates-news .one-news-wrapper p:hover {
+    color:rgb(229, 11, 85)
+}
+.page-dcote_main .updates .updates-news h3.hot {
+    color:rgb(229, 11, 85)
 }
 
 .page-dcote_main .updates .updates-news .one-news-wrapper {
@@ -1315,7 +1326,7 @@ a.current-page span::after {
         height: clamp(10px, 8.01vw, 100px);
     }
 
-    .page-dcote_main .content-line4 .top-classes .spoilers {
+    .page-dcote_main .content-line4 .top-classes .spoilers-btn {
         gap: clamp(1px, 2.67vw, 100px);
     }
 
@@ -1426,7 +1437,7 @@ a.current-page span::after {
     }
 
     .page-dcote_main .updates {
-        height: clamp(1px, 96.12vw, 1000px);
+        min-height: clamp(1px, 96.12vw, 1000px);
     }
 
     .page-dcote_main .grid-images {

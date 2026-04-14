@@ -6,6 +6,7 @@ $pass = '';
 
 
 $db = mysqli_connect($host, $user, $pass, $db);
+mysqli_query($db, "SET time_zone = '+00:00'");
 
 if (!$db) {
     die("Ошибка подключения: " . mysqli_connect_error());

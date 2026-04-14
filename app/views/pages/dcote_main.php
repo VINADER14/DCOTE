@@ -3,6 +3,7 @@ $classes_list_default = execute_query('SELECT * FROM classes_top WHERE spoilers=
 $max_points_default = $classes_list_default[0]['class_points'];
 $classes_list_spoilers = execute_query('SELECT * FROM classes_top WHERE spoilers= ? ORDER BY class_points DESC', ['1'], fetch: 'all');
 $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
+$feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 4', fetch: 'all');
 ?>
 <main class="page-dcote_main">
     <div class="hero">
@@ -44,7 +45,7 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
     <div class="grid-images">
         <a href="/anime">
             <div class="wrapper">
-                <img src="/images/index/категории-аниме.webp">
+                <img src="/images/index/category-anime.webp">
                 <div class="content">
                     <h3><b>АНИМЕ</b></h3>
                     <p>Бесплатный просмотр аниме-адаптации всех сезонов в хорошем качестве</p>
@@ -53,8 +54,8 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
         </a>
         <a>
             <div class="wrapper">
-                <img src="/images/index/категории-ранобе.webp">
-                <div class="content" style="background: rgba(11, 23, 43, 1)">
+                <img src="/images/index/category-ranobe-bw.webp">
+                <div class="content">
                     <h3><b>РАНОБЭ</b></h3>
                     <p>Чтение оригинальной новеллы в полном формате и хорошем качестве перевода</p>
                 </div>
@@ -62,8 +63,8 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
         </a>
         <a>
             <div class="wrapper">
-                <img src="/images/index/категории-манга.webp">
-                <div class="content" style="background: rgba(11, 23, 43, 1);">
+                <img src="/images/index/category-manga-bw.webp">
+                <div class="content">
                     <h3><b>МАНГА</b></h3>
                     <p>Чтение глав манга-адаптации в хорошем качестве изображений и перевода</p>
                 </div>
@@ -71,8 +72,8 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
         </a>
         <a>
             <div class="wrapper">
-                <img src="/images/index/категории-иллюстрации.webp">
-                <div class="content" style="background: rgba(11, 23, 43, 1)">
+                <img src="/images/index/category-illustrations-bw.webp">
+                <div class="content">
                     <h3><b>ИЛЛЮСТРАЦИИ</b></h3>
                     <p>Сборник иллюстраций от художника Томосе Сюнсаку, арты от художников-фанатов и превосходные арт-генерации от ИИ</p>
                 </div>
@@ -80,8 +81,8 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
         </a>
         <a>
             <div class="wrapper">
-                <img src="/images/index/категории-персонажи.webp">
-                <div class="content" style="background: rgba(11, 23, 43, 1)">
+                <img src="/images/index/category-characters-bw.webp">
+                <div class="content">
                     <h3><b>ПЕРСОНАЖИ</b></h3>
                     <p>Подробные досье и описания всех персонажей произведения</p>
                 </div>
@@ -123,10 +124,16 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                 <h1>ЛЕНТА ОБНОВЛЕНИЙ</h1>
             </div>
             <div class="updates-news">
-                <h3>НОВОЕ</h3>
-                <div class="one-news-wrapper">
-                    <p>Опубликована озвучка к 4 серии 4 сезона аниме-адаптацииииииииииииииии</p>
-                </div>
+                <?php foreach ($feed as $index => $update): ?>
+                    <div>
+                        <h3 class="<?= $index == 0 ? 'hot' : '' ?>"><?= $index == 0 ? 'НОВОЕ' : format_date($update['created_at']) ?></h3>
+                        <div class="one-news-wrapper">
+                            <a href="/<?= $update['link'] ?>">
+                                <p><?= $update['description'] ?></p>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <div class="updates-link-wrapper">
                 <a class="link-like-button disabled_a" rel="noopener noreferrer">ВСЕ ОБНОВЛЕНИЯ</a>
@@ -146,7 +153,7 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                 </label>
             </div>
             <div class="rating">
-<?php foreach ($classes_list_default as $class): ?>
+                <?php foreach ($classes_list_default as $class): ?>
                     <?php $percent = ($max_points_default > 0) ? min(100, round(($class['class_points'] / $max_points_default) * 100, 2)) : 0; ?>
                     <div class="school-class">
                         <img src="<?= $class['leader_img'] ?>">
@@ -155,13 +162,15 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <h3>Класс <?= $class['letter'] ?></h3>
                                 <p><?= $class['leader'] ?></p>
                             </div>
-                            <div class="points-bg" style="--points-width: <?= $percent ?>%;background: <?= $class['color'] ?>;"><p><b><?= $class['class_points'] ?></b> классных очков</p></div>
+                            <div class="points-bg" style="--points-width: <?= $percent ?>%;background: <?= $class['color'] ?>;">
+                                <p><b><?= $class['class_points'] ?></b> классных очков</p>
+                            </div>
                         </div>
                     </div>
-<?php endforeach; ?>
+                <?php endforeach; ?>
             </div>
             <div class="rating spoilers hidden">
-<?php foreach ($classes_list_spoilers as $class): ?>
+                <?php foreach ($classes_list_spoilers as $class): ?>
                     <?php $percent = ($max_points_spoilers > 0) ? min(100, round(($class['class_points'] / $max_points_spoilers) * 100, 2)) : 0; ?>
                     <div class="school-class">
                         <img src="<?= $class['leader_img'] ?>">
@@ -170,12 +179,14 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <h3>Класс <?= $class['letter'] ?></h3>
                                 <p><?= $class['leader'] ?></p>
                             </div>
-                            <div class="points-bg" style="--points-width: <?= $percent ?>%;background: <?= $class['color'] ?>;"><p><b><?= $class['class_points'] ?></b> классных очков</p></div>
+                            <div class="points-bg" style="--points-width: <?= $percent ?>%;background: <?= $class['color'] ?>;">
+                                <p><b><?= $class['class_points'] ?></b> классных очков</p>
+                            </div>
                         </div>
                     </div>
-<?php endforeach; ?>
+                <?php endforeach; ?>
             </div>
-        <div class="full-stat"><button disabled>ПОЛНАЯ СТАТИСТИКА</button></div>
+            <div class="full-stat"><button disabled>ПОЛНАЯ СТАТИСТИКА</button></div>
         </div>
         <div class="top-users scale-in">
             <div class="title">
@@ -208,10 +219,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>1</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -225,10 +236,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>2</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -242,10 +253,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>3</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -259,10 +270,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>4</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -276,10 +287,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>5</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -293,10 +304,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>6</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -310,10 +321,10 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
                                 <p><b>7</b></p>
                             </td>
                             <td><img src="/images/user-avatar.webp" alt=""></td>
-                            <td class="nickname"  data-status="-">
+                            <td class="nickname" data-status="-">
                                 <p>-</p>
                             </td>
-                            <td class="status" >
+                            <td class="status">
                                 <p style="color: white;">-</p>
                             </td>
                             <td class="rating-on-main">
@@ -431,14 +442,14 @@ $max_points_spoilers = $classes_list_spoilers[0]['class_points'];
     const ratingDefault = document.querySelector('.rating:not(.spoilers)')
     const ratingSpoilers = document.querySelector('.rating.spoilers')
     checkbox.addEventListener('change', function(event) {
-    if (event.target.checked) {
-        ratingDefault.classList.add('hidden')
-        ratingSpoilers.classList.remove('hidden')
-    } else {
-        ratingSpoilers.classList.add('hidden')
-        ratingDefault.classList.remove('hidden')
-    }
+        if (event.target.checked) {
+            ratingDefault.classList.add('hidden')
+            ratingSpoilers.classList.remove('hidden')
+        } else {
+            ratingSpoilers.classList.add('hidden')
+            ratingDefault.classList.remove('hidden')
+        }
     });
-
 </script>
+
 </html>
