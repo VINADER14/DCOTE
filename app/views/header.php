@@ -7,8 +7,10 @@
     <title><?= $pageTitle ?? 'DCOTE' ?></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png?v=6">
     <link rel="stylesheet" href="<?= asset('/css/style.css') ?>">
+    <link rel="stylesheet" href="/css/components/dropdown.css">
     <meta name="description" content="<?= htmlspecialchars($desc ?? 'Сайт, который совмещает в себе все аспекты произведения "Добро пожаловать в класс превосходства". Википедия, аниме, ранобэ, манга и не только!') ?>">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="/js/components/dropdown.js"></script>
 </head>
 
 <body>
@@ -221,7 +223,22 @@
                 <a href="/about-project"><span>О ПРОЕКТЕ</span></a>
             </div>
             <div class="right">
-                <a href="<?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? '/account' : '/login' ?>" class="link-like-button login-btn" rel="noopener noreferrer"><?= (isset($_SESSION['verified']) && $_SESSION['verified']) ? 'АККАУНТ' : 'ВОЙТИ' ?></a>
+                <?php if (isset($_SESSION['verified']) && $_SESSION['verified']): ?>
+                    <div class="dropdown" data-dropdown>
+                        <button class="link-like-button login-btn" data-dropdown-toggle>
+                            АККАУНТ
+                        </button>
+                        <div class="drop-menu" data-dropdown-menu>
+                            <a href="/account"><img src="/images/menu/user.svg" alt="avatar">Мой аккаунт</a>
+                            <a href="/favorites"><img src="/images/menu/file-star.svg" alt="avatar">Избранное</a>
+                            <a href="/rules"><img src="/images/menu/info-square.svg" alt="avatar">Правила сайта</a>
+                            <a href="/settings"><img src="/images/menu/settings.svg" alt="avatar">Настройки</a>
+                            <a href="/logout"><img src="/images/menu/layout-sidebar-right-expand.svg" alt="avatar">Выйти с аккаунта</a>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <a href="/login" class="link-like-button login-btn">АККАУНТ</a>
+                <?php endif; ?>
             </div>
             </div>
         <div class="side-menu" id="sideMenu">
@@ -237,4 +254,6 @@
             </div>
         </div>
         <div class="overlay" id="overlay"></div>
+        
+        </script>
     </nav>

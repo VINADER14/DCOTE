@@ -92,6 +92,13 @@ if (empty($segments) || $segments[0] === '' || $segments[0] === 'dcote_main') {
         $httpCode = 404;
         $contentPage = '/app/views/pages/page-404.php';
     }
+} elseif ($segments[0] === 'logout') {
+    session_start();
+    $_SESSION = [];
+    session_destroy();
+
+    header("Location: /");
+    exit;
 } else {
     $httpCode = 404;
     $pageTitle = 'Страница не найдена | DCOTE';
