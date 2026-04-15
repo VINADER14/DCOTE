@@ -16,10 +16,26 @@
             <svg class="nav-icon"><use href="#file-star"></use></svg>
             <h2 class="nav-label">Избранное</h2>
         </a>
-        <a href="/account" class="nav-item">
-            <svg class="nav-icon"><use href="#user"></use></svg>
-            <h2 class="nav-label">Аккаунт</h2>
-        </a>
+        <?php if (isset($_SESSION['verified']) && $_SESSION['verified']): ?>
+                    <a href="#" class="nav-item">
+                        <svg class="nav-icon"><use href="#user"></use></svg>
+                        <h2 class="nav-label">Аккаунт</h2>
+                    </a>
+                    <div class="dropdown" data-dropdown>
+                        <div class="drop-menu" data-dropdown-menu>
+                            <a href="/account"><img src="/images/menu/user.svg" alt="avatar">Мой аккаунт</a>
+                            <a href="/favorites"><img src="/images/menu/file-star.svg" alt="avatar">Избранное</a>
+                            <a href="/rules"><img src="/images/menu/info-square.svg" alt="avatar">Правила сайта</a>
+                            <a href="/settings"><img src="/images/menu/settings.svg" alt="avatar">Настройки</a>
+                            <a href="/logout"><img src="/images/menu/layout-sidebar-right-expand.svg" alt="avatar">Выйти с аккаунта</a>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <a href="/login" class="nav-item">
+                        <svg class="nav-icon"><use href="#user"></use></svg>
+                        <h2 class="nav-label">Аккаунт</h2>
+                    </a>
+                <?php endif; ?>
         <a href="/" class="nav-item">
             <svg class="center-nav-icon"><use href="#dcote-logo-small"></use></svg>
         </a>
