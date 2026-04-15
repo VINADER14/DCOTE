@@ -1,3 +1,5 @@
+    <link rel="stylesheet" href="/css/components/mobile_dropdown.css">
+    <script src="/js/components/mobile-dropdown.js"></script>
     <footer class="footer-nav">
         <div class="footer-left">
             <a href="https://x.com/aandreev06" class="logo-link "><svg class="social-nets-logos" width="50" height="50"><use href="#x-logo"></use></svg></a>
@@ -17,12 +19,12 @@
             <h2 class="nav-label">Избранное</h2>
         </a>
         <?php if (isset($_SESSION['verified']) && $_SESSION['verified']): ?>
-                    <a href="#" class="nav-item">
-                        <svg class="nav-icon"><use href="#user"></use></svg>
-                        <h2 class="nav-label">Аккаунт</h2>
-                    </a>
-                    <div class="dropdown" data-dropdown>
-                        <div class="drop-menu" data-dropdown-menu>
+                    <div class="mobile-dropdown" data-mobile-dropdown>
+                        <button class="nav-item" data-mobile-dropdown-toggle>
+                            <svg class="nav-icon"><use href="#user"></use></svg>
+                            <h2 class="nav-label">Аккаунт</h2>
+                        </button>
+                        <div class="mobile-drop-menu" data-mobile-dropdown-menu>
                             <a href="/account"><img src="/images/menu/user.svg" alt="avatar">Мой аккаунт</a>
                             <a href="/favorites"><img src="/images/menu/file-star.svg" alt="avatar">Избранное</a>
                             <a href="/rules"><img src="/images/menu/info-square.svg" alt="avatar">Правила сайта</a>
