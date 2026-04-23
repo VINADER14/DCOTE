@@ -67,28 +67,36 @@ $voice = $initial_type === 'dub' ? ($episode_links['has_anilibria'] === 1 ? 'Ani
                 if (this.dataset.href) window.location.href = this.dataset.href;
             });
         });
+        
+    const buttons = document.querySelectorAll('.subs-and-dubs button');
+    const iframe = document.querySelector('iframe');
+    if (!iframe) return;
 
-        const buttons = document.querySelectorAll('.subs-and-dubs button');
-        const iframe = document.querySelector('iframe');
+    const voicePath = '<?= $voice ?>'; 
 
-        if (!iframe) return;
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            if (this.classList.contains('active') || this.disabled) return;
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (this.classList.contains('active') || this.disabled) return;
+            buttons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
 
-                buttons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+            const type = this.dataset.type;
+            let url = new URL(iframe.src);
+            let srcParam = url.searchParams.get('src');
 
-                const type = this.dataset.type;
-                let currentSrc = iframe.src;
-
-                if (type === 'sub') {
-                    iframe.src = currentSrc.replace('/dub/', '/sub/');
-                } else {
-                    iframe.src = currentSrc.replace('/sub/', '/dub/');
+            if (type === 'sub') {
+                srcParam = srcParam.replace('/dub/', '/sub/').replace(voicePath, '');
+            } else {
+                srcParam = srcParam.replace('/sub/', '/dub/');
+                if (!srcParam.includes(voicePath)) {
+                    srcParam = srcParam.replace('master.m3u8', voicePath + 'master.m3u8');
                 }
-            });
+            }
+
+            url.searchParams.set('src', srcParam);
+            iframe.src = url.toString();
         });
     });
+});
 </script>

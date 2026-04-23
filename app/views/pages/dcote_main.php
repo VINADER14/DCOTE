@@ -99,7 +99,7 @@ $feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 
                     </svg>
                 </button>
                 <div class="content">
-                    <img src="/images/index/аниме-4-сезон.webp">
+                    <img src="/images/index/аниме-4-сезон.webp" loading="lazy" decoding="async">
                     <div class="text">
                         <h3><b>АНИМЕ</b> 4 СЕЗОН</h3>
                         <p>Токийская столичная старшая школа продвинутого воспитания —
@@ -156,7 +156,7 @@ $feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 
                 <?php foreach ($classes_list_default as $class): ?>
                     <?php $percent = ($max_points_default > 0) ? min(100, round(($class['class_points'] / $max_points_default) * 100, 2)) : 0; ?>
                     <div class="school-class">
-                        <img src="<?= $class['leader_img'] ?>">
+                        <img src="<?= $class['leader_img'] ?>" loading="lazy" decoding="async">
                         <div class="info">
                             <div class="text">
                                 <h3>Класс <?= $class['letter'] ?></h3>
@@ -173,7 +173,7 @@ $feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 
                 <?php foreach ($classes_list_spoilers as $class): ?>
                     <?php $percent = ($max_points_spoilers > 0) ? min(100, round(($class['class_points'] / $max_points_spoilers) * 100, 2)) : 0; ?>
                     <div class="school-class">
-                        <img src="<?= $class['leader_img'] ?>">
+                        <img src="<?= $class['leader_img'] ?>" loading="lazy" decoding="async">
                         <div class="info">
                             <div class="text">
                                 <h3>Класс <?= $class['letter'] ?></h3>
@@ -400,7 +400,7 @@ $feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 
     <div class="tg-links">
         <div class="banner">
             <div class="image-wrapper">
-                <img src="/images/index/обсуждение-новостей.webp">
+                <img src="/images/index/обсуждение-новостей.webp" loading="lazy" decoding="async">
             </div>
             <div class="text">
                 <div class="title-and-smth">
@@ -412,7 +412,7 @@ $feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 
         </div>
         <div class="banner">
             <div class="image-wrapper">
-                <img src="/images/index/обсуждение-спойлеров.webp">
+                <img src="/images/index/обсуждение-спойлеров.webp" loading="lazy" decoding="async">
             </div>
             <div class="text">
                 <div class="title-and-smth">
@@ -424,7 +424,7 @@ $feed = execute_query('SELECT * FROM update_feed ORDER BY created_at DESC LIMIT 
         </div>
         <div class="banner">
             <div class="image-wrapper">
-                <img src="/images/index/теории-и-разборы.webp">
+                <img src="/images/index/теории-и-разборы.webp" loading="lazy" decoding="async">
             </div>
             <div class="text">
                 <div class="title-and-smth">

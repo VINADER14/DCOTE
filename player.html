@@ -5,12 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player</title>
-
     <script src="https://cdn.jsdelivr.net/npm/shaka-player@5/dist/shaka-player.ui.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@5/dist/controls.css" />
-
     <style>
-        /* ... твои базовые стили остаются без изменений ... */
         *,
         *::before,
         *::after {
@@ -45,14 +42,11 @@
             object-fit: contain;
         }
 
-        /* Фоновое кольцо (которое circle) */
         .shaka-spinner-container .shaka-spinner svg g circle {
             stroke: rgba(255, 255, 255, 0.2) !important;
             stroke-opacity: 1 !important;
-            /* Перебиваем атрибут stroke-opacity=".5" из HTML */
         }
 
-        /* Сама бегущая дорожка (которая path) */
         .shaka-spinner-container .shaka-spinner svg g path {
             stroke: rgba(224, 11, 82, 0.8) !important;
             /* Сделал чуть ярче для контраста */
@@ -64,8 +58,6 @@
             background: transparent !important;
         }
 
-        /* Фикс для ползунка */
-
         .shaka-seek-bar-container .shaka-range-element::-webkit-slider-thumb {
             background: rgb(224, 11, 82) !important;
             transform: translateX(-1px);
@@ -76,7 +68,6 @@
             transform: translateX(-1px);
         }
 
-        /* Skip button */
         #skip-btn {
             display: none;
             position: fixed;
@@ -120,8 +111,7 @@
 
     <div id="player-container">
         <video id="video" playsinline></video>
-    </div>
-    <div id="skip-btn">
+        <div id="skip-btn">
             <button id="skip-btn-dismiss">
                 <div id="skip-btn-dismiss-inner"><img style="display: block; font-size: 16px;" class="shaka-ui-icon"
                         src="/images/player-vector/file-x.svg"></div>
@@ -130,12 +120,11 @@
                 <div id="skip-btn-action-inner">Пропустить опенинг</div>
             </button>
         </div>
-
+    </div>
     <script>
         function onError(error) {
             console.error('Shaka Error:', error.code, error.message || error);
         }
-
         async function init() {
             shaka.polyfill.installAll();
             if (!shaka.Player.isBrowserSupported()) {
@@ -197,8 +186,6 @@
             ]));
             localization.changeLocale([RU]);
 
-
-
             window.addEventListener('keydown', (e) => {
                 if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
                 switch (e.code) {
@@ -230,20 +217,23 @@
                 }
             });
 
+            const shakaButtons = container.querySelectorAll('button, .shaka-range-element');
+            shakaButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.blur(); 
+                });
+            });
+
             const skipAction = document.getElementById('skip-btn-action');
             const skipDismiss = document.getElementById('skip-btn-dismiss');
-            const skipTarget = (skipEnd > skipStart && skipEnd >= 0) ? skipEnd : skipStart + 88;
+            const skipTarget = (skipEnd > skipStart && skipEnd >= 0) ? skipEnd : skipStart + 85;
 
             let skipDismissed = false;
 
-            // 1. Основной цикл отслеживания времени
             video.addEventListener('timeupdate', () => {
                 const isInsideRange = video.currentTime > skipStart && video.currentTime < skipTarget && skipStart >= 0;
-
-                // ПРОВЕРКА: Если нажали "Закрыть" или открыто меню — не показываем
                 const overflowMenu = document.querySelector('.shaka-overflow-menu');
                 const isMenuOpen = overflowMenu && !overflowMenu.classList.contains('shaka-hidden');
-
                 if (isInsideRange && !skipDismissed && !isMenuOpen) {
                     skipBtn.classList.add('visible');
                 } else {
@@ -251,16 +241,39 @@
                 }
             });
 
-            skipAction.addEventListener('click', () => {
-                video.currentTime = skipTarget;
-                skipBtn.classList.remove('visible');
-            });
-            skipDismiss.addEventListener('click', () => {
-                skipDismissed = true;
-                skipBtn.classList.remove('visible');
+            const silenceShaka = (e) => {
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                if (controls && typeof controls.setEnabledShakaControls === 'function') {
+                    controls.setEnabledShakaControls(false);
+                    setTimeout(() => controls.setEnabledShakaControls(true), 400);
+                }
+            };
+
+            ['pointerdown', 'touchstart', 'mousedown'].forEach(type => {
+                skipBtn.addEventListener(type, silenceShaka, true);
             });
 
-            // 3. Клики по меню (оставляем для мгновенной реакции)
+            skipAction.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                video.currentTime = skipTarget;
+                skipBtn.classList.remove('visible');
+                if (controls && typeof controls.hideUI === 'function') {
+                    controls.hideUI();
+                }
+            }, true);
+
+            skipDismiss.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                skipDismissed = true;
+                skipBtn.classList.remove('visible');
+                if (controls && typeof controls.hideUI === 'function') {
+                    controls.hideUI();
+                }
+            }, true);
+
             const overflowBtn = document.querySelector('.shaka-overflow-menu-button');
             if (overflowBtn) {
                 overflowBtn.addEventListener('click', () => {
@@ -276,9 +289,7 @@
                 }
             }
         }
-
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
-
 </html>

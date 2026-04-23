@@ -1,26 +1,31 @@
 @font-face {
     font-family: 'Vag-Heavy';
-    src: url('/fonts/VAG\ Rounded\ Next\ Heavy.ttf') format('truetype');
+    src: url('/fonts/VAG\ Rounded\ Next\ Heavy.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Vag-Bold';
-    src: url('/fonts/VAG\ Rounded\ Next\ Bold.ttf') format('truetype');
+    src: url('/fonts/VAG\ Rounded\ Next\ Bold.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Vag-Medium';
-    src: url('/fonts/VAG\ Rounded\ Next\ Medium.ttf') format('truetype');
+    src: url('/fonts/VAG\ Rounded\ Next\ Medium.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Vag-Regular';
-    src: url('/fonts/VAG\ Rounded\ Next\ Regular.ttf') format('truetype');
+    src: url('/fonts/VAG\ Rounded\ Next\ Regular.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Vag-Thin';
-    src: url('/fonts/VAG\ Rounded\ Next\ Thin.ttf') format('truetype');
+    src: url('/fonts/VAG\ Rounded\ Next\ Thin.woff2') format('woff2');
+    font-display: swap;
 }
 
 *,
@@ -730,6 +735,7 @@ a.current-page span::after {
     gap: clamp(10px, 1.95vw, 30px);
     align-items: center;
     width: 100%;
+    aspect-ratio: 1384/374;
 }
 
 .page-dcote_main .grid-images .wrapper {
@@ -884,7 +890,7 @@ a.current-page span::after {
     justify-content: flex-start;
     text-align: center;
     width: 100%;
-    gap:var(--fs-gap20);
+    gap: var(--fs-gap20);
 }
 
 .page-dcote_main .updates .updates-news .one-news-wrapper p {
@@ -893,15 +899,17 @@ a.current-page span::after {
     text-overflow: ellipsis;
     width: 100%
 }
+
 .page-dcote_main .updates .updates-news .one-news-wrapper a {
     text-decoration: none;
 }
 
 .page-dcote_main .updates .updates-news .one-news-wrapper p:hover {
-    color:rgb(229, 11, 85)
+    color: rgb(229, 11, 85)
 }
+
 .page-dcote_main .updates .updates-news h3.hot {
-    color:rgb(229, 11, 85)
+    color: rgb(229, 11, 85)
 }
 
 .page-dcote_main .updates .updates-news .one-news-wrapper {
@@ -1452,6 +1460,7 @@ a.current-page span::after {
         padding-bottom: clamp(1px, 1.335vw, 100px);
         position: relative;
         height: 100%;
+        aspect-ratio: unset;
     }
 
 
@@ -1731,8 +1740,8 @@ a.current-page span::after {
 }
 
 .page-404 .text-404 {
-    font-size: clamp(5px, 42.315vw, 651px);
-    line-height: 1;
+    font-size: clamp(5px, 26.065vw, 401px);
+    line-height: 0.75;
     margin: 0;
     z-index: 0;
 }
@@ -1740,11 +1749,11 @@ a.current-page span::after {
 
 
 .page-404 .ptichka {
-    width: clamp(1px, 47.32vw, 728px);
-    height: clamp(1px, 44.135vw, 679px);
+    width: auto;
+    height: clamp(1px, 30.615vw, 417px);
     display: block;
     z-index: 1;
-    margin-top: calc(-0.6 * clamp(5px, 42.315vw, 651px));
+    margin-top: calc(-0.6 * clamp(5px, 26.065vw, 401px));
 }
 
 .page-404 .desc-404 {
@@ -1757,11 +1766,11 @@ a.current-page span::after {
 .page-404 .desc-404 {
     z-index: 2;
     text-align: center;
-    margin-top: calc(-0.15 * clamp(1px, 44.135vw, 679px));
+    margin-top: calc(-0.2 * clamp(1px, 30.615vw, 417px));
 }
 
 .page-404 .desc-404 h2 {
-    font-size: clamp(1px, 4.68vw, 72px);
+    font-size: clamp(1px, 2.86vw, 44px);
 }
 
 .page-404 .desc-404 h3 {
@@ -3248,7 +3257,7 @@ video-player.dcote-player-rounded video-skin video {
     scale: 1.05;
 }
 
-.page-anime-episode .iframe-wrapper{
+.page-anime-episode .iframe-wrapper {
     width: 100%;
     padding-inline: 10%;
 }
@@ -3265,7 +3274,8 @@ video-player.dcote-player-rounded video-skin video {
     .page-anime-episode .episode-controls.mobile button {
         padding: clamp(1px, 1.335vw, 100px);
     }
-    .page-anime-episode .iframe-wrapper{
+
+    .page-anime-episode .iframe-wrapper {
         padding-inline: 0%;
     }
 }

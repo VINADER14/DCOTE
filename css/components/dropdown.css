@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Vag-Bold';
-    src: url('/fonts/VAG\ Rounded\ Next\ Bold.ttf') format('truetype');
+    src: url('/fonts/VAG\ Rounded\ Next\ Bold.woff2') format('woff2');
+    font-display:swap;
 }
 .drop-menu{
     position: absolute;
